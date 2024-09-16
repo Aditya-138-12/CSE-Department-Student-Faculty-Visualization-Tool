@@ -1,0 +1,286 @@
+/* Form container */
+.closeDiv {
+    position: absolute;
+    height: 1vw;
+    width: 1vw;
+    border-radius: 50%;
+    background-color: red;
+    right: 0.5vw;
+    top: 0.5vw;
+    transition: 0.2s ease;
+}
+
+.closeDiv:hover {
+    transform: scale(1.4);
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.form-container-fact {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 50.5rem;
+    height: auto;
+    min-height: 70vh;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    z-index: 998;
+    box-sizing: border-box;
+    margin: 2rem auto;
+    overflow: visible;
+}
+
+@media (max-width: 640px) {
+    .form-container {
+        padding: 1rem;
+        height: auto;
+        min-height: 100vh;
+        border-radius: 0;
+        margin: 0;
+    }
+}
+
+/* Form content */
+.form-content {
+    flex: 1;
+    overflow-y: visible;
+    padding-right: 0.5rem;
+    box-sizing: border-box;
+}
+
+/* Ensure all form elements respect the container's width */
+.form-group {
+    width: 100%;
+}
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Rest of the CSS remains the same */
+
+/* Adjustments to ensure height fits content */
+.form-content>* {
+    box-sizing: border-box;
+    /* Ensures child elements respect container sizing */
+}
+
+/* Typography */
+h1 {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+}
+
+@media (max-width: 640px) {
+    h1 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.tab {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    margin: 0 0.3125rem;
+    border-radius: 0.3125rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab:hover {
+    background-color: #e0e0e0;
+}
+
+.tab.active {
+    background-color: #28a745;
+    color: #fff;
+}
+
+@media (max-width: 480px) {
+    .tab {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Form groups */
+.form-group {
+    margin-bottom: 0.75rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.25);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 4rem;
+}
+
+/* Button container */
+.button-container {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 0.625rem;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+    position: relative;
+    width: 25%;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.5);
+}
+
+/* Date inputs */
+.dates-container {
+    margin-top: 0.5rem;
+}
+
+.date-label {
+    font-style: italic;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    color: #666;
+}
+
+/* Checkbox group */
+.form-group.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+}
+
+.form-group.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: normal;
+    order: 2;
+}
+
+.form-group.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    order: 1;
+}
+
+/* Accessibility and touch device improvements */
+@media (hover: none) {
+    .tab:hover {
+        background-color: #f0f0f0;
+    }
+
+    .tab:active {
+        background-color: #e0e0e0;
+    }
+
+    button:hover {
+        background-color: #28a745;
+    }
+
+    button:active {
+        background-color: #218838;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    body {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .form-container {
+        background-color: #333;
+        color: #fff;
+    }
+
+    input,
+    select,
+    textarea {
+        background-color: #000;
+        color: #fff;
+        border-color: #fff;
+    }
+
+    .tab {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .tab.active {
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}

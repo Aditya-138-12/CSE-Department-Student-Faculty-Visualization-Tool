@@ -1,0 +1,143 @@
+body {
+    user-select: none;
+}
+
+.analyticsMainDiv {
+    position: absolute;
+    top: 6.1vw;
+    left: 2.5vw;
+    width: calc(100% - 5vw);
+    height: auto;
+    /* Allows height to adjust based on content */
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 8px rgba(99, 99, 99, 0.2);
+    z-index: 1000;
+    padding: 1rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+    /* Ensures padding is included in width calculation */
+    text-align: left;
+    backdrop-filter: blur(5px);
+}
+
+.analyticsMainDiv h2 {
+    text-align: center;
+    font-size: 2vw;
+    margin-top: 0vw;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .analyticsMainDiv {
+        top: 4vw;
+        /* Adjust top margin for smaller screens */
+        left: 2vw;
+        /* Adjust left margin for smaller screens */
+        width: calc(100% - 4vw);
+        /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .analyticsMainDiv {
+        top: 3vw;
+        /* Further adjust top margin for very small screens */
+        left: 1.5vw;
+        /* Further adjust left margin for very small screens */
+        width: calc(100% - 3vw);
+        /* Further adjust width for very small screens */
+        padding: 0.5rem;
+        /* Reduce padding for very small screens */
+    }
+}
+
+/* Style for dropdowns */
+.dropdowns {
+    margin-left: 50%;
+}
+
+.dropdowns select {
+    margin-left: 0.5rem;
+    padding: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Class to highlight no data options in branch dropdown */
+.no-data-branch {
+    background-color: rgba(255, 0, 0, 0.2);
+    /* Light red tint */
+    color: #fff;
+    /* White text for better contrast */
+}
+
+/* Class to highlight no data options in semester dropdown */
+.no-data {
+    background-color: rgba(255, 0, 0, 0.2);
+    /* Light red tint */
+    color: #fff;
+    /* White text for better contrast */
+}
+
+/* Container for the charts */
+.chartsContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    /* Space between charts */
+    flex-wrap: wrap;
+    /* Allow wrapping if necessary */
+}
+
+/* Individual chart styling */
+.chart {
+    flex: 1;
+    min-width: 0;
+    /* Prevent charts from overflowing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for chart headers */
+.chart h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* Student Details Section */
+.studentsList {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.studentsList h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.studentsList table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.studentsList th,
+.studentsList td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.studentsList th {
+    background-color: #f4f4f4;
+}
+
+.studentsList td {
+    white-space: nowrap;
+    /* Prevent text from wrapping in cells */
+}
+
+.studentsDetails {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

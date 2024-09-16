@@ -1,0 +1,16 @@
+.flame3 {
+    /* Adjust size */
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    left: 5px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../photos/third.png");
+    background-repeat: none;
+    background-size: 100% 100%;
+
+}

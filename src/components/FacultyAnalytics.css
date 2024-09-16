@@ -1,0 +1,94 @@
+.faculty-analytics {
+    font-family: Arial, sans-serif;
+    width: 90vw;
+    height: 80vh;
+    /* Add top margin to account for navbar height */
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    /* Add position relative */
+    z-index: 1000;
+    /* Ensure it's above the navbar */
+    overflow-y: scroll;
+}
+
+.faculty-analytics h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    /* Add some top padding for spacing */
+}
+
+/* Rest of the CSS remains the same */
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.controls select,
+.controls input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.faculty-list {
+    margin-top: 30px;
+}
+
+.faculty-list h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.fa-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.fa-th,
+.fa-td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.fa-th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.fa-tr:hover {
+    background-color: #f5f5f5;
+}
+
+.facultyAnalyticsCloseButton {
+    position: absolute;
+    top: 1vh;
+    left: 1vw;
+    width: 1vw;
+    height: 1vh;
+    border: 0.1vw solid white;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.1s ease;
+}
+
+.facultyAnalyticsCloseButton:hover {
+    transform: scale(1.4);
+    background-color: red;
+    transition: 0.1s ease;
+}

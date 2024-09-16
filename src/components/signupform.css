@@ -1,0 +1,106 @@
+.signup-container {
+    position: absolute;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 400px;
+    background-color: #f0f2f5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+}
+
+.signup-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.submit-btn[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4267B2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #365899;
+}
+
+.error-message {
+    color: #d32f2f;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.success-message {
+    color: #388e3c;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Add these rules to your existing CSS file */
+
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Adjust the container size to accommodate the new fields */
+.signup-container {
+    width: 450px;
+    max-width: 90%;
+}
+
+/* Make the form scrollable if it exceeds the container height */
+.signup-form {
+    max-height: 90vh;
+    overflow-y: auto;
+}

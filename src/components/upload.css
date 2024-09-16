@@ -1,0 +1,89 @@
+.uploadMainDiv {
+    position: fixed;
+    z-index: 1000;
+    width: 80vw;
+    max-width: 800px;
+    max-height: 90vh;
+    height: 40vw;
+    /* Ensures it doesn't exceed viewport height */
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+    /* Enables scrolling if content exceeds height */
+    border-radius: 8px;
+}
+
+
+
+.closingBtn {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    right: 0.8vw;
+    top: 0.6vw;
+    transition: 0.1s ease-out;
+    z-index: 1000;
+}
+
+.closingBtn:hover {
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+.form-container-stud {
+    position: absolute;
+    height: 85%;
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+}
+
+.form-container::-webkit-scrollbar {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    position: absolute;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+button:hover {
+    background-color: #45a049;
+}

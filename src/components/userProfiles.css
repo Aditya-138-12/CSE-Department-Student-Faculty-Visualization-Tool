@@ -1,0 +1,227 @@
+/* Container styling */
+.container {
+    display: flex;
+    position: absolute;
+    width: 80vw;
+    height: 80vh;
+    background-color: #f3f4f6;
+    top: 52.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 25%;
+    background-color: white;
+    padding: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Avatar styling */
+.avatar {
+    width: 210px;
+    height: 210px;
+    position: relative;
+    border-radius: 50%;
+    display: block;
+    /* Makes the image a block element */
+    margin: 0 auto 32px;
+}
+
+/* Navigation item styling - now looks like buttons */
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center text within the button */
+    margin-bottom: 16px;
+    padding: 10px 20px;
+    /* Add padding for a button-like feel */
+    background-color: #3b82f6;
+    /* Button background color */
+    color: white;
+    /* Button text color */
+    border-radius: 4px;
+    /* Rounded corners */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: #2563eb;
+    /* Darker shade on hover */
+}
+
+
+/* Main content styling */
+.main-content {
+    width: 75%;
+    padding: 32px;
+    position: relative;
+    overflow-y: scroll;
+}
+
+/* Header styling */
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+/* Form styling */
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 16px;
+}
+
+/* Label styling */
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Input field styling */
+.input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+}
+
+/* Select dropdown styling */
+.select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+}
+
+/* Button styling */
+.button {
+    padding: 12px 26px;
+    position: relative;
+    width: 20vw;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Flexbox for birthday dropdowns */
+.birthday-select {
+    display: flex;
+    gap: 8px;
+}
+
+.birthday-select .select {
+    width: 33%;
+}
+
+/* Add these styles to your userProfiles.css file */
+
+.dashboard {
+    margin-top: 0px;
+    padding: 0px;
+}
+
+.dashboard-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.faculty-data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    position: relative;
+}
+
+.faculty-data-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    position: relative;
+}
+
+.faculty-data-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background-color: #f0f0f0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.card-title {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.card-date {
+    font-size: 14px;
+    color: #666;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.achievement-type,
+.event-type {
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.card-department {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+.no-data-message {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.upload-button {
+    width: 95%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.upload-button.uploading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
