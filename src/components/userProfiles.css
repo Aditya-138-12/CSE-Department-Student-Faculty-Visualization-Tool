@@ -21,8 +21,18 @@
 
 /* Avatar styling */
 .avatar {
-    width: 210px;
-    height: 210px;
+    width: 14vw;
+    height: 22vh;
+    position: relative;
+    border-radius: 50%;
+    display: block;
+    /* Makes the image a block element */
+    margin: 0 auto 32px;
+}
+
+.skeleton-avatar {
+    width: 14vw;
+    height: 22vh;
     position: relative;
     border-radius: 50%;
     display: block;

@@ -1,0 +1,60 @@
+.main_div_aur {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    /*height: ;*/
+    width: 70%;
+    /*background-color: ;*/
+}
+
+.divcl {
+    position: relative;
+    display: inline-block;
+    /*background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif)*/
+    margin-top: calc(50% - 150px);
+    margin-bottom: 0;
+    background: linear-gradient(to top, #525252, #6b6767, #bbbaba);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
+    color: transparent;
+    font-weight: 700;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    font-size: 5.5rem;
+    text-align: center;
+    font-family: Inter var, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+.ddivcl {
+    position: relative;
+
+    /*background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif)*/
+    /*margin-top: calc(50% - 150px);*/
+    font-weight: 700;
+    font-size: 5.5rem;
+    text-align: ;
+    font-family: Inter var, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+.pcl {
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 25px;
+    text-align: left;
+    margin-top: 0px;
+    /*margin-left: 120px;*/
+    margin-right: 10px;
+    font-family: Inter var, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    color: rgb(88, 88, 88);
+}
+
+.btn_uar {
+    position: relative;
+    left: 50%;
+    max-width: 12vw;
+    min-width: 100px;
+    background-color: #ffffff;
+}

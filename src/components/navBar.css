@@ -8,15 +8,18 @@ body {
     align-items: center;
     top: 0vw;
     left: 0vw;
-    height: 4vw;
+    /*height: 4vw;*/
+    height: 7.12vh;
     width: 100%;
-    background: linear-gradient(303deg, #000000, #a7a7a7);
+    /**background: linear-gradient(303deg, #000000, #a7a7a7);
     background-size: 400% 400%;
 
     -webkit-animation: AnimationName 10s ease infinite;
     -moz-animation: AnimationName 10s ease infinite;
     -o-animation: AnimationName 10s ease infinite;
     animation: AnimationName 10s ease infinite;
+    */
+    background-color: black;
 }
 
 @-webkit-keyframes AnimationName {
@@ -80,8 +83,8 @@ body {
     border-radius: 50%;
     left: 1vw;
     top: 5%;
-    height: 90%;
-    width: 3.5vw;
+    height: 6.2vh;
+    width: 6.2vh;
     background-image: url("../photos/sjcit.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -95,10 +98,13 @@ body {
 
 .middleLogo {
     position: absolute;
-    left: calc(50% - 7vw);
-    top: 5%;
-    height: 90%;
-    width: 13vw;
+    /*left: calc(50% - 7vw);*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /*top: 5%;*/
+    height: 6.2vh;
+    width: 23.14vh;
     background-image: url("../photos/sjcitcse.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -106,13 +112,14 @@ body {
 }
 
 .middleLogo:hover {
-    transform: scale(1.1);
+    width: 25vh;
+    height: 7vh;
     transition: 0.1s ease;
 }
 
 .type1 {
     margin-left: auto;
-    margin-right: -85vw;
+    margin-right: -80vw;
     height: auto;
     background: linear-gradient(135deg, #FF6F61, #D83A9B, #FFB700);
     -webkit-background-clip: text;
@@ -140,8 +147,20 @@ body {
     background-size: 300% 300%;
     animation: gradientShift 5s ease infinite;
     font-size: 1.1vw;
+    /*font-size: 21.12px;*/
+    /*font-size: 1.96vh;*/
     border-bottom: 0.1vw solid white;
     user-select: none;
+}
+
+@media(max-width: 720px) {
+    .type1 {
+        font-size: 16px;
+    }
+
+    .type2 {
+        font-size: 16px;
+    }
 }
 
 @keyframes gradientShift {

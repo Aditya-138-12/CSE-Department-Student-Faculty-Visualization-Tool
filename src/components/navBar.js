@@ -15,11 +15,17 @@ import SignUpForm from "./signupform";
 import PasswordReset from "./passwordReset";
 import UserProfile from "./userProfile";
 import FacultyAnalytics from "./facultyAnaytics";
-
+import MUITable from "./muitable";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Sheet from '@mui/joy/Sheet';
+import Snackbar from "@mui/joy/Snackbar";
 
 const HoD_UID = process.env.REACT_APP_USER_UID;
 
+const theme = createTheme();
+
 const NavBar = () => {
+    const [loadingState, setLoadingState] = useState(true);
     const [showUpload, setShowUpload] = useState(false);
     const [showUploadButton, setshowUploadButton] = useState(true);
     const [showFacultyUploadButton, setshowFacultyUploadButton] = useState(false);
@@ -36,8 +42,9 @@ const NavBar = () => {
     const [showFacultyAnalyticsButton, setshowFacultyAnalyticsButton] = useState(false);
     const [ShowFacultyForm, setShowFacultyForm] = useState(false);
     const [ShowFPasswordResetForm, setShowFPasswordResetForm] = useState(false);
-
+    const [open, setOpen] = useState(false);
     const [showFacultyAnalytics, setShowFacultyAnalytics] = useState(false);
+    const [SecondOpen, setSecondOpen] = useState(false);
 
     const eventScores = {
         "Hackathon": 15,
@@ -134,6 +141,9 @@ const NavBar = () => {
             setUserUid(null);      /*Is Owner */
         } catch (error) {
             console.error("Error signing out: ", error);
+        } finally {
+            console.log("In finally block");
+            setOpen(true);
         }
     };
 
@@ -151,6 +161,7 @@ const NavBar = () => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
+                setSecondOpen(true);
                 setUserUid(user.uid);  // Store the logged-in user's UID
 
                 // Check if the logged-in user is the HOD
@@ -180,6 +191,7 @@ const NavBar = () => {
     useEffect(() => {
         const fetchData = () => {
             const dataRef = dbRef(db, 'uploads/');
+            setLoadingState(true); // Start loading
             onValue(dataRef, (snapshot) => {
                 const fetchedData = snapshot.val();
                 if (fetchedData) {
@@ -223,6 +235,7 @@ const NavBar = () => {
                 } else {
                     setData([]);
                 }
+                setLoadingState(false); // Loading done
             });
         };
 
@@ -231,121 +244,161 @@ const NavBar = () => {
 
     return (
         <>
-            {false && <SignUpForm />}
-            {ShowFPasswordResetForm && <PasswordReset onClose={closePasswordReseForm} />}
-            {isFacultyOwner && ShowFacultyForm && <FacultyForm onClose={closeFacultyFormDiv} />}
-            {showUpload && <Upload onClose={closeUploadDiv} />}
-            {showLogin && <Login onClose={() => setShowLogin(false)} onLogin={() => setIsOwner(true)} OnPasswordReset={closePasswordReseForm} />}
-            {showAnalytics && isOwner && <Analytics onClose={() => setShowAnalytics(false)} data={data} />}
-            {showFacultyAnalytics && isOwner && !isFacultyOwner && (
-                <FacultyAnalytics onClose={() => setShowFacultyAnalytics(false)} />
-            )}
+            <Snackbar
+                autoHideDuration={4000}
+                open={open}
+                size="lg"
+                variant={'solid'}
+                color={'primary'}
+                onClose={(event, reason) => {
+                    if (reason === 'clickaway') {
+                        return;
+                    }
+                    setOpen(false);
+                }}
+            >
+                Logged Out Sucessfully
+            </Snackbar>
 
-            <div className="mainNavigationDiv">
-                <a href="https://aditya-138-12.github.io/CodeArena-Website-/" target="_blank"><div className="leftLogo"></div></a>
-                <a href="https://cse.sjcit.ac.in/" target="_blank"><div className="middleLogo"></div ></a>
-                {!isFacultyOwner && !isOwner && showUploadButton && <p className="type1" onClick={UploadBtn}>Upload</p>}
-                {!isFacultyOwner && showAnalyticsButton && isOwner && <p className="type3" onClick={() => setShowAnalytics(!showAnalytics)}>Student Analytics</p>}
-                {!isFacultyOwner && isactiveAdminLogin && <p className="type2" onClick={handleLoginToggle}>{isOwner ? 'HoD CSE Logout' : 'HoD CSE Login'}</p>}
-                {activeTab === 'faculty' && isFacultyOwner && showFacultyUploadButton && < p className="type6" onClick={closeFacultyFormDiv}>Upload Faculty</p>}
-                {isactiveFacultyLogin && <p className="type4" onClick={handleLoginToggle}>{isFacultyOwner ? "Faculty Logout" : "Faculty Login"}</p>}
-                {!isFacultyOwner && isOwner && showFacultyAnalyticsButton && (
-                    <p className="type5" onClick={() => setShowFacultyAnalytics(!showFacultyAnalytics)}>
-                        Faculty Analytics
-                    </p>
+            <Snackbar
+                autoHideDuration={4000}
+                open={SecondOpen}
+                size="lg"
+                variant={'solid'}
+                color={'primary'}
+                onClose={(event, reason) => {
+                    if (reason === 'clickaway') {
+                        return;
+                    }
+                    setSecondOpen(false);
+                }}
+            >
+                Logged In Sucessfully
+            </Snackbar>
+
+            <ThemeProvider theme={theme}>
+                {false && <SignUpForm />}
+                {ShowFPasswordResetForm && <PasswordReset onClose={closePasswordReseForm} />}
+                {isFacultyOwner && ShowFacultyForm && <FacultyForm onClose={closeFacultyFormDiv} />}
+                {showUpload && <Upload onClose={closeUploadDiv} />}
+                {showLogin && <Login onClose={() => setShowLogin(false)} onLogin={() => setIsOwner(true)} OnPasswordReset={closePasswordReseForm} />}
+                {showAnalytics && isOwner && <Analytics onClose={() => setShowAnalytics(false)} data={data} />}
+                {showFacultyAnalytics && isOwner && !isFacultyOwner && (
+                    <FacultyAnalytics onClose={() => setShowFacultyAnalytics(false)} />
                 )}
-            </div >
 
-            {/* Tab Navigation */}
-            < div className="tabNavigation" >
-                <div
-                    className={isFacultyOwner ? "student123" : "student"}
-                    onClick={() => !isFacultyOwner && makeStudentTabActive()}
-                >
-                    Student
-                </div>
-                <div
-                    className="faculty"
-                    onClick={makeFacultyTabActive}
-                >
-                    Faculty
-                </div>
-            </div >
+                <div className="mainNavigationDiv">
+                    <a href="https://aditya-138-12.github.io/CodeArena-Website-/" target="_blank"><div className="leftLogo"></div></a>
+                    <a href="https://cse.sjcit.ac.in/" target="_blank"><div className="middleLogo"></div ></a>
+                    {!isFacultyOwner && !isOwner && showUploadButton && <p className="type1" onClick={UploadBtn}>Student Upload</p>}
+                    {!isFacultyOwner && showAnalyticsButton && isOwner && <p className="type3" onClick={() => setShowAnalytics(!showAnalytics)}>Student Analytics</p>}
+                    {!isFacultyOwner && isactiveAdminLogin && <p className="type2" onClick={handleLoginToggle}>{isOwner ? 'HoD CSE Logout' : 'HoD CSE Login'}</p>}
+                    {activeTab === 'faculty' && isFacultyOwner && showFacultyUploadButton && < p className="type6" onClick={closeFacultyFormDiv}>Upload Faculty</p>}
+                    {isactiveFacultyLogin && <p className="type4" onClick={handleLoginToggle}>{isFacultyOwner ? "Faculty Logout" : "Faculty Login"}</p>}
+                    {!isFacultyOwner && isOwner && showFacultyAnalyticsButton && (
+                        <p className="type5" onClick={() => setShowFacultyAnalytics(!showFacultyAnalytics)}>
+                            Faculty Analytics
+                        </p>
+                    )}
+                </div >
 
-            {/* Conditional Rendering Based on Active Tab */}
-            {
-                activeTab === "student" && (
-                    <div className="tableDiv">
-                        <table className="table">
-                            <thead className="tableHead">
-                                <tr>
-                                    <th>Rank In College</th>
-                                    <th className="name">Name</th>
-                                    <th className="usn">USN</th>
-                                    <th className="branch">Branch</th>
-                                    <th className="section">Section</th>
-                                    <th className="sem">Sem</th>
-                                    <th className="achievements">Achievements</th>
-                                    <th className="summary">Summary</th>
-                                    <th>Score</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {data.map((entry, index) => (
-                                    <tr key={entry.usn}>
-                                        <td className={index === 0 ? "first_ranker_row" : index === 1 ? "second_ranker_row" : index === 2 ? "third_ranker_row" : ""}>{index + 1} {index === 0 ? <Flame /> : (index === 1 ? <Flame2 /> : index === 2 ? <Flame3 /> : "")} {/* Show flame for the first ranker */}</td>
-                                        <td>{entry.name}</td>
-                                        <td>{entry.usn}</td>
-                                        <td>{entry.branch}</td>
-                                        <td>{entry.section}</td>
-                                        <td>{entry.sem}</td>
-                                        <td className={index === data.length - 1 ? "last_ranker" : ""}>
-                                            {entry.achievements.map((achievement, i) => (
-                                                <span key={i} className="achievementTooltip">
-                                                    {achievement.name} - {achievement.count}
-                                                    <div className="tooltipContent">
-                                                        {achievement.urls.map((url, j) => (
-                                                            <div key={j}>
-                                                                <a href={url} target="_blank" rel="noopener noreferrer">
-                                                                    {achievement.name} - {j + 1} Report Link
-                                                                </a>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                    {i < entry.achievements.length - 1 ? ', ' : ''}
-                                                </span>
-                                            ))}
-                                        </td>
-                                        <td>{entry.summary || 'N/A'}</td>
-                                        <td>{entry.score || 'N/A'}</td>
+                {/* Tab Navigation */}
+                < div className="tabNavigation" >
+                    <div
+                        className={isFacultyOwner ? "student123" : "student"}
+                        onClick={() => !isFacultyOwner && makeStudentTabActive()}
+                    >
+                        Student
+                    </div>
+                    <div
+                        className="faculty"
+                        onClick={makeFacultyTabActive}
+                    >
+                        Faculty
+                    </div>
+                </div >
+
+                {/* Conditional Rendering Based on Active Tab */}
+                {
+                    activeTab === "student" && (
+                        <div className="tableDiv">
+                            {/*
+                            <table className="table">
+                                <thead className="tableHead">
+                                    <tr>
+                                        <th>Rank In College</th>
+                                        <th className="name">Name</th>
+                                        <th className="usn">USN</th>
+                                        <th className="branch">Branch</th>
+                                        <th className="section">Section</th>
+                                        <th className="sem">Sem</th>
+                                        <th className="achievements">Achievements</th>
+                                        <th className="summary">Summary</th>
+                                        <th>Score</th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div >
-                )
-            }
+                                </thead>
+                                <tbody>
+                                    {data.map((entry, index) => (
+                                        <tr key={entry.usn}>
+                                            <td className={index === 0 ? "first_ranker_row" : index === 1 ? "second_ranker_row" : index === 2 ? "third_ranker_row" : ""}>{index + 1} {index === 0 ? <Flame /> : (index === 1 ? <Flame2 /> : index === 2 ? <Flame3 /> : "")} </td>
+                                            <td>{entry.name}</td>
+                                            <td>{entry.usn}</td>
+                                            <td>{entry.branch}</td>
+                                            <td>{entry.section}</td>
+                                            <td>{entry.sem}</td>
+                                            <td className={index === data.length - 1 ? "last_ranker" : ""}>
+                                                {entry.achievements.map((achievement, i) => (
+                                                    <span key={i} className="achievementTooltip">
+                                                        {achievement.name} - {achievement.count}
+                                                        <div className="tooltipContent">
+                                                            {achievement.urls.map((url, j) => (
+                                                                <div key={j}>
+                                                                    <a href={url} target="_blank" rel="noopener noreferrer">
+                                                                        {achievement.name} - {j + 1} Report Link
+                                                                    </a>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                        {i < entry.achievements.length - 1 ? ', ' : ''}
+                                                    </span>
+                                                ))}
+                                            </td>
+                                            <td>{entry.summary || 'N/A'}</td>
+                                            <td>{entry.score || 'N/A'}</td>
+                                        </tr >
+                                    ))}
+                                </tbody >
+                            </table >
+                        */}
 
-            {
-                activeTab === "faculty" && !isOwner && !isFacultyOwner && (
-                    <div className="facultyUnderConstruction">
-                        <h2>Faculties Are Requested To Kindly Login To Continue.</h2>
-                    </div>
-                )
+                            <MUITable data={data} isLoading={loadingState} />
 
-            }
 
-            {
-                activeTab === "faculty" && isOwner && (
-                    <div className="facultyUnderConstruction">
-                        <h2>Click on Faculty Analytics To Track The Progress Of The Department.</h2>
-                    </div>
-                )
-            }
+                        </div >
+                    )
+                }
 
-            {activeTab === "faculty" && isFacultyOwner && <UserProfile />}
+                {
+                    activeTab === "faculty" && !isOwner && !isFacultyOwner && (
+                        <div className="facultyUnderConstruction">
+                            <h2>Faculties Are Requested To Kindly Login To Continue.</h2>
+                        </div>
+                    )
 
-            <div className="bottom-footter">Created with <span>`</span><a className="bottom-footter-heart">♥</a> <span>`</span> By <span>`</span> <a href="https://github.com/Aditya-138-12" target="_blank" className="bottom-footter-aditya-saroha">Aditya Saroha</a></div >
+                }
+
+                {
+                    activeTab === "faculty" && isOwner && !isFacultyOwner && (
+                        <div className="facultyUnderConstruction">
+                            <h2>Click on Faculty Analytics To Track The Progress Of The Department.</h2>
+                        </div>
+                    )
+                }
+
+                {activeTab === "faculty" && isFacultyOwner && <UserProfile />}
+
+                {false && <div className="bottom-footter">Created with <span>`</span><a className="bottom-footter-heart">♥</a> <span>`</span> By <span>`</span> <a href="https://github.com/Aditya-138-12" target="_blank" className="bottom-footter-aditya-saroha">Aditya Saroha</a></div >}
+            </ThemeProvider>
         </>
     );
 };

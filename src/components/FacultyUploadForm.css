@@ -284,3 +284,23 @@ button:focus {
         transition: none !important;
     }
 }
+
+#event-name {
+    margin-bottom: 15px;
+}
+
+#person-name {
+    margin-bottom: 15px;
+}
+
+#event-conducted-for {
+    margin-bottom: 15px;
+}
+
+#place-conduction {
+    margin-bottom: 15px;
+}
+
+#event-poster-link {
+    margin-bottom: 15px;
+}
