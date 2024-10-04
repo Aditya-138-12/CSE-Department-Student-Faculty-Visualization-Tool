@@ -1,0 +1,187 @@
+.HoDsideBarMainDiv {
+    position: fixed;
+    margin-left: 0.5%;
+    left: 0%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    /*min-height: 200px;
+    height: 12.5vw;*/
+    height: auto;
+    width: 6vh;
+    background-color: rgba(128, 128, 128, 0.2);
+    z-index: 1200;
+    backdrop-filter: blur(8px);
+    border: 0.1vw solid rgb(197, 197, 197);
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.HoDsideBarMainDiv.hover {
+    width: 180px;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.sideBarIconContainer {
+    display: flex;
+    align-items: top;
+    justify-content: flex-start;
+    padding-left: 15px;
+    height: auto;
+    margin-top: 16px;
+    margin-bottom: 15px;
+}
+
+/* Home icon styling */
+.sideBarMainDivHomeIcon {
+    transition: transform 0.3s ease;
+}
+
+/* Home icon hover effect */
+.sideBarMainDivHomeIcon.hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: transform 0.1s ease;
+}
+
+.sideBarMainDivFileUploadIcon {
+    transition: transform 0.3s ease;
+}
+
+.sideBarMainDivFileUploadIcon.hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: transform 0.1s ease;
+}
+
+.sideBarMainDivLogoutIcon {
+    transition: transform 0.3s ease;
+}
+
+.sideBarMainDivLogoutIcon.hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: transform 0.1s ease;
+}
+
+.sideBarMainDivFaculty {
+    transition: transform 0.3s ease;
+}
+
+.sideBarMainDivFaculty.hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: transform 0.1s ease;
+}
+
+.sideBarMainDivReport {
+    transition: transform 0.3s ease;
+}
+
+.sideBarMainDivReport.hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: transform 0.1s ease;
+}
+
+
+.fileUploadLabel {
+    margin-left: 0.5vw;
+    font-size: 0.99em;
+    color: rgb(100, 100, 100);
+    opacity: 1;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 3.5px;
+}
+
+.fileUploadLabel:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.2s ease;
+}
+
+.FacultyLabel {
+    margin-left: 0.5vw;
+    font-size: 0.95em;
+    color: rgb(100, 100, 100);
+    opacity: 1;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 3.5px;
+}
+
+
+.FacultyLabel:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.2s ease;
+}
+
+.ReportLabel {
+    margin-left: 0.5vw;
+    font-size: 0.95em;
+    color: rgb(100, 100, 100);
+    opacity: 1;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 3.5px;
+}
+
+
+.ReportLabel:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.2s ease;
+}
+
+
+.LogoutIconLabel {
+    margin-left: 0.5vw;
+    font-size: 0.99em;
+    color: rgb(100, 100, 100);
+    opacity: 1;
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 3.5px;
+}
+
+.LogoutIconLabel:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.2s ease;
+}
+
+.horizontalLine {
+    border: 0;
+    height: 1px;
+    margin: 8px 5px;
+    width: 80%;
+    background-color: rgb(190, 190, 190);
+    margin-bottom: 15px;
+}
+
+.horizontalLine.hover {
+    width: 90%;
+}
+
+@media(max-width: 480px) {
+    .HoDsideBarMainDiv {
+        /*height: 30vh !important;*/
+        height: auto;
+    }
+}
+
+@media(max-width: 720px) {
+    .HoDsideBarMainDiv {
+        /*height: 30vh !important;*/
+        height: auto;
+    }
+}

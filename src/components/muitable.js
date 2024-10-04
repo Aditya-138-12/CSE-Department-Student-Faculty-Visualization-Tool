@@ -95,32 +95,25 @@ const SearchInput = styled(TextField)(({ theme }) => ({
     },
 }));
 
-const MUITable = ({ data, isLoading }) => {
+const MUITable = ({ data, isLoading, isHoDLoggedIn }) => {
     const [searchTerm, setSearchTerm] = useState('');
+    console.log(data);
 
-    const filteredData = useMemo(() => {
-        return data.filter((entry) =>
-            entry.name.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-    }, [data, searchTerm]);
-
-    const dataWithRanks = useMemo(() => {
-        const sortedData = [...data].sort((a, b) => b.score - a.score);
-        return sortedData.map((entry, index) => ({
-            ...entry,
-            rank: index + 1,
-        }));
+    const rankedData = useMemo(() => {
+        // Sort the entire dataset by score and assign ranks
+        return data
+            .sort((a, b) => b.score - a.score)
+            .map((entry, index) => ({
+                ...entry,
+                originalRank: index + 1,
+            }));
     }, [data]);
 
-    const filteredRankedData = useMemo(() => {
-        return filteredData.map((entry) => {
-            const originalEntry = dataWithRanks.find(e => e.usn === entry.usn);
-            return {
-                ...entry,
-                rank: originalEntry ? originalEntry.rank : null,
-            };
-        });
-    }, [filteredData, dataWithRanks]);
+    const filteredData = useMemo(() => {
+        return rankedData.filter((entry) =>
+            entry.name && entry.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+    }, [rankedData, searchTerm]);
 
     return (
         <Box sx={{ width: '100%', mb: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -149,7 +142,7 @@ const MUITable = ({ data, isLoading }) => {
                 <Table sx={{ minWidth: 600 }}>
                     <TableHead>
                         <TableRow sx={{ backgroundColor: '#e3f2fd' }}>
-                            <StyledTableCell>Rank In College</StyledTableCell>
+                            <StyledTableCell>Realtime Rank In College</StyledTableCell>
                             <StyledTableCell>Name</StyledTableCell>
                             <StyledTableCell>USN</StyledTableCell>
                             <StyledTableCell>Branch</StyledTableCell>
@@ -193,14 +186,14 @@ const MUITable = ({ data, isLoading }) => {
                                     </StyledTableCell>
                                 </TableRow>
                             ))
-                        ) : filteredRankedData.length > 0 ? (
-                            filteredRankedData.map((entry, index) => (
+                        ) : filteredData.length > 0 ? (
+                            filteredData.map((entry, index) => (
                                 <StyledTableRow key={entry.usn} isOdd={index % 2 !== 0}>
                                     <StyledTableCell>
-                                        {entry.rank}
-                                        {entry.rank === 1 && <Flame />}
-                                        {entry.rank === 2 && <Flame2 />}
-                                        {entry.rank === 3 && <Flame3 />}
+                                        {entry.originalRank}
+                                        {entry.originalRank === 1 && <Flame />}
+                                        {entry.originalRank === 2 && <Flame2 />}
+                                        {entry.originalRank === 3 && <Flame3 />}
                                     </StyledTableCell>
                                     <StyledTableCell>{entry.name}</StyledTableCell>
                                     <StyledTableCell>{entry.usn}</StyledTableCell>
@@ -209,33 +202,39 @@ const MUITable = ({ data, isLoading }) => {
                                     <StyledTableCell>{entry.sem}</StyledTableCell>
                                     <StyledTableCell>
                                         {entry.achievements.map((achievement, i) => (
-                                            <CustomTooltip
-                                                key={i}
-                                                title={
-                                                    <React.Fragment>
-                                                        {achievement.urls.map((url, j) => (
-                                                            <div key={j}>
-                                                                <Link style={{ fontSize: '17px', lineHeight: '22px' }}
-                                                                    href={url}
-                                                                    target="_blank"
-                                                                    rel="noopener noreferrer"
-                                                                    sx={{
-                                                                        textDecoration: 'none',
-                                                                        color: '#3f51b5',
-                                                                        '&:hover': { textDecoration: 'underline' },
-                                                                        transition: 'color 0.3s',
-                                                                        '&:hover': { color: '#ff4081' },
-                                                                    }}
-                                                                >
-                                                                    {achievement.name} - {j + 1} Report Link
-                                                                </Link>
-                                                            </div>
-                                                        ))}
-                                                    </React.Fragment>
-                                                }
-                                            >
-                                                {achievement.name} - {achievement.count} {i < entry.achievements.length - 1 ? ', ' : ''}
-                                            </CustomTooltip>
+                                            <React.Fragment key={i}>
+                                                {isHoDLoggedIn ? (
+                                                    <CustomTooltip
+                                                        title={
+                                                            <React.Fragment>
+                                                                {achievement.urls.map((url, j) => (
+                                                                    <div key={j}>
+                                                                        <Link
+                                                                            style={{ fontSize: '17px', lineHeight: '22px' }}
+                                                                            href={url}
+                                                                            target="_blank"
+                                                                            rel="noopener noreferrer"
+                                                                            sx={{
+                                                                                textDecoration: 'none',
+                                                                                color: '#3f51b5',
+                                                                                '&:hover': { textDecoration: 'underline' },
+                                                                                transition: 'color 0.3s',
+                                                                                '&:hover': { color: '#ff4081' },
+                                                                            }}
+                                                                        >
+                                                                            {achievement.name} - {j + 1} Report Link
+                                                                        </Link>
+                                                                    </div>
+                                                                ))}
+                                                            </React.Fragment>
+                                                        }
+                                                    >
+                                                        <span>{achievement.name} - {achievement.count} {i < entry.achievements.length - 1 ? ', ' : ''}</span>
+                                                    </CustomTooltip>
+                                                ) : (
+                                                    <span>{achievement.name} - {achievement.count} {i < entry.achievements.length - 1 ? ', ' : ''}</span>
+                                                )}
+                                            </React.Fragment>
                                         ))}
                                     </StyledTableCell>
                                     <StyledTableCell>{entry.summary}</StyledTableCell>

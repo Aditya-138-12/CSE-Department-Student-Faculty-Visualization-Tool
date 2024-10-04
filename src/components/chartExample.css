@@ -1,0 +1,52 @@
+#container {
+    margin-top: 60px !important;
+    width: 50% !important;
+    display: inline-block;
+}
+
+.cont {
+    padding-left: 0px !important;
+}
+
+.highcharts-credits {
+    display: none;
+}
+
+.profile-tooltip {
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.profile-tooltip img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-tooltip h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.profile-tooltip p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+
+@media (max-width:720px) {
+    #container {
+        position: relative;
+        width: 100vw !important;
+        /*display: block !important;*/
+        top: 50px !important;
+    }
+
+    .cont {
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+    }
+}

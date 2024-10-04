@@ -56,5 +56,9 @@
     left: 50%;
     max-width: 12vw;
     min-width: 100px;
-    background-color: #ffffff;
+    background-color: transparent !important;
+}
+
+.btn_uar:hover {
+    background-color: black !important;
 }

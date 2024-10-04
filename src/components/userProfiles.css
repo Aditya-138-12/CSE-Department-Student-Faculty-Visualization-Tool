@@ -21,7 +21,7 @@
 
 /* Avatar styling */
 .avatar {
-    width: 14vw;
+    width: 12vw;
     height: 22vh;
     position: relative;
     border-radius: 50%;
@@ -50,6 +50,29 @@
     padding: 10px 20px;
     /* Add padding for a button-like feel */
     background-color: #3b82f6;
+    /* Button background color */
+    color: white;
+    /* Button text color */
+    border-radius: 4px;
+    /* Rounded corners */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.nav-item.active {
+    background-color: #0848af;
+}
+
+.nav-itemLogOut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center text within the button */
+    margin-bottom: 16px;
+    padding: 10px 20px;
+    /* Add padding for a button-like feel */
+    background-color: #f63b3b;
     /* Button background color */
     color: white;
     /* Button text color */

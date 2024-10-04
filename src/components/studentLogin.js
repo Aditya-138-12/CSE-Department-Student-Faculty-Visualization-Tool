@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./login.css";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "./firebase";
+import { Studentauth } from "./firebaseStudent";
 
-const Login = ({ onClose, onLogin, OnPasswordReset }) => {
+export const StudentLoginForm = ({ onStudentClose, onStudentLogin, OnStudentPasswordReset }) => {
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -21,9 +21,9 @@ const Login = ({ onClose, onLogin, OnPasswordReset }) => {
         setLoading(true);
         setError(''); // Clear previous errors
         try {
-            await signInWithEmailAndPassword(auth, formData.email, formData.password);
-            onLogin();
-            onClose();
+            await signInWithEmailAndPassword(Studentauth, formData.email, formData.password);
+            onStudentLogin();
+            onStudentClose();
         } catch (error) {
             handleError(); // Display generic error message
         } finally {
@@ -39,7 +39,7 @@ const Login = ({ onClose, onLogin, OnPasswordReset }) => {
     return (
         <div className="bodyDiv">
             <div className="loginMainDiv">
-                <div className="closingBtn" onClick={onClose}></div>
+                <div className="closingBtn" onClick={onStudentClose}></div>
                 <form onSubmit={handleSubmit} className="login-form">
                     <div className="form-group">
                         <label htmlFor="email">Email:</label>
@@ -67,11 +67,10 @@ const Login = ({ onClose, onLogin, OnPasswordReset }) => {
                     <button type="submit" disabled={loading}>
                         {loading ? 'Logging in...' : 'Login'}
                     </button>
-                    <p onClick={OnPasswordReset} className="password-reset">Forgot Password, Reset.</p>
+                    <p onClick={OnStudentPasswordReset} className="password-reset">Forgot Password, Reset.</p>
                 </form>
             </div>
         </div>
+
     );
 };
-
-export default Login;

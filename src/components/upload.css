@@ -3,8 +3,8 @@
     z-index: 1000;
     width: 80vw;
     max-width: 800px;
-    max-height: 90vh;
-    height: 40vw;
+    min-height: 90vh;
+    height: 88vh;
     /* Ensures it doesn't exceed viewport height */
     background-color: white;
     top: 50%;

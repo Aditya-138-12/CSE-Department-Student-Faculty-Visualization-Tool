@@ -3,13 +3,12 @@ import "./navBar.css";
 import Upload from "./upload.js";
 import Login from "./login";
 import Analytics from "./analytics";
-import { db, auth } from "./firebase";
-import { ref as dbRef, onValue } from "firebase/database";
+import { db, auth, storage } from "./firebase";
+import { Studentauth, Studentdb, Studentstorage } from "./firebaseStudent";
+import { ref as dbRef, get, update, getDatabase } from "firebase/database";
 import { signOut, onAuthStateChanged } from "firebase/auth";
-import Oneko from "./oneko";
-import Flame from "./flame";
-import Flame2 from "./flame2";
-import Flame3 from "./flame3"; // Import the Flame component
+/*import { getStorage, ref as storageRef, listAll, getMetadata, getDownloadURL } from 'firebase/storage';*/
+// Import the Flame, Oneko component
 import FacultyForm from './facultyUploadForm';
 import SignUpForm from "./signupform";
 import PasswordReset from "./passwordReset";
@@ -19,6 +18,23 @@ import MUITable from "./muitable";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Sheet from '@mui/joy/Sheet';
 import Snackbar from "@mui/joy/Snackbar";
+import { SideBar } from "./sideBar/sideBar";
+/*import { BrowserRouter as Router, Route, Routes, useNavigate, useLocation } from "react-router-dom";*/
+import Button from '@mui/joy/Button';
+import { CssVarsProvider } from '@mui/joy/styles';
+import { StudentLoginForm } from './studentLogin.js';
+import Avatar from '@mui/joy/Avatar';
+import Modal from '@mui/joy/Modal';
+import ModalClose from '@mui/joy/ModalClose';
+import Typography from '@mui/joy/Typography';
+import { Skeleton } from "@mui/material";
+import { Skeleton as CSkeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
+import { HoDSideBar } from "./HoDSideBar/HoDSideBar";
+import FacultyReportGenerator from "./FacultyReportGenerator";
+import CountUp from 'react-countup';
+import { ChartExample } from "./chartExample";
+import { LiveDataChart } from "./LiveChartExample";
+
 
 const HoD_UID = process.env.REACT_APP_USER_UID;
 
@@ -36,7 +52,7 @@ const NavBar = () => {
     const [isFacultyOwner, setisFacultyOwner] = useState(false);
     const [data, setData] = useState([]);
     const [activeTab, setActiveTab] = useState("student"); // State for active tab
-    const [isactiveAdminLogin, setisactiveAdminLogin] = useState(true);
+    const [isactiveAdminLogin, setisactiveAdminLogin] = useState(false);
     const [isactiveFacultyLogin, setisactiveFacultyLogin] = useState(false);
     const [showAnalyticsButton, setshowAnalyticsButton] = useState(true);
     const [showFacultyAnalyticsButton, setshowFacultyAnalyticsButton] = useState(false);
@@ -45,6 +61,73 @@ const NavBar = () => {
     const [open, setOpen] = useState(false);
     const [showFacultyAnalytics, setShowFacultyAnalytics] = useState(false);
     const [SecondOpen, setSecondOpen] = useState(false);
+    const [Modalopen, setModalopen] = useState(false);
+
+    const [isStudentOwner, setisStudentOwner] = useState(false);
+    const [StudentShowLogin, setStudentShowLogin] = useState(false);
+    const [StudentUserUid, setStudentUserUid] = useState(null);
+
+    const [isSaving, setisSaving] = useState(false);
+    const [isEditing, setisEditing] = useState(false);
+
+    const [ShowReportGenerator, setShowReportGenerator] = useState(false);
+
+    const [totalSize, setTotalSize] = useState(0);
+    const [debugInfo, setDebugInfo] = useState('');
+
+    const [HoDModalopen, setHoDModalopen] = useState(false);
+
+    const [showStudentSignUpFormButton, setshowStudentSignUpFormButton] = useState(true);
+    const [showStudentSignUpForm, setshowStudentSignUpForm] = useState(false);
+
+    const [StudentuserInfo, setStudentuserInfo] = useState({
+        name: "",
+        usn: "",
+        sem: "",
+        branch: "",
+        section: "",
+        email: "",
+        gender: "",
+        mobile: "",
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+
+        setStudentuserInfo(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    }
+
+    const handleEditClick = () => {
+        setisEditing(true);
+    }
+
+    const handleSaveClick = async () => {
+        setisSaving(true);
+        console.log("Inside the handleSaveClick");
+        const user = Studentauth.currentUser;
+        console.log(user);
+        if (user) {
+            try {
+                const userRef = dbRef(Studentdb, `StudentUserData/${user.uid}`);
+                await update(userRef, StudentuserInfo);
+                setisEditing(false);
+                console.log('Profile updated successfully');
+            } catch (error) {
+                console.error('Error updating profile:', error);
+            } finally {
+                /*setIsSaving(false);*/
+                setTimeout(() => {
+                    setisSaving(false);
+                }, 2000);
+            }
+        } else {
+            console.log('No user is logged in.');
+            setisSaving(false);
+        }
+    }
 
     const eventScores = {
         "Hackathon": 15,
@@ -83,6 +166,7 @@ const NavBar = () => {
         setShowUpload(false);
     };
 
+
     const makeFacultyTabActive = () => {
         setActiveTab("faculty");
         { isFacultyOwner && setisactiveFacultyLogin(true); }
@@ -105,19 +189,27 @@ const NavBar = () => {
 
     const makeStudentTabActive = () => {
         setActiveTab("student");
-        setisactiveAdminLogin(true);
+        setisactiveAdminLogin(false);
         setisactiveFacultyLogin(false);
         { !isFacultyOwner && setshowUploadButton(true); }
         { !isFacultyOwner && isOwner && setshowAnalyticsButton(true); }            /*Is Owner */
         setshowFacultyAnalyticsButton(false);
         setshowFacultyUploadButton(false);
+        setshowStudentSignUpFormButton(true);
     }
 
-    const Loginbtn = () => {
-        if (isOwner || isFacultyOwner) {          /*Is Owner */
+    const makeHoDTabActive = () => {
+        setActiveTab("HoD");
+        setisactiveAdminLogin(true);
+        setshowStudentSignUpFormButton(false);
+        setshowUploadButton(false);
+    }
+
+    const StudentLoginbtn = () => {
+        if (isStudentOwner) {          /*Is Owner */
             handleLogout();
         } else {
-            setShowLogin(!showLogin);
+            setStudentShowLogin(!StudentShowLogin);
         }
     };
 
@@ -147,6 +239,19 @@ const NavBar = () => {
         }
     };
 
+    const handleStudentLogout = async () => {
+        try {
+            await signOut(Studentauth);
+            setisStudentOwner(false);
+            setStudentUserUid(null);      /*Is Owner */
+        } catch (error) {
+            console.error("Error signing out: ", error);
+        } finally {
+            console.log("In finally block");
+            setOpen(true);
+        }
+    };
+
     const closeFacultyFormDiv = () => {
         setShowFacultyForm(!ShowFacultyForm);
     }
@@ -156,6 +261,80 @@ const NavBar = () => {
         setShowLogin(!showLogin);
 
     }
+
+
+
+
+    /*
+    useEffect(() => {
+        const fetchTotalSize = async () => {
+            let totalBytes = 0;
+            let debugLog = '';
+
+            // Fetch Realtime Database size
+            try {
+                const dbSnapshot = await get(dbRef(Studentdb, 'uploads'));
+                const dbData = JSON.stringify(dbSnapshot.val());
+                const dbSize = new TextEncoder().encode(dbData).length;
+                totalBytes += dbSize;
+                debugLog += `Database size: ${dbSize} bytes\n`;
+            } catch (error) {
+                debugLog += `Error fetching database size: ${error.message}\n`;
+            }
+
+            // Fetch Storage size
+            try {
+                const rootRef = storageRef(Studentstorage, 'files');
+                const allFiles = await listAllFiles(rootRef);
+                debugLog += `Found ${allFiles.length} files in storage\n`;
+
+                for (const file of allFiles) {
+                    try {
+                        const url = await getDownloadURL(file);
+                        const response = await fetch(url, { method: 'HEAD', mode: 'no-cors' });
+                        const size = parseInt(response.headers.get('Content-Length') || '0', 10);
+                        totalBytes += size;
+                        debugLog += `File ${file.fullPath}: ${size} bytes\n`;
+                    } catch (itemError) {
+                        debugLog += `Error fetching size for ${file.fullPath}: ${itemError.message}\n`;
+                    }
+                }
+            } catch (error) {
+                debugLog += `Error fetching storage list: ${error.message}\n`;
+            }
+
+            // Convert to MB and update state
+            const totalMB = totalBytes / (1024 * 1024);
+            debugLog += `Total Size: ${totalMB.toFixed(2)} MB (${totalBytes} bytes)\n`;
+            console.log(debugLog);
+            setDebugInfo(debugLog);
+            setTotalSize(parseFloat(totalMB.toFixed(2)));
+        };
+
+        const listAllFiles = async (ref) => {
+            const allFiles = [];
+            // List all files in the current directory
+            const listResult = await listAll(ref);
+
+            // Add all files to our result
+            allFiles.push(...listResult.items);
+
+            // Recursively list files in all subdirectories
+            for (const subDir of listResult.prefixes) {
+                const subDirFiles = await listAllFiles(subDir);
+                allFiles.push(...subDirFiles);
+            }
+
+            return allFiles;
+        };
+
+        fetchTotalSize();
+    }, []);
+    */
+
+
+
+
 
 
     useEffect(() => {
@@ -189,42 +368,105 @@ const NavBar = () => {
     }, [auth, HoD_UID]);
 
     useEffect(() => {
-        const fetchData = () => {
-            const dataRef = dbRef(db, 'uploads/');
-            setLoadingState(true); // Start loading
-            onValue(dataRef, (snapshot) => {
-                const fetchedData = snapshot.val();
-                if (fetchedData) {
-                    const formattedData = Object.keys(fetchedData).map(key => {
-                        const userData = fetchedData[key];
+        const unsubscribe = onAuthStateChanged(Studentauth, (user) => {
+            if (user) {
+                setisStudentOwner(true);
+                setStudentUserUid(user.uid);
+                console.log("Student logged in");
+
+                const LoggedInUSerDataInfoCall = dbRef(Studentdb, 'StudentUserData/' + user.uid);
+
+                get(LoggedInUSerDataInfoCall).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        const LoggedInUserData = snapshot.val();
+
+                        setStudentuserInfo({
+                            name: LoggedInUserData['name'] || '',
+                            email: LoggedInUserData['email'] || '',
+                            mobile: LoggedInUserData['mobile'] || '',
+                            usn: LoggedInUserData['usn'] || '',
+                            gender: LoggedInUserData['gender'] || '',
+                            branch: LoggedInUserData['branch'] || '',
+                            sem: LoggedInUserData['sem'] || '',
+                            section: LoggedInUserData['section'] || ''
+                        });
+
+                    } else {
+                        console.log("No data available");
+                    }
+                }).catch((error) => {
+                    console.error("Error fetching data:", error);
+                });
+
+                // Add any student-specific state updates here
+            } else {
+                setisStudentOwner(false);
+                setStudentUserUid(null);
+                setStudentuserInfo({
+                    name: "",
+                    usn: "",
+                    sem: "",
+                    branch: "",
+                    section: "",
+                    email: "",
+                    gender: "",
+                    mobile: "",
+                });
+            }
+        });
+
+        return () => unsubscribe();
+    }, [Studentauth]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoadingState(true);
+            const eventsRef = dbRef(Studentdb, 'uploads/');
+            const userDataRef = dbRef(Studentdb, 'StudentUserData/');
+
+            try {
+                const [eventsSnapshot, userDataSnapshot] = await Promise.all([
+                    get(eventsRef),
+                    get(userDataRef)
+                ]);
+
+                const eventsData = eventsSnapshot.val();
+                const userData = userDataSnapshot.val();
+
+                console.log("UserData");
+
+                /*console.log(userData[StudentUserUid]);*/
+
+                console.log("EventsData" + eventsData);
+
+                if (eventsData && userData) {
+                    const formattedData = Object.keys(eventsData).map(uid => {
+                        const userEvents = eventsData[uid].events || {};
+                        const userInfo = userData[uid] || {};
+
                         let eventCounts = {};
                         let totalScore = 0;
 
-                        if (typeof userData.events === 'object') {
-                            eventCounts = Object.values(userData.events).reduce((acc, event) => {
-                                const eventType = event.eventName;
-                                if (!acc[eventType]) {
-                                    acc[eventType] = [];
-                                }
-                                acc[eventType].push(event.eventURL);
+                        Object.values(userEvents).forEach(event => {
+                            const eventType = event.eventName;
+                            if (!eventCounts[eventType]) {
+                                eventCounts[eventType] = [];
+                            }
+                            eventCounts[eventType].push(event.reportURL);
 
-                                if (eventScores[eventType]) {
-                                    totalScore += eventScores[eventType];
-                                }
-
-                                return acc;
-                            }, {});
-                        }
+                            if (eventScores[eventType]) {
+                                totalScore += eventScores[eventType];
+                            }
+                        });
 
                         return {
-                            ...userData,
-                            usn: key,
-                            achievements: Object.entries(eventCounts)
-                                .map(([eventName, urls]) => ({
-                                    name: eventName,
-                                    count: urls.length,
-                                    urls: urls
-                                })),
+                            ...userInfo,
+                            usn: userInfo.usn,
+                            achievements: Object.entries(eventCounts).map(([eventName, urls]) => ({
+                                name: eventName,
+                                count: urls.length,
+                                urls: urls
+                            })),
                             score: totalScore,
                             summary: getSummary(totalScore)
                         };
@@ -235,15 +477,25 @@ const NavBar = () => {
                 } else {
                     setData([]);
                 }
-                setLoadingState(false); // Loading done
-            });
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                setData([]);
+            }
+
+            setLoadingState(false);
         };
 
         fetchData();
     }, []);
 
     return (
+
         <>
+
+            {ShowReportGenerator && isOwner && !isStudentOwner && !isFacultyOwner && <FacultyReportGenerator onClickonReportGeneratorCloseButton={() => setShowReportGenerator(false)} />}
+
+            {isStudentOwner && !isFacultyOwner && !isOwner && showUploadButton && isStudentOwner && < SideBar onClickonUploadButton={UploadBtn} onClickLogOutButton={handleStudentLogout} />}
+
             <Snackbar
                 autoHideDuration={4000}
                 open={open}
@@ -277,47 +529,415 @@ const NavBar = () => {
             </Snackbar>
 
             <ThemeProvider theme={theme}>
-                {false && <SignUpForm />}
+                {showStudentSignUpForm && <SignUpForm OnsignupFormbodyDivClick={() => setshowStudentSignUpForm(false)} />}
                 {ShowFPasswordResetForm && <PasswordReset onClose={closePasswordReseForm} />}
                 {isFacultyOwner && ShowFacultyForm && <FacultyForm onClose={closeFacultyFormDiv} />}
-                {showUpload && <Upload onClose={closeUploadDiv} />}
+                {showUpload && <Upload onClose={closeUploadDiv} studentUid={StudentUserUid} />}
                 {showLogin && <Login onClose={() => setShowLogin(false)} onLogin={() => setIsOwner(true)} OnPasswordReset={closePasswordReseForm} />}
-                {showAnalytics && isOwner && <Analytics onClose={() => setShowAnalytics(false)} data={data} />}
-                {showFacultyAnalytics && isOwner && !isFacultyOwner && (
+                {StudentShowLogin && <StudentLoginForm onStudentClose={() => setStudentShowLogin(false)} onStudentLogin={() => setisStudentOwner(true)} OnStudentPasswordReset={closePasswordReseForm} />}
+                {showAnalytics && isOwner && !isFacultyOwner && !isStudentOwner && <Analytics onClose={() => setShowAnalytics(false)} data={data} />}
+                {showFacultyAnalytics && isOwner && !isFacultyOwner && !isStudentOwner && (
                     <FacultyAnalytics onClose={() => setShowFacultyAnalytics(false)} />
                 )}
+                <div>
+                    <div className="mainNavigationDiv">
+                        <a href="https://aditya-138-12.github.io/CodeArena-Website-/" target="_blank"><div className="leftLogo"></div></a>
+                        <a href="https://cse.sjcit.ac.in/" target="_blank"><div className="middleLogo"></div ></a>
+                        {/* !isFacultyOwner && !isOwner && showUploadButton && <p className="type1" onClick={UploadBtn}>Student Upload</p> */}
+                        {/* !isFacultyOwner && showAnalyticsButton && isOwner && <p className="type3" onClick={() => setShowAnalytics(!showAnalytics)}>Student Analytics</p>*/}
+                        {/* !isFacultyOwner && isactiveAdminLogin && !isOwner && <p className="type2" onClick={handleLoginToggle}>{isOwner ? '' : 'HoD CSE Login'}</p> */}
 
-                <div className="mainNavigationDiv">
-                    <a href="https://aditya-138-12.github.io/CodeArena-Website-/" target="_blank"><div className="leftLogo"></div></a>
-                    <a href="https://cse.sjcit.ac.in/" target="_blank"><div className="middleLogo"></div ></a>
-                    {!isFacultyOwner && !isOwner && showUploadButton && <p className="type1" onClick={UploadBtn}>Student Upload</p>}
-                    {!isFacultyOwner && showAnalyticsButton && isOwner && <p className="type3" onClick={() => setShowAnalytics(!showAnalytics)}>Student Analytics</p>}
-                    {!isFacultyOwner && isactiveAdminLogin && <p className="type2" onClick={handleLoginToggle}>{isOwner ? 'HoD CSE Logout' : 'HoD CSE Login'}</p>}
-                    {activeTab === 'faculty' && isFacultyOwner && showFacultyUploadButton && < p className="type6" onClick={closeFacultyFormDiv}>Upload Faculty</p>}
-                    {isactiveFacultyLogin && <p className="type4" onClick={handleLoginToggle}>{isFacultyOwner ? "Faculty Logout" : "Faculty Login"}</p>}
-                    {!isFacultyOwner && isOwner && showFacultyAnalyticsButton && (
-                        <p className="type5" onClick={() => setShowFacultyAnalytics(!showFacultyAnalytics)}>
-                            Faculty Analytics
-                        </p>
-                    )}
-                </div >
+                        {/* activeTab === 'faculty' && isFacultyOwner && showFacultyUploadButton && < p className="type6" onClick={closeFacultyFormDiv}>Upload Faculty</p> */}
 
-                {/* Tab Navigation */}
-                < div className="tabNavigation" >
-                    <div
-                        className={isFacultyOwner ? "student123" : "student"}
-                        onClick={() => !isFacultyOwner && makeStudentTabActive()}
-                    >
-                        Student
-                    </div>
-                    <div
-                        className="faculty"
-                        onClick={makeFacultyTabActive}
-                    >
-                        Faculty
-                    </div>
-                </div >
+                        {/* isactiveFacultyLogin && <p className="type4" onClick={handleLoginToggle}>{isFacultyOwner ? "Faculty Logout" : ""}</p> */}
 
+                        {!isFacultyOwner && isOwner && showFacultyAnalyticsButton && (
+                            <p className="type5" onClick={() => setShowFacultyAnalytics(!showFacultyAnalytics)}>
+                                Faculty Analytics
+                            </p>
+                        )}
+
+
+
+                        <div className="StudentAuthButton">
+                            <CssVarsProvider>
+                                {!isStudentOwner && !isFacultyOwner && !isOwner && showUploadButton && <Button onClick={() => { StudentLoginbtn(); }} className="bt" size="sm" >Student Login</Button>}
+                            </CssVarsProvider>
+
+                            <CssVarsProvider>
+                                {showStudentSignUpFormButton && !isStudentOwner && !isFacultyOwner && !isOwner && showUploadButton && <Button onClick={() => { setshowStudentSignUpForm(!showStudentSignUpForm) }} className="sgnbt" size="sm" >Student Signup</Button>}
+                            </CssVarsProvider>
+                        </div>
+
+                        <CssVarsProvider>
+                            {isStudentOwner && <Avatar onClick={() => setModalopen(!Modalopen)} className="userAvatar" variant="soft" size="lg" alt={StudentuserInfo.name} />}
+                        </CssVarsProvider>
+
+                        <CssVarsProvider>
+                            {isOwner && !isStudentOwner && !isFacultyOwner && <Avatar onClick={() => setHoDModalopen(!Modalopen)} className="userAvatar" variant="soft" size="lg" src="https://cse.sjcit.ac.in/wp-content/uploads/2022/02/cse-hod-948x1024.jpg" alt="ManjuNath Kumar B.H." />}
+                        </CssVarsProvider>
+
+                        <CssVarsProvider>
+                            <Modal
+                                className="userAvatarInfoModal"
+                                aria-labelledby="modal-title"
+                                aria-describedby="modal-desc"
+                                open={Modalopen}
+                                onClose={() => setModalopen(false)}
+                                sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                            >
+                                <Sheet
+                                    variant="outlined"
+                                    sx={{ maxWidth: 500, borderRadius: 'md', p: 3, boxShadow: 'lg' }}
+                                >
+                                    <ModalClose variant="plain" sx={{ m: 1 }} />
+                                    <Typography
+                                        component="h2"
+                                        id="modal-title"
+                                        level="h4"
+                                        textColor="inherit"
+                                        sx={{ fontWeight: 'lg', mb: 1 }}
+                                    >
+                                        Student Profile
+                                    </Typography>
+
+
+
+
+
+
+
+
+
+
+                                    <form className="form" onSubmit={(e) => e.preventDefault()}>
+                                        {isSaving ? (
+                                            <>
+                                                <div className={'cs'}></div>
+                                                <div className={'cs'}></div>
+                                                <div className={'cs'} ></div>
+                                                <div className={'cs'} ></div>
+                                                <div className={'cs'} ></div>
+                                                <div className={'cs'} ></div>
+                                                <div className={'cs'} ></div>
+                                                <div className={'cs'} ></div>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <div className="form-group">
+                                                    <label className="label">Name</label>
+                                                    <input
+                                                        type="text"
+                                                        name="name"
+                                                        value={StudentuserInfo.name}
+                                                        onChange={handleInputChange}
+                                                        className="input"
+                                                        disabled={!isEditing}
+                                                    />
+                                                </div>
+                                                <div className="form-group">
+                                                    <label className="label">Email</label>
+                                                    <input type="email" value={StudentuserInfo.email} className="input" disabled />
+                                                </div>
+                                                <div className="form-group">
+                                                    <label className="label">Mobile</label>
+                                                    <input
+                                                        type="tel"
+                                                        name="mobile"
+                                                        value={StudentuserInfo.mobile}
+                                                        onChange={handleInputChange}
+                                                        className="input"
+                                                        disabled={!isEditing}
+                                                    />
+                                                </div>
+                                                <div className="form-group">
+                                                    <label className="label">USN</label>
+                                                    <input
+                                                        type="text"
+                                                        name="usn"
+                                                        value={StudentuserInfo.usn}
+                                                        onChange={handleInputChange}
+                                                        className="input"
+                                                        disabled={!isEditing}
+                                                    />
+                                                </div>
+                                                <div className="form-group">
+                                                    <label className="label">Gender</label>
+                                                    <select
+                                                        name="gender"
+                                                        value={StudentuserInfo.gender}
+                                                        onChange={handleInputChange}
+                                                        className="select"
+                                                        disabled={!isEditing}
+                                                    >
+                                                        <option value="">Select Gender</option>
+                                                        <option value="male">Male</option>
+                                                        <option value="female">Female</option>
+                                                        <option value="other">Other</option>
+                                                    </select>
+                                                </div>
+                                                <div className="form-group">
+                                                    <label className="label">Branch</label>
+                                                    <input
+                                                        type="text"
+                                                        name="branch"
+                                                        value={StudentuserInfo.branch}
+                                                        onChange={handleInputChange}
+                                                        className="input"
+                                                        disabled={!isEditing}
+                                                    />
+                                                </div>
+                                                <div className="form-group">
+                                                    <label className="label">Semester</label>
+                                                    <input
+                                                        type="text"
+                                                        name="sem"
+                                                        value={StudentuserInfo.sem}
+                                                        onChange={handleInputChange}
+                                                        className="input"
+                                                        disabled={!isEditing}
+                                                    />
+                                                </div>
+
+                                                <div className="form-group">
+                                                    <label className="label">Section</label>
+                                                    <input
+                                                        type="text"
+                                                        name="section"
+                                                        value={StudentuserInfo.section}
+                                                        onChange={handleInputChange}
+                                                        className="input"
+                                                        disabled={!isEditing}
+                                                    />
+                                                </div>
+
+
+                                                {isEditing ? (
+                                                    <div className="StudentProfileSavebutton" onClick={handleSaveClick} disabled={isSaving}>
+                                                        {isSaving ? 'Saving...' : 'Save Profile'}
+                                                    </div>
+                                                ) : (
+                                                    <div className="StudentProfileEditbutton" onClick={handleEditClick}>Edit Profile</div>
+                                                )}
+
+
+                                            </>
+                                        )}
+                                    </form>
+
+
+
+
+
+
+                                </Sheet>
+                            </Modal>
+                        </CssVarsProvider>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <CssVarsProvider>
+                            <Modal
+                                className="userAvatarInfoModal"
+                                aria-labelledby="modal-title"
+                                aria-describedby="modal-desc"
+                                open={HoDModalopen}
+                                onClose={() => setHoDModalopen(false)}
+                                sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                            >
+                                <Sheet
+                                    variant="outlined"
+                                    sx={{ maxWidth: 500, borderRadius: 'md', p: 3, boxShadow: 'lg' }}
+                                >
+                                    <ModalClose variant="plain" sx={{ m: 1 }} />
+                                    <Typography
+                                        component="h2"
+                                        id="modal-title"
+                                        level="h4"
+                                        textColor="inherit"
+                                        sx={{ fontWeight: 'lg', mb: 1 }}
+                                    >
+                                        Head Of The Department Computer Science & Engineering Profile
+                                    </Typography>
+
+
+
+
+
+
+
+
+
+
+                                    <form className="form" onSubmit={(e) => e.preventDefault()}>
+                                        {isSaving ? (
+                                            <>
+                                                <div className={'cs'}></div>
+                                                <div className={'cs'}></div>
+                                                <div className={'cs'} ></div>
+                                                <div className={'cs'} ></div>
+                                                <div className={'cs'} ></div>
+                                                <div className={'cs'} ></div>
+                                                <div className={'cs'} ></div>
+                                                <div className={'cs'} ></div>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <div className="form-group">
+                                                    <label className="label">Name</label>
+                                                    <input
+                                                        type="text"
+                                                        name="name"
+                                                        value="Dr. Manjunath Kumar B.H"
+                                                        onChange={handleInputChange}
+                                                        className="input"
+                                                        disabled={!isEditing}
+                                                    />
+                                                </div>
+                                                <div className="form-group">
+                                                    <label className="label">Email</label>
+                                                    <input type="email" value="manjunathabh@sjcit.ac.in" className="input" disabled />
+                                                </div>
+                                                <div className="form-group">
+                                                    <label className="label">Mobile</label>
+                                                    <input
+                                                        type="tel"
+                                                        name="mobile"
+                                                        value="9900600756"
+                                                        onChange={handleInputChange}
+                                                        className="input"
+                                                        disabled={!isEditing}
+                                                    />
+                                                </div>
+                                                <div className="form-group">
+                                                    <label className="label">Employee Id</label>
+                                                    <input
+                                                        type="text"
+                                                        name="usn"
+                                                        value=""
+                                                        onChange={handleInputChange}
+                                                        className="input"
+                                                        disabled={!isEditing}
+                                                    />
+                                                </div>
+                                                <div className="form-group">
+                                                    <label className="label">Gender</label>
+                                                    <select
+                                                        name="gender"
+                                                        value="male"
+                                                        onChange={handleInputChange}
+                                                        className="select"
+                                                        disabled={!isEditing}
+                                                    >
+                                                        <option value="">Select Gender</option>
+                                                        <option value="male">Male</option>
+                                                        <option value="female">Female</option>
+                                                        <option value="other">Other</option>
+                                                    </select>
+                                                </div>
+                                                <div className="form-group">
+                                                    <label className="label">Branch</label>
+                                                    <input
+                                                        type="text"
+                                                        name="branch"
+                                                        value="CSE HoD"
+                                                        onChange={handleInputChange}
+                                                        className="input"
+                                                        disabled={!isEditing}
+                                                    />
+                                                </div>
+
+
+                                                {isEditing ? (
+                                                    <div className="StudentProfileSavebutton" onClick={handleSaveClick} disabled={isSaving}>
+                                                        {isSaving ? 'Saving...' : 'Save Profile'}
+                                                    </div>
+                                                ) : (
+                                                    <div className="StudentProfileEditbutton" onClick={handleEditClick}>Edit Profile</div>
+                                                )}
+
+
+                                            </>
+                                        )}
+                                    </form>
+
+
+
+
+
+
+                                </Sheet>
+                            </Modal>
+                        </CssVarsProvider>
+
+                    </div >
+
+                    {/* Tab Navigation */}
+                    < div className="tabNavigation" >
+                        <div
+                            className={(isFacultyOwner) ? "student123" : "student"}
+                            onClick={() => !isFacultyOwner && makeStudentTabActive()}
+                        >
+                            CSE Students
+                        </div>
+                        <div
+                            className={(isStudentOwner || isOwner) ? "faculty123" : "faculty"}
+                            onClick={() => !isOwner && !isStudentOwner && makeFacultyTabActive()}
+                        >
+                            CSE Faculty
+                        </div>
+                        <div
+                            className={(isStudentOwner || isFacultyOwner) ? "HoD123" : "HoD"}
+                            onClick={() => !isFacultyOwner && !isStudentOwner && makeHoDTabActive()}
+                        >
+                            CSE HoD
+                        </div>
+                    </div >
+                </div>
                 {/* Conditional Rendering Based on Active Tab */}
                 {
                     activeTab === "student" && (
@@ -371,7 +991,7 @@ const NavBar = () => {
                             </table >
                         */}
 
-                            <MUITable data={data} isLoading={loadingState} />
+                            <MUITable data={data || []} isLoading={loadingState} isHoDLoggedIn={isOwner} />
 
 
                         </div >
@@ -381,7 +1001,8 @@ const NavBar = () => {
                 {
                     activeTab === "faculty" && !isOwner && !isFacultyOwner && (
                         <div className="facultyUnderConstruction">
-                            <h2>Faculties Are Requested To Kindly Login To Continue.</h2>
+                            <h2>Faculties Are Requested To Kindly Login , To Continue.</h2>
+                            {isactiveFacultyLogin && <p className="ttrr" onClick={handleLoginToggle}>{isFacultyOwner ? "" : "Faculty Login"}</p>}
                         </div>
                     )
 
@@ -395,10 +1016,64 @@ const NavBar = () => {
                     )
                 }
 
-                {activeTab === "faculty" && isFacultyOwner && <UserProfile />}
+                {
+                    activeTab === "HoD" && !isOwner && !isFacultyOwner && (
+                        <div className="facultyUnderConstruction">
+                            <h2>HoD CSE is Requested To Kindly Login , To Continue.</h2>
+                            {isactiveAdminLogin && <p className="ttrr" onClick={handleLoginToggle}>{isOwner ? "" : "HoD CSE Login"}</p>}
+                        </div>
+                    )
+                }
+
+                {activeTab === "faculty" && isFacultyOwner && <UserProfile FacultyUpload={closeFacultyFormDiv} FacultyLogOut={handleLoginToggle} />}
+
+                {activeTab === "HoD" && isOwner &&
+                    <>
+                        <p className="HoDLoggedIn">HoD Sir Logged In</p>
+
+                        <div className="HoDManyUtilities">
+
+                            <div className="NumberOfStudentsEnrolled">
+                                <CountUp className="CountUp" end={data.length} />
+                                <p className="CountUp_p">+</p>
+                                <p className="CountUp_p_students">Students on SJCIT-Connect</p>
+                            </div>
+
+                            <div className="NumberOfFacultyEnrolled">
+                                <CountUp className="CountUp" end={30} />
+                                <p className="CountUp_p">+</p>
+                                <p className="CountUp_p_faculty">Faculty on SJCIT-Connect</p>
+                            </div>
+
+                            <div className="NumberOfFacultyEnrolled">
+                                <CountUp className="CountUp" end={0} />
+                                <p className="CountUp_p">+</p>
+                                <p className="CountUp_p_reportsGenerated">Total Reports Generated</p>
+                            </div>
+
+                            <div className="NumberOfFacultyEnrolled">
+                                <CountUp className="CountUp" end={20} /> {/**end={totalSize}*/}
+                                <p className="CountUp_p"> +Gb </p>
+                                <p className="CountUp_p_reportsGenerated">Total Data Capacity</p>
+                            </div>
+                        </div>
+
+                        <HoDSideBar onClickLogOutButton={handleLogout} onClickonStudentAnalyticsButton={() => { setShowAnalytics(true) }}
+                            onClickonFacultyAnalyticsButton={() => { setShowFacultyAnalytics(true) }}
+                            onClickonReportGeneratorButton={() => { setShowReportGenerator(true) }}
+                        />
+
+                        <div className="ChartsHoDdashboardDiv">
+                            <ChartExample />
+
+                            <LiveDataChart />
+                        </div>
+
+                    </>
+                }
 
                 {false && <div className="bottom-footter">Created with <span>`</span><a className="bottom-footter-heart">♥</a> <span>`</span> By <span>`</span> <a href="https://github.com/Aditya-138-12" target="_blank" className="bottom-footter-aditya-saroha">Aditya Saroha</a></div >}
-            </ThemeProvider>
+            </ThemeProvider >
         </>
     );
 };

@@ -6,7 +6,7 @@ import './userProfiles.css';
 import Snackbar from "@mui/joy/Snackbar";
 import { Skeleton } from '@mui/material';
 
-const UserProfile = () => {
+const UserProfile = ({ FacultyUpload, FacultyLogOut }) => {
     const defaultAvatarUrl = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACUCAMAAAAj+tKkAAAAP1BMVEWoqa3///+lpqqio6f8/Pyoqaukpafu7u/29vbh4eL5+fnx8fKwsbSfoKWmqq3l5ebR0tO7u77DxMba2tzLzM05qcraAAAEFElEQVR4nO2cCZaiMBCGocImBEnA+591Ehm71UZNpRZ65vGd4H9FrUmFojg4ODg4ODg4ODg4OPhfqAN7a/iHAYAmAJG9tfwAzAh+vrgl4Nzsi3H8RSKDxfzSdn1V/qXqu2HxxS8xpLHz6UvaA6fZmr3VFSO4YVPdlWEpxl3lgXWv1a0se1nxHH3v0n3SFxzSFXv44jk6X/tZ3vVD+12MCJc0eRG3Q4Exp3R9ZTk1yp8ZUj/vlZCFOquo8Bz0vckt23SajgiQEL0/zKhoQ7z9rja0WpFiphx9Id0ofWSz5OmLsayhD+ZcfWV50XBDmxEgNzQCZcx0wJVWvLkxnqKvLGfxQMFUkA0GKyuPEiErwnFislL0PZVoqgGiB0ZmSRPSQnilFQwTsD1dYOXlTIhpol/jBAWiuuhXTGL6SFXuDrlUaFn0lWJOyOOCYZaXiuORxQWDE0p1DCOxDt/ogwVFuv+RIQtGYrWTGU+2T9nwhLZVRiCTvhjGEgKBKcuI5ZlDIJlfL5AzikUwXAJl5IVEzdPMXCuJjECGhj8ySNVi8/HOIY2TlAU5ZrqI3FxneaJErqOuWZywFdNXNCxOuAhOdZ5jLpY8WmgYeupBTh5PohEbmVaF9DiWlBe8kGzCk/BJP/Vwofcge51D9cKlEZqXbtSGlmlAaqD7EkgryLPUzH4HZN+EhQjRufDMztaDwnpFTTgIVrkxjtsRMOela5WrxCsm6zrnorgTYDKOMp3qkpSZkX5Yyd8iPin0qJrXz0Z7twe1OTMIXt68pDYuMZirxeyz6mh80hDV7mG+SKj7lxQbOlvvoRCMXxIjuTr58I1jkOgFCjR2QiSaqrXr+pva7pFFtzQnxeUyaFJWQ5/pncracuwVfObiQqcRzjVpsFtiQ3gWFQi0xZlBuiVENwnPVLJN15iUmd8j2HZBwbOzED6ziB9Cw3J+WZWt1OzEdMgf2geJUCGG7yMS8yfP+fSNKSg8szoir771K3MKxG3upzCx5kOuO6Z7+A7761A/uO4573FcNqyB6YbpGb4Okeka9hmuJxw8S3lbTCwC806K0qC7YXzbIuOAKww9diP2gSMTeczLOWjDsFC7Q7ZNj1cQ2wb+EvcMLZLBSxuQuMEAzD3MFi1BINeax3sIcx797UMKXb4BhVPMjfx6wjiFvCP3lY6OB0YyryhGFQ+M9FnlhG8j9DM+Z5FBvoh8k/WmkultRhJ9RtullWNWHL7tAqUcs9LhBSqGSAT9jUeBUf0d6LVRnTL8DbYgNwqN4APVjMs0PLuWGBZkKlToVB9BbrZyvJFE4jH66M+I8aC2avL/VJAP6jEb17MCDBUmE4K+PtQrkz1cEDXdSRxJfwaxfpv7txEaLaKjUW21bqQPd4Dby+Jiu63+AxfOOWntbr/vAAAAAElFTkSuQmCC";
 
     const [userInfo, setUserInfo] = useState({
@@ -329,7 +329,7 @@ const UserProfile = () => {
                                         {item.events === 'seminar' && (
                                             <p><strong>Seminar Topic:</strong> {item['seminar-topic']}</p>
                                         )}
-                                        {item.events === 'collegeEvent' && (
+                                        {item.events === 'College Event ' && (
                                             <>
                                                 <p><strong>Name Of the Event:</strong> {item['event-name']}</p>
                                                 <p><strong>Name of the Resource Person's:</strong> {item['person-name']}</p>
@@ -395,6 +395,18 @@ const UserProfile = () => {
                             onClick={() => setActiveView('dashboard')}
                         >
                             Faculty Dashboard
+                        </div>
+                        <div
+                            className={'nav-item'}
+                            onClick={FacultyUpload}
+                        >
+                            Faculty Upload
+                        </div>
+                        <div
+                            className={'nav-itemLogOut'}
+                            onClick={FacultyLogOut}
+                        >
+                            Log Out
                         </div>
                     </nav>
                 </div>

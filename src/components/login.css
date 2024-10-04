@@ -1,3 +1,25 @@
+.bodyDiv {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 1000000;
+    animation: 1s bodyDivBlur linear forwards;
+}
+
+@keyframes bodyDivBlur {
+
+    from {
+        backdrop-filter: blur(0px);
+    }
+
+    to {
+        backdrop-filter: blur(8px);
+    }
+}
+
 .loginMainDiv {
     position: fixed;
     top: 50%;
@@ -11,6 +33,22 @@
     width: 100%;
     max-width: 400px;
     /* Adjust width for larger screens */
+    animation: 0.2s StudentLoginAnm linear;
+}
+
+@keyframes StudentLoginAnm {
+
+    from {
+        height: 0;
+        opacity: 0;
+        background-color: black;
+    }
+
+    to {
+        height: 28vh;
+        opacity: 1;
+        background-color: transparent;
+    }
 }
 
 /* Responsive adjustments for smaller screens */

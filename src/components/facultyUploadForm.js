@@ -108,7 +108,7 @@ const FacultyForm = ({ onClose }) => {
                     <input type="text" id="seminar-topic" name="seminar-topic" required />
                 </div>
             );
-        } else if (event === 'collegeEvent') {
+        } else if (event === 'College Event') {
             return (
                 <div className="form-group">
                     <label htmlFor="seminar-topic">Name of the Event:</label>
@@ -299,7 +299,7 @@ const FacultyForm = ({ onClose }) => {
                                     <option value="conference">Conference</option>
                                     <option value="workshop">Workshop</option>
                                     <option value="seminar">Seminar</option>
-                                    <option value="collegeEvent">College Event</option>
+                                    <option value="College Event">College Event</option>
                                 </select>
                             </div>
                             {showEventQuestions()}

@@ -85,10 +85,11 @@
     cursor: pointer;
     font-size: 16px;
     transition: 0.1s ease;
+    outline: none;
 }
 
 .facultyAnalyticsCloseButton:hover {
     transform: scale(1.4);
-    background-color: red;
+    background-color: red !important;
     transition: 0.1s ease;
 }

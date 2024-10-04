@@ -19,7 +19,147 @@ body {
     -o-animation: AnimationName 10s ease infinite;
     animation: AnimationName 10s ease infinite;
     */
-    background-color: black;
+    background-color: rgba(0, 0, 0);
+}
+
+.bt {
+    height: 5%;
+    width: 6.5vw !important;
+    line-height: 12px !important;
+    position: relative;
+    left: 0vw;
+    background-color: #ffffff !important;
+    color: black !important;
+    transition: 0.4s ease-in-out;
+    font-size: 0.9rem !important;
+    margin-right: 0px !important;
+    padding: 0px !important;
+    border-radius: 0% !important;
+}
+
+.bt:hover {
+    background-color: black !important;
+    color: white !important;
+    border: 0.01px solid white;
+    transition: 0.4s ease-in-out;
+}
+
+.sgnbt {
+    height: 5%;
+    width: 6.5vw !important;
+    line-height: 12px !important;
+    position: relative;
+    left: 0vw;
+    background-color: #ffffff !important;
+    color: black !important;
+    transition: 0.4s ease-in-out;
+    font-size: 0.9rem !important;
+    margin-right: 0px !important;
+    padding: 0px !important;
+    margin-right: 0px !important;
+    border-radius: 0% !important;
+}
+
+.sgnbt:hover {
+    background-color: black !important;
+    color: white !important;
+    border: 0.01px solid white;
+    transition: 0.4s ease-in-out;
+}
+
+.userAvatar {
+    position: relative;
+    left: 97%;
+    z-index: 10000000;
+    transition: 0.2s ease;
+}
+
+.userAvatar:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.2s ease;
+}
+
+.MuiSheet-root.MuiSheet-variantOutlined.MuiSheet-colorNeutral.css-1xscj5t-JoySheet-root {
+    outline: none;
+    max-width: 100%;
+    width: 50% !important;
+    height: 80%;
+}
+
+.MuiSheet-root.MuiSheet-variantOutlined.MuiSheet-colorNeutral.css-1xscj5t-JoySheet-root Button {
+    left: 96.5% !important;
+    top: 0%;
+    height: 4% !important;
+    width: 4% !important;
+    position: absolute;
+    outline: none !important;
+}
+
+.StudentProfileEditbutton {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: absolute;
+    background-color: #1a73e8;
+    width: 25% !important;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    transition: 0.2s ease;
+}
+
+.StudentProfileEditbutton:hover {
+    background-color: #1556ac;
+    transition: 0.2s ease;
+    cursor: pointer;
+    font-size: 1.01rem;
+}
+
+.StudentProfileSavebutton {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: absolute;
+    background-color: #1ae824;
+    width: 25% !important;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    transition: 0.2s ease;
+}
+
+.StudentProfileSavebutton:hover {
+    background-color: #40b962;
+    transition: 0.2s ease;
+    cursor: pointer;
+    font-size: 1.01rem;
+}
+
+.cs {
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 50px;
+    width: 450px;
+    margin-top: 30px;
+    animation: loading 1.5s alternate-reverse infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-color: #e0e0e0;
+    }
+
+    50% {
+        background-color: #d0d0d0;
+    }
+
+    100% {
+        background-color: #e0e0e0;
+    }
 }
 
 @-webkit-keyframes AnimationName {
@@ -160,6 +300,99 @@ body {
 
     .type2 {
         font-size: 16px;
+    }
+
+    .facultyUnderConstruction {
+        height: 18vh !important;
+        font-size: 1rem !important;
+    }
+
+    .bt {
+        width: 12.5vw !important;
+        padding: 20px !important;
+    }
+
+    .sgnbt {
+        width: 12.5vw !important;
+        padding: 20px !important;
+    }
+
+    .HoDManyUtilities {
+        grid-template-columns: 1fr !important;
+    }
+
+    .NumberOfStudentsEnrolled,
+    .NumberOfFacultyEnrolled {
+        width: 100% !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    .userAvatar {
+        left: 88%;
+    }
+
+    .StudentAuthButton {
+        width: 20%;
+        gap: 0.3rem;
+        margin-right: 20px;
+    }
+
+    .ChartsHoDdashboardDiv {
+        flex-direction: column !important;
+    }
+}
+
+@media(max-width: 480px) {
+    .facultyUnderConstruction {
+        height: 14vh !important;
+        font-size: 0.8rem !important;
+    }
+
+    .facultyUnderConstruction h2 {
+        margin: 10px !important;
+    }
+
+    .ttrr {
+        font-size: 1rem !important;
+        padding: 2vw !important;
+        margin: 0px !important;
+    }
+
+    .bt {
+        width: 12.5vw !important;
+        padding: 20px !important;
+    }
+
+    .sgnbt {
+        width: 12.5vw !important;
+        padding: 20px !important;
+    }
+
+    .HoDManyUtilities {
+        grid-template-columns: 1fr !important;
+    }
+
+    .NumberOfStudentsEnrolled,
+    .NumberOfFacultyEnrolled {
+        width: 100% !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    .userAvatar {
+        left: 88%;
+    }
+
+    .StudentAuthButton {
+        width: 20%;
+        gap: 0.2rem;
+        justify-content: flex-end;
+        margin-right: 20px;
+    }
+
+    .ChartsHoDdashboardDiv {
+        flex-direction: column !important;
     }
 }
 
@@ -473,10 +706,67 @@ tr:hover {
     padding: 10px;
     background-color: rgb(212, 216, 212);
     text-align: center;
+    border-right: 0.1vw solid rgba(0, 0, 0, 0.2);
 }
 
 .faculty:hover {
     cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.1s ease;
+}
+
+.faculty123 {
+    opacity: 0.5;
+    position: relative;
+    display: inline-block;
+    height: 50%;
+    width: 50%;
+    padding: 10px;
+    background-color: rgb(212, 216, 212);
+    transition: 0.1s ease;
+    text-align: center;
+    left: 0;
+    border-right: 0.1vw solid rgba(0, 0, 0, 0.2);
+}
+
+.faculty123:hover {
+    cursor: not-allowed;
+    transform: scale(1.05);
+    transition: 0.1s ease;
+}
+
+.HoD {
+    position: relative;
+    display: inline-block;
+    height: 50%;
+    width: 50%;
+    padding: 10px;
+    background-color: rgb(212, 216, 212);
+    text-align: center;
+}
+
+.HoD:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.1s ease;
+}
+
+.HoD123 {
+    opacity: 0.5;
+    position: relative;
+    display: inline-block;
+    height: 50%;
+    width: 50%;
+    padding: 10px;
+    background-color: rgb(212, 216, 212);
+    transition: 0.1s ease;
+    text-align: center;
+    left: 0;
+    border-right: 0.1vw solid rgba(0, 0, 0, 0.2);
+}
+
+.HoD123:hover {
+    cursor: not-allowed;
     transform: scale(1.05);
     transition: 0.1s ease;
 }
@@ -486,7 +776,7 @@ tr:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vw;
+    height: 18vh;
     width: 50vw;
     left: calc(100% - 50vw - 25vw);
     top: calc(100% - 10vw - 5vw);
@@ -494,13 +784,45 @@ tr:hover {
     /* Adjust height based on header size */
     background-color: #fff;
     /* Match background with tab content */
-    font-size: 1.35vw;
+    font-size: 1.6rem;
     color: #888;
     text-align: center;
     padding: 20px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: inline-block;
     /* Subtle shadow for depth */
+    border-radius: 1rem;
 }
+
+.facultyUnderConstruction h2 {
+    margin: 20px;
+}
+
+
+.ttrr {
+    position: relative;
+    display: inline-block;
+    color: white;
+    background-color: black;
+    height: auto;
+    width: auto;
+    font-size: 1.2rem;
+    margin: 0;
+    margin-top: 0px;
+    padding: 8px 20px 8px 20px;
+    border-radius: 2rem;
+    transition: 0.2s ease-out;
+}
+
+.ttrr:hover {
+    background-color: white;
+    color: black;
+    transition: 0.2s ease-in;
+    transform: scale(1.1);
+    cursor: pointer;
+    border: 0.1vw solid black;
+}
+
 
 .bottom-footter {
     display: flex;
@@ -539,4 +861,100 @@ tr:hover {
     100% {
         background-position: 100% 50%;
     }
+}
+
+.HoDLoggedIn {
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.HoDManyUtilities {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
+    grid-gap: 5rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.NumberOfStudentsEnrolled,
+.NumberOfFacultyEnrolled {
+    position: relative;
+    width: 90%;
+    height: 10rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 20px;
+}
+
+.CountUp {
+    font-size: 4rem;
+    color: #FF7400;
+    font-weight: 500;
+}
+
+.CountUp_p {
+    font-size: 3rem;
+    color: #FF7400;
+    font-weight: 1000;
+}
+
+.CountUp_p_students {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.CountUp_p_faculty {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.CountUp_p_reportsGenerated {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.StudentAuthButton {
+    position: absolute;
+    right: -3%;
+    height: 100%;
+    width: 15%;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    place-content: center;
+    gap: 0.5rem;
+    grid-auto-flow: column;
+    margin-right: 10px;
+}
+
+.ChartsHoDdashboardDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }

@@ -3,6 +3,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import { db } from './firebase';
 import { ref, onValue, get } from 'firebase/database';
 import './FacultyAnalytics.css';
+import FacultyDetailsWindow from './facultyDetailsWindow';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 
 const FacultyAnalytics = ({ onClose }) => {
     const [facultyData, setFacultyData] = useState([]);
@@ -10,6 +12,8 @@ const FacultyAnalytics = ({ onClose }) => {
     const [timeFrame, setTimeFrame] = useState('month');
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
+    const [selectedFaculty, setSelectedFaculty] = useState(null);
+    const [detailsOpen, setDetailsOpen] = useState(false);
 
     useEffect(() => {
         const fetchFacultyData = () => {
@@ -92,21 +96,30 @@ const FacultyAnalytics = ({ onClose }) => {
                 facultyMap.set(entry.userId, {
                     userId: entry.userId,
                     name: facultyNames[entry.userId] || 'Unknown',
-                    achievements: 0,
-                    events: 0,
+                    achievements: [],
+                    events: [],
                     dept: entry.dept
                 });
             }
 
             const facultyStats = facultyMap.get(entry.userId);
             if (entry.type === 'achievement') {
-                facultyStats.achievements += 1;
+                facultyStats.achievements.push(entry);
             } else if (entry.type === 'event') {
-                facultyStats.events += 1;
+                facultyStats.events.push(entry);
             }
         });
 
         return Array.from(facultyMap.values());
+    };
+
+    const handleFacultyClick = (faculty) => {
+        setSelectedFaculty(faculty);
+        setDetailsOpen(true);
+    };
+
+    const handleCloseDetails = () => {
+        setDetailsOpen(false);
     };
 
     const chartData = aggregateData(filterDataByTimeFrame());
@@ -144,27 +157,38 @@ const FacultyAnalytics = ({ onClose }) => {
             </ResponsiveContainer>
             <div className="faculty-list">
                 <h3>Faculty Activity Within Selected Time Frame</h3>
-                <table className='fa-table'>
-                    <thead className='fa-thead'>
-                        <tr className='fa-tr'>
-                            <th className='fa-th'>Faculty Name</th>
-                            <th className='fa-th'>Department</th>
-                            <th className='fa-th'>Achievements</th>
-                            <th className='fa-th'>Events</th>
-                        </tr>
-                    </thead>
-                    <tbody className='fa-body'>
-                        {facultyList.map(faculty => (
-                            <tr className='fa-tr' key={faculty.userId}>
-                                <td className='fa-td'>{faculty.name}</td>
-                                <td className='fa-td'>{faculty.dept}</td>
-                                <td className='fa-td'>{faculty.achievements}</td>
-                                <td className='fa-td'>{faculty.events}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                <TableContainer component={Paper}>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Faculty Name</TableCell>
+                                <TableCell>Department</TableCell>
+                                <TableCell>Achievements</TableCell>
+                                <TableCell>Events</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {facultyList.map((faculty) => (
+                                <TableRow
+                                    key={faculty.userId}
+                                    onClick={() => handleFacultyClick(faculty)}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    <TableCell>{faculty.name}</TableCell>
+                                    <TableCell>{faculty.dept}</TableCell>
+                                    <TableCell>{faculty.achievements.length}</TableCell>
+                                    <TableCell>{faculty.events.length}</TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
             </div>
+            <FacultyDetailsWindow
+                faculty={selectedFaculty}
+                open={detailsOpen}
+                onClose={handleCloseDetails}
+            />
             <button className='facultyAnalyticsCloseButton' onClick={onClose}></button>
         </div>
     );
