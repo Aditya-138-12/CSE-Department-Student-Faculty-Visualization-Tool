@@ -1072,7 +1072,7 @@ const NavBar = () => {
                     </>
                 }
 
-                {false && <div className="bottom-footter">Created with <span>`</span><a className="bottom-footter-heart">♥</a> <span>`</span> By <span>`</span> <a href="https://github.com/Aditya-138-12" target="_blank" className="bottom-footter-aditya-saroha">Aditya Saroha</a></div >}
+                {false && <div className="bottom-footter">Created with <span>`</span><a className="bottom-footter-heart">♥</a> <span>`</span> By <span>`</span> <a href="https://github.com/Aditya-138-12" target="_blank" className="bottom-footter-aditya-saroha">Aditya Saroha && Vishnu Dutt</a></div >}
             </ThemeProvider >
         </>
     );
