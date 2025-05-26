@@ -1,0 +1,225 @@
+{
+    "topic": "Data Interpretation",
+    "questions": [
+        {
+            "id": 1,
+            "questionContent": "If the sales in Q1 were $10,000 and increased by 20% in Q2, what were the sales in Q2?",
+            "options": [
+                "$10,000",
+                "$12,000",
+                "$14,000",
+                "$16,000"
+            ],
+            "correctAnswer": "$12,000"
+        },
+        {
+            "id": 2,
+            "questionContent": "If the average of 5 numbers is 20, what is their total sum?",
+            "options": [
+                "50",
+                "75",
+                "100",
+                "125"
+            ],
+            "correctAnswer": "100"
+        },
+        {
+            "id": 3,
+            "questionContent": "If a pie chart represents 100% and one sector is 45%, what is the angle of that sector?",
+            "options": [
+                "90°",
+                "120°",
+                "150°",
+                "162°"
+            ],
+            "correctAnswer": "162°"
+        },
+        {
+            "id": 4,
+            "questionContent": "If a bar graph shows sales of $5,000 in January and $7,000 in February, what is the percentage increase?",
+            "options": [
+                "20%",
+                "30%",
+                "40%",
+                "50%"
+            ],
+            "correctAnswer": "40%"
+        },
+        {
+            "id": 5,
+            "questionContent": "If a line graph shows a steady increase from 100 to 200 over 5 years, what is the average increase per year?",
+            "options": [
+                "10",
+                "20",
+                "30",
+                "40"
+            ],
+            "correctAnswer": "20"
+        },
+        {
+            "id": 6,
+            "questionContent": "If a table shows 3 products with sales of $1,000, $2,000, and $3,000, what is the total sales?",
+            "options": [
+                "$5,000",
+                "$6,000",
+                "$7,000",
+                "$8,000"
+            ],
+            "correctAnswer": "$6,000"
+        },
+        {
+            "id": 7,
+            "questionContent": "If a histogram shows frequencies of 10, 20, and 30, what is the total frequency?",
+            "options": [
+                "50",
+                "60",
+                "70",
+                "80"
+            ],
+            "correctAnswer": "60"
+        },
+        {
+            "id": 8,
+            "questionContent": "If a scatter plot shows a positive correlation, what does it mean?",
+            "options": [
+                "As one variable increases, the other decreases",
+                "As one variable increases, the other increases",
+                "There is no relationship",
+                "The relationship is random"
+            ],
+            "correctAnswer": "As one variable increases, the other increases"
+        },
+        {
+            "id": 9,
+            "questionContent": "If a pie chart has 4 sectors of 25%, 30%, 20%, and 25%, what is the angle of the 30% sector?",
+            "options": [
+                "90°",
+                "108°",
+                "120°",
+                "135°"
+            ],
+            "correctAnswer": "108°"
+        },
+        {
+            "id": 10,
+            "questionContent": "If a bar graph shows sales of $10,000 in Q1 and $15,000 in Q2, what is the percentage increase?",
+            "options": [
+                "30%",
+                "40%",
+                "50%",
+                "60%"
+            ],
+            "correctAnswer": "50%"
+        },
+        {
+            "id": 11,
+            "questionContent": "If a line graph shows a decrease from 200 to 100 over 5 years, what is the average decrease per year?",
+            "options": [
+                "10",
+                "20",
+                "30",
+                "40"
+            ],
+            "correctAnswer": "20"
+        },
+        {
+            "id": 12,
+            "questionContent": "If a table shows 4 products with sales of $500, $1,000, $1,500, and $2,000, what is the average sales?",
+            "options": [
+                "$1,000",
+                "$1,250",
+                "$1,500",
+                "$1,750"
+            ],
+            "correctAnswer": "$1,250"
+        },
+        {
+            "id": 13,
+            "questionContent": "If a histogram shows frequencies of 5, 10, and 15, what is the total frequency?",
+            "options": [
+                "20",
+                "25",
+                "30",
+                "35"
+            ],
+            "correctAnswer": "30"
+        },
+        {
+            "id": 14,
+            "questionContent": "If a scatter plot shows a negative correlation, what does it mean?",
+            "options": [
+                "As one variable increases, the other decreases",
+                "As one variable increases, the other increases",
+                "There is no relationship",
+                "The relationship is random"
+            ],
+            "correctAnswer": "As one variable increases, the other decreases"
+        },
+        {
+            "id": 15,
+            "questionContent": "If a pie chart has 3 sectors of 40%, 30%, and 30%, what is the angle of the 40% sector?",
+            "options": [
+                "120°",
+                "135°",
+                "144°",
+                "150°"
+            ],
+            "correctAnswer": "144°"
+        },
+        {
+            "id": 16,
+            "questionContent": "If a bar graph shows sales of $20,000 in Q1 and $25,000 in Q2, what is the percentage increase?",
+            "options": [
+                "20%",
+                "25%",
+                "30%",
+                "35%"
+            ],
+            "correctAnswer": "25%"
+        },
+        {
+            "id": 17,
+            "questionContent": "If a line graph shows an increase from 100 to 300 over 10 years, what is the average increase per year?",
+            "options": [
+                "10",
+                "20",
+                "30",
+                "40"
+            ],
+            "correctAnswer": "20"
+        },
+        {
+            "id": 18,
+            "questionContent": "If a table shows 5 products with sales of $200, $400, $600, $800, and $1,000, what is the total sales?",
+            "options": [
+                "$2,500",
+                "$3,000",
+                "$3,500",
+                "$4,000"
+            ],
+            "correctAnswer": "$3,000"
+        },
+        {
+            "id": 19,
+            "questionContent": "If a histogram shows frequencies of 10, 15, and 25, what is the total frequency?",
+            "options": [
+                "40",
+                "45",
+                "50",
+                "55"
+            ],
+            "correctAnswer": "50"
+        },
+        {
+            "id": 20,
+            "questionContent": "If a scatter plot shows no correlation, what does it mean?",
+            "options": [
+                "As one variable increases, the other decreases",
+                "As one variable increases, the other increases",
+                "There is no relationship",
+                "The relationship is random"
+            ],
+            "correctAnswer": "There is no relationship"
+        }
+    ]
+}

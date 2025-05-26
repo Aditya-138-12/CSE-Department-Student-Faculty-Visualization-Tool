@@ -1,0 +1,225 @@
+{
+    "topic": "Basic Level Test - 2 (Fundamentals)",
+    "questions": [
+        {
+            "id": 1,
+            "questionContent": "What does URL stand for?",
+            "options": [
+                "Uniform Resource Locator",
+                "Universal Resource Locator",
+                "Uniform Resource Link",
+                "Universal Resource Link"
+            ],
+            "correctAnswer": "Uniform Resource Locator"
+        },
+        {
+            "id": 2,
+            "questionContent": "Which of the following is a front-end framework?",
+            "options": [
+                "React",
+                "Django",
+                "Flask",
+                "Node.js"
+            ],
+            "correctAnswer": "React"
+        },
+        {
+            "id": 3,
+            "questionContent": "What is the primary purpose of JavaScript?",
+            "options": [
+                "To add interactivity to web pages",
+                "To style web pages",
+                "To structure web pages",
+                "To manage databases"
+            ],
+            "correctAnswer": "To add interactivity to web pages"
+        },
+        {
+            "id": 4,
+            "questionContent": "Which of the following is a NoSQL database?",
+            "options": [
+                "MongoDB",
+                "MySQL",
+                "PostgreSQL",
+                "SQLite"
+            ],
+            "correctAnswer": "MongoDB"
+        },
+        {
+            "id": 5,
+            "questionContent": "What is the correct syntax for referring to an external CSS file?",
+            "options": [
+                "<link rel='stylesheet' href='styles.css'>",
+                "<style src='styles.css'></style>",
+                "<css src='styles.css'></css>",
+                "<stylesheet href='styles.css'></stylesheet>"
+            ],
+            "correctAnswer": "<link rel='stylesheet' href='styles.css'>"
+        },
+        {
+            "id": 6,
+            "questionContent": "Which of the following is used to make HTTP requests in JavaScript?",
+            "options": [
+                "fetch()",
+                "request()",
+                "get()",
+                "http()"
+            ],
+            "correctAnswer": "fetch()"
+        },
+        {
+            "id": 7,
+            "questionContent": "What is the purpose of the <meta> tag in HTML?",
+            "options": [
+                "To provide metadata about the document",
+                "To create a navigation bar",
+                "To insert images",
+                "To define a paragraph"
+            ],
+            "correctAnswer": "To provide metadata about the document"
+        },
+        {
+            "id": 8,
+            "questionContent": "Which of the following is a valid JavaScript variable name?",
+            "options": [
+                "myVariable",
+                "1variable",
+                "my-variable",
+                "my variable"
+            ],
+            "correctAnswer": "myVariable"
+        },
+        {
+            "id": 9,
+            "questionContent": "What is the default method of an HTML form?",
+            "options": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE"
+            ],
+            "correctAnswer": "GET"
+        },
+        {
+            "id": 10,
+            "questionContent": "Which of the following is used to create a numbered list in HTML?",
+            "options": [
+                "<ol>",
+                "<ul>",
+                "<li>",
+                "<list>"
+            ],
+            "correctAnswer": "<ol>"
+        },
+        {
+            "id": 11,
+            "questionContent": "What is the purpose of the <footer> tag in HTML?",
+            "options": [
+                "To define the footer of a document or section",
+                "To create a form",
+                "To insert images",
+                "To define a paragraph"
+            ],
+            "correctAnswer": "To define the footer of a document or section"
+        },
+        {
+            "id": 12,
+            "questionContent": "Which of the following is a JavaScript framework?",
+            "options": [
+                "Angular",
+                "Django",
+                "Flask",
+                "Laravel"
+            ],
+            "correctAnswer": "Angular"
+        },
+        {
+            "id": 13,
+            "questionContent": "What is the purpose of the <nav> tag in HTML?",
+            "options": [
+                "To define a set of navigation links",
+                "To create a form",
+                "To insert images",
+                "To define a paragraph"
+            ],
+            "correctAnswer": "To define a set of navigation links"
+        },
+        {
+            "id": 14,
+            "questionContent": "Which of the following is used to style a specific element with a unique ID?",
+            "options": [
+                "#id",
+                ".id",
+                "id{}",
+                "*id"
+            ],
+            "correctAnswer": "#id"
+        },
+        {
+            "id": 15,
+            "questionContent": "What is the purpose of the <header> tag in HTML?",
+            "options": [
+                "To define the header of a document or section",
+                "To create a form",
+                "To insert images",
+                "To define a paragraph"
+            ],
+            "correctAnswer": "To define the header of a document or section"
+        },
+        {
+            "id": 16,
+            "questionContent": "Which of the following is used to create a responsive web design?",
+            "options": [
+                "Media Queries",
+                "JavaScript",
+                "PHP",
+                "SQL"
+            ],
+            "correctAnswer": "Media Queries"
+        },
+        {
+            "id": 17,
+            "questionContent": "What is the purpose of the <section> tag in HTML?",
+            "options": [
+                "To define a section in a document",
+                "To create a form",
+                "To insert images",
+                "To define a paragraph"
+            ],
+            "correctAnswer": "To define a section in a document"
+        },
+        {
+            "id": 18,
+            "questionContent": "Which of the following is used to create a grid layout in CSS?",
+            "options": [
+                "display: grid",
+                "display: flex",
+                "display: block",
+                "display: inline"
+            ],
+            "correctAnswer": "display: grid"
+        },
+        {
+            "id": 19,
+            "questionContent": "What is the purpose of the <aside> tag in HTML?",
+            "options": [
+                "To define content aside from the main content",
+                "To create a form",
+                "To insert images",
+                "To define a paragraph"
+            ],
+            "correctAnswer": "To define content aside from the main content"
+        },
+        {
+            "id": 20,
+            "questionContent": "Which of the following is used to create a flexbox layout in CSS?",
+            "options": [
+                "display: flex",
+                "display: grid",
+                "display: block",
+                "display: inline"
+            ],
+            "correctAnswer": "display: flex"
+        }
+    ]
+}

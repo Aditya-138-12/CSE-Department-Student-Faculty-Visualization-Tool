@@ -34,6 +34,8 @@ import FacultyReportGenerator from "./FacultyReportGenerator";
 import CountUp from 'react-countup';
 import { ChartExample } from "./chartExample";
 import { LiveDataChart } from "./LiveChartExample";
+import { BubbleChart } from "./hodDashboardGraphs/bubbleChart";
+import { TreemapChart } from "./hodDashboardGraphs/treemap";
 
 
 const HoD_UID = process.env.REACT_APP_USER_UID;
@@ -529,7 +531,7 @@ const NavBar = () => {
             </Snackbar>
 
             <ThemeProvider theme={theme}>
-                {showStudentSignUpForm && <SignUpForm OnsignupFormbodyDivClick={() => setshowStudentSignUpForm(false)} />}
+                {showStudentSignUpForm && <SignUpForm OnsignupFormbodyDivClick={(e) => { if (e.target.id === 'signupFormbodyDiv') { setshowStudentSignUpForm(false); } else { } }} />}
                 {ShowFPasswordResetForm && <PasswordReset onClose={closePasswordReseForm} />}
                 {isFacultyOwner && ShowFacultyForm && <FacultyForm onClose={closeFacultyFormDiv} />}
                 {showUpload && <Upload onClose={closeUploadDiv} studentUid={StudentUserUid} />}
@@ -892,13 +894,15 @@ const NavBar = () => {
                                                 </div>
 
 
-                                                {isEditing ? (
-                                                    <div className="StudentProfileSavebutton" onClick={handleSaveClick} disabled={isSaving}>
+                                                {/*
+                                                isEditing ? (
+                                                    <div className="" onClick={handleSaveClick} disabled={isSaving}>
                                                         {isSaving ? 'Saving...' : 'Save Profile'}
                                                     </div>
                                                 ) : (
-                                                    <div className="StudentProfileEditbutton" onClick={handleEditClick}>Edit Profile</div>
-                                                )}
+                                                    <div className="" onClick={handleEditClick}>Edit Profile</div>
+                                                )
+                                                */}
 
 
                                             </>
@@ -1069,10 +1073,20 @@ const NavBar = () => {
                             <LiveDataChart />
                         </div>
 
+                        <div className="ChartsHoDdashboardDiv2" style={{ justifyContent: 'center' }}>
+
+                            <BubbleChart />
+
+                            <TreemapChart />
+
+                        </div>
+
+
+
                     </>
                 }
 
-                {false && <div className="bottom-footter">Created with <span>`</span><a className="bottom-footter-heart">♥</a> <span>`</span> By <span>`</span> <a href="https://github.com/Aditya-138-12" target="_blank" className="bottom-footter-aditya-saroha">Aditya Saroha</a></div >}
+                {<div className="bottom-footter">Created with <span>`</span><a className="bottom-footter-heart">♥</a> <span>`</span> By <span>`</span> <a href="https://github.com/Aditya-138-12" target="_blank" className="bottom-footter-aditya-saroha"><u>Aditya Saroha</u></a><span>''</span><p>&</p><span>''</span><a href="https://github.com/Vishnu-dutt" target="_blank" className="bottom-footter-aditya-saroha"><u>Vishnu Dutt</u></a></div >}
             </ThemeProvider >
         </>
     );

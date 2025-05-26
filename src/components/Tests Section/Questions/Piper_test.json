@@ -1,0 +1,1104 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "questionContent": "What is the primary purpose of a large-scale version control system like Piper?",
+            "options": [
+                "To manage small codebases for individual developers",
+                "To handle massive codebases with thousands of developers",
+                "To replace Git in all scenarios",
+                "To provide a graphical user interface for version control"
+            ],
+            "correctAnswer": "To handle massive codebases with thousands of developers"
+        },
+        {
+            "id": 2,
+            "questionContent": "What is a key difference between Piper and Git?",
+            "options": [
+                "Piper is centralized, while Git is distributed",
+                "Piper is open-source, while Git is proprietary",
+                "Piper is slower than Git",
+                "Piper does not support branching"
+            ],
+            "correctAnswer": "Piper is centralized, while Git is distributed"
+        },
+        {
+            "id": 3,
+            "questionContent": "What is a 'monorepo' in the context of large-scale version control?",
+            "options": [
+                "A single repository containing all code for an organization",
+                "A repository that only contains documentation",
+                "A repository that uses multiple version control systems",
+                "A repository that is only accessible to a single developer"
+            ],
+            "correctAnswer": "A single repository containing all code for an organization"
+        },
+        {
+            "id": 4,
+            "questionContent": "Why does Google use a monorepo for its codebase?",
+            "options": [
+                "To simplify dependency management and code sharing",
+                "To make version control slower",
+                "To limit collaboration between teams",
+                "To avoid using branches"
+            ],
+            "correctAnswer": "To simplify dependency management and code sharing"
+        },
+        {
+            "id": 5,
+            "questionContent": "What is 'CitC' (Clients in the Cloud) in the context of Piper?",
+            "options": [
+                "A feature that allows developers to work on code directly in the cloud",
+                "A tool for managing Git repositories",
+                "A type of merge conflict resolution",
+                "A backup system for version control"
+            ],
+            "correctAnswer": "A feature that allows developers to work on code directly in the cloud"
+        },
+        {
+            "id": 6,
+            "questionContent": "How does Piper handle branching compared to Git?",
+            "options": [
+                "Piper uses lightweight branching with virtual workspaces",
+                "Piper does not support branching at all",
+                "Piper requires manual branch creation for every change",
+                "Piper uses the same branching model as Git"
+            ],
+            "correctAnswer": "Piper uses lightweight branching with virtual workspaces"
+        },
+        {
+            "id": 7,
+            "questionContent": "What is a 'virtual workspace' in Piper?",
+            "options": [
+                "A lightweight, isolated environment for making changes",
+                "A physical workspace for developers",
+                "A tool for visualizing Git history",
+                "A backup of the entire codebase"
+            ],
+            "correctAnswer": "A lightweight, isolated environment for making changes"
+        },
+        {
+            "id": 8,
+            "questionContent": "What is the role of 'code review' in a Piper-like system?",
+            "options": [
+                "To ensure code quality and enforce standards",
+                "To slow down the development process",
+                "To replace version control entirely",
+                "To automate testing"
+            ],
+            "correctAnswer": "To ensure code quality and enforce standards"
+        },
+        {
+            "id": 9,
+            "questionContent": "What is 'trunk-based development' in the context of Piper?",
+            "options": [
+                "A development model where all changes are committed to a single main branch",
+                "A model where each developer works in isolation",
+                "A model that avoids using branches entirely",
+                "A model that relies on long-lived feature branches"
+            ],
+            "correctAnswer": "A development model where all changes are committed to a single main branch"
+        },
+        {
+            "id": 10,
+            "questionContent": "How does Piper handle large binary files?",
+            "options": [
+                "By using a separate storage system for binaries",
+                "By storing them directly in the repository",
+                "By ignoring binary files entirely",
+                "By converting them to text files"
+            ],
+            "correctAnswer": "By using a separate storage system for binaries"
+        },
+        {
+            "id": 11,
+            "questionContent": "What is 'dependency management' in a monorepo?",
+            "options": [
+                "The process of managing relationships between different parts of the codebase",
+                "The process of deleting unused code",
+                "The process of creating new branches",
+                "The process of merging code from different repositories"
+            ],
+            "correctAnswer": "The process of managing relationships between different parts of the codebase"
+        },
+        {
+            "id": 12,
+            "questionContent": "What is 'atomic commit' in the context of Piper?",
+            "options": [
+                "A commit that includes all related changes as a single unit",
+                "A commit that only includes one file",
+                "A commit that is automatically reverted",
+                "A commit that is not reviewed"
+            ],
+            "correctAnswer": "A commit that includes all related changes as a single unit"
+        },
+        {
+            "id": 13,
+            "questionContent": "What is 'code visibility' in a Piper-like system?",
+            "options": [
+                "The ability to see and access code across the entire organization",
+                "The ability to hide code from other developers",
+                "The ability to encrypt code",
+                "The ability to delete code permanently"
+            ],
+            "correctAnswer": "The ability to see and access code across the entire organization"
+        },
+        {
+            "id": 14,
+            "questionContent": "What is 'pre-submit testing' in Piper?",
+            "options": [
+                "Running tests before code is submitted to the main branch",
+                "Running tests after code is merged",
+                "Running tests only on the developer's machine",
+                "Running tests manually"
+            ],
+            "correctAnswer": "Running tests before code is submitted to the main branch"
+        },
+        {
+            "id": 15,
+            "questionContent": "What is 'post-submit testing' in Piper?",
+            "options": [
+                "Running tests after code is merged into the main branch",
+                "Running tests before code is submitted",
+                "Running tests only on the developer's machine",
+                "Running tests manually"
+            ],
+            "correctAnswer": "Running tests after code is merged into the main branch"
+        },
+        {
+            "id": 16,
+            "questionContent": "What is 'code search' in the context of a monorepo?",
+            "options": [
+                "A tool for finding code across the entire repository",
+                "A tool for deleting code",
+                "A tool for merging branches",
+                "A tool for creating new repositories"
+            ],
+            "correctAnswer": "A tool for finding code across the entire repository"
+        },
+        {
+            "id": 17,
+            "questionContent": "What is 'code ownership' in a Piper-like system?",
+            "options": [
+                "A system for assigning responsibility for specific parts of the codebase",
+                "A system for deleting code",
+                "A system for merging branches",
+                "A system for creating new repositories"
+            ],
+            "correctAnswer": "A system for assigning responsibility for specific parts of the codebase"
+        },
+        {
+            "id": 18,
+            "questionContent": "What is 'continuous integration' in the context of Piper?",
+            "options": [
+                "Automatically integrating and testing changes as they are made",
+                "Manually integrating changes after they are reviewed",
+                "Ignoring tests during development",
+                "Creating long-lived feature branches"
+            ],
+            "correctAnswer": "Automatically integrating and testing changes as they are made"
+        },
+        {
+            "id": 19,
+            "questionContent": "What is 'continuous deployment' in the context of Piper?",
+            "options": [
+                "Automatically deploying changes to production after they pass tests",
+                "Manually deploying changes after they are reviewed",
+                "Ignoring tests during deployment",
+                "Creating long-lived feature branches"
+            ],
+            "correctAnswer": "Automatically deploying changes to production after they pass tests"
+        },
+        {
+            "id": 20,
+            "questionContent": "What is 'scalability' in the context of a version control system?",
+            "options": [
+                "The ability to handle a growing number of developers and code",
+                "The ability to delete code",
+                "The ability to merge branches",
+                "The ability to create new repositories"
+            ],
+            "correctAnswer": "The ability to handle a growing number of developers and code"
+        },
+        {
+            "id": 21,
+            "questionContent": "What is 'fault tolerance' in the context of Piper?",
+            "options": [
+                "The ability to continue operating despite hardware or software failures",
+                "The ability to delete code",
+                "The ability to merge branches",
+                "The ability to create new repositories"
+            ],
+            "correctAnswer": "The ability to continue operating despite hardware or software failures"
+        },
+        {
+            "id": 22,
+            "questionContent": "What is 'data consistency' in the context of a version control system?",
+            "options": [
+                "Ensuring that all copies of the codebase are identical",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Ensuring that all copies of the codebase are identical"
+        },
+        {
+            "id": 23,
+            "questionContent": "What is 'distributed caching' in the context of Piper?",
+            "options": [
+                "Storing frequently accessed data closer to developers for faster access",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Storing frequently accessed data closer to developers for faster access"
+        },
+        {
+            "id": 24,
+            "questionContent": "What is 'load balancing' in the context of Piper?",
+            "options": [
+                "Distributing workloads across multiple servers to improve performance",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Distributing workloads across multiple servers to improve performance"
+        },
+        {
+            "id": 25,
+            "questionContent": "What is 'high availability' in the context of Piper?",
+            "options": [
+                "Ensuring the system is operational at all times",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Ensuring the system is operational at all times"
+        },
+        {
+            "id": 26,
+            "questionContent": "What is 'replication' in the context of Piper?",
+            "options": [
+                "Creating multiple copies of data for redundancy and performance",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Creating multiple copies of data for redundancy and performance"
+        },
+        {
+            "id": 27,
+            "questionContent": "What is 'sharding' in the context of Piper?",
+            "options": [
+                "Splitting data across multiple servers to improve performance",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Splitting data across multiple servers to improve performance"
+        },
+        {
+            "id": 28,
+            "questionContent": "What is 'data compression' in the context of Piper?",
+            "options": [
+                "Reducing the size of data to save storage and improve performance",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Reducing the size of data to save storage and improve performance"
+        },
+        {
+            "id": 29,
+            "questionContent": "What is 'data deduplication' in the context of Piper?",
+            "options": [
+                "Removing duplicate copies of data to save storage",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Removing duplicate copies of data to save storage"
+        },
+        {
+            "id": 30,
+            "questionContent": "What is 'data encryption' in the context of Piper?",
+            "options": [
+                "Protecting data by converting it into a secure format",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Protecting data by converting it into a secure format"
+        },
+        {
+            "id": 31,
+            "questionContent": "What is 'access control' in the context of Piper?",
+            "options": [
+                "Restricting access to code based on user roles",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Restricting access to code based on user roles"
+        },
+        {
+            "id": 32,
+            "questionContent": "What is 'audit logging' in the context of Piper?",
+            "options": [
+                "Recording all actions taken on the codebase for accountability",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Recording all actions taken on the codebase for accountability"
+        },
+        {
+            "id": 33,
+            "questionContent": "What is 'rollback' in the context of Piper?",
+            "options": [
+                "Reverting the codebase to a previous state",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Reverting the codebase to a previous state"
+        },
+        {
+            "id": 34,
+            "questionContent": "What is 'snapshotting' in the context of Piper?",
+            "options": [
+                "Creating a point-in-time copy of the codebase",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Creating a point-in-time copy of the codebase"
+        },
+        {
+            "id": 35,
+            "questionContent": "What is 'backup' in the context of Piper?",
+            "options": [
+                "Creating a copy of the codebase for disaster recovery",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Creating a copy of the codebase for disaster recovery"
+        },
+        {
+            "id": 36,
+            "questionContent": "What is 'disaster recovery' in the context of Piper?",
+            "options": [
+                "Restoring the codebase after a catastrophic failure",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Restoring the codebase after a catastrophic failure"
+        },
+        {
+            "id": 37,
+            "questionContent": "What is 'versioning' in the context of Piper?",
+            "options": [
+                "Tracking changes to the codebase over time",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Tracking changes to the codebase over time"
+        },
+        {
+            "id": 38,
+            "questionContent": "What is 'branching' in the context of Piper?",
+            "options": [
+                "Creating a separate line of development",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Creating a separate line of development"
+        },
+        {
+            "id": 39,
+            "questionContent": "What is 'merging' in the context of Piper?",
+            "options": [
+                "Combining changes from different branches",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Combining changes from different branches"
+        },
+        {
+            "id": 40,
+            "questionContent": "What is 'conflict resolution' in the context of Piper?",
+            "options": [
+                "Resolving differences between conflicting changes",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "Resolving differences between conflicting changes"
+        },
+        {
+            "id": 41,
+            "questionContent": "What is 'code review' in the context of Piper?",
+            "options": [
+                "A process for evaluating changes before they are merged",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for evaluating changes before they are merged"
+        },
+        {
+            "id": 42,
+            "questionContent": "What is 'testing' in the context of Piper?",
+            "options": [
+                "A process for verifying the correctness of changes",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for verifying the correctness of changes"
+        },
+        {
+            "id": 43,
+            "questionContent": "What is 'deployment' in the context of Piper?",
+            "options": [
+                "A process for releasing changes to production",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for releasing changes to production"
+        },
+        {
+            "id": 44,
+            "questionContent": "What is 'monitoring' in the context of Piper?",
+            "options": [
+                "A process for observing the health and performance of the system",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for observing the health and performance of the system"
+        },
+        {
+            "id": 45,
+            "questionContent": "What is 'logging' in the context of Piper?",
+            "options": [
+                "A process for recording events in the system",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for recording events in the system"
+        },
+        {
+            "id": 46,
+            "questionContent": "What is 'alerting' in the context of Piper?",
+            "options": [
+                "A process for notifying developers of issues",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for notifying developers of issues"
+        },
+        {
+            "id": 47,
+            "questionContent": "What is 'incident management' in the context of Piper?",
+            "options": [
+                "A process for responding to and resolving issues",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for responding to and resolving issues"
+        },
+        {
+            "id": 48,
+            "questionContent": "What is 'change management' in the context of Piper?",
+            "options": [
+                "A process for managing changes to the codebase",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing changes to the codebase"
+        },
+        {
+            "id": 49,
+            "questionContent": "What is 'release management' in the context of Piper?",
+            "options": [
+                "A process for planning and executing releases",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for planning and executing releases"
+        },
+        {
+            "id": 50,
+            "questionContent": "What is 'configuration management' in the context of Piper?",
+            "options": [
+                "A process for managing configuration settings",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing configuration settings"
+        },
+        {
+            "id": 51,
+            "questionContent": "What is 'dependency management' in the context of Piper?",
+            "options": [
+                "A process for managing dependencies between components",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing dependencies between components"
+        },
+        {
+            "id": 52,
+            "questionContent": "What is 'artifact management' in the context of Piper?",
+            "options": [
+                "A process for managing build artifacts",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing build artifacts"
+        },
+        {
+            "id": 53,
+            "questionContent": "What is 'build automation' in the context of Piper?",
+            "options": [
+                "A process for automating the build process",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for automating the build process"
+        },
+        {
+            "id": 54,
+            "questionContent": "What is 'continuous integration' in the context of Piper?",
+            "options": [
+                "A process for integrating changes frequently",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for integrating changes frequently"
+        },
+        {
+            "id": 55,
+            "questionContent": "What is 'continuous delivery' in the context of Piper?",
+            "options": [
+                "A process for delivering changes to production frequently",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for delivering changes to production frequently"
+        },
+        {
+            "id": 56,
+            "questionContent": "What is 'continuous deployment' in the context of Piper?",
+            "options": [
+                "A process for deploying changes to production automatically",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for deploying changes to production automatically"
+        },
+        {
+            "id": 57,
+            "questionContent": "What is 'infrastructure as code' in the context of Piper?",
+            "options": [
+                "A process for managing infrastructure using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing infrastructure using code"
+        },
+        {
+            "id": 58,
+            "questionContent": "What is 'configuration as code' in the context of Piper?",
+            "options": [
+                "A process for managing configuration using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing configuration using code"
+        },
+        {
+            "id": 59,
+            "questionContent": "What is 'policy as code' in the context of Piper?",
+            "options": [
+                "A process for managing policies using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing policies using code"
+        },
+        {
+            "id": 60,
+            "questionContent": "What is 'security as code' in the context of Piper?",
+            "options": [
+                "A process for managing security using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing security using code"
+        },
+        {
+            "id": 61,
+            "questionContent": "What is 'compliance as code' in the context of Piper?",
+            "options": [
+                "A process for managing compliance using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing compliance using code"
+        },
+        {
+            "id": 62,
+            "questionContent": "What is 'audit as code' in the context of Piper?",
+            "options": [
+                "A process for managing audits using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing audits using code"
+        },
+        {
+            "id": 63,
+            "questionContent": "What is 'testing as code' in the context of Piper?",
+            "options": [
+                "A process for managing tests using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing tests using code"
+        },
+        {
+            "id": 64,
+            "questionContent": "What is 'monitoring as code' in the context of Piper?",
+            "options": [
+                "A process for managing monitoring using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing monitoring using code"
+        },
+        {
+            "id": 65,
+            "questionContent": "What is 'logging as code' in the context of Piper?",
+            "options": [
+                "A process for managing logging using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing logging using code"
+        },
+        {
+            "id": 66,
+            "questionContent": "What is 'alerting as code' in the context of Piper?",
+            "options": [
+                "A process for managing alerting using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing alerting using code"
+        },
+        {
+            "id": 67,
+            "questionContent": "What is 'incident management as code' in the context of Piper?",
+            "options": [
+                "A process for managing incidents using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing incidents using code"
+        },
+        {
+            "id": 68,
+            "questionContent": "What is 'change management as code' in the context of Piper?",
+            "options": [
+                "A process for managing changes using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing changes using code"
+        },
+        {
+            "id": 69,
+            "questionContent": "What is 'release management as code' in the context of Piper?",
+            "options": [
+                "A process for managing releases using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing releases using code"
+        },
+        {
+            "id": 70,
+            "questionContent": "What is 'configuration management as code' in the context of Piper?",
+            "options": [
+                "A process for managing configuration using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing configuration using code"
+        },
+        {
+            "id": 71,
+            "questionContent": "What is 'dependency management as code' in the context of Piper?",
+            "options": [
+                "A process for managing dependencies using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing dependencies using code"
+        },
+        {
+            "id": 72,
+            "questionContent": "What is 'artifact management as code' in the context of Piper?",
+            "options": [
+                "A process for managing artifacts using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing artifacts using code"
+        },
+        {
+            "id": 73,
+            "questionContent": "What is 'build automation as code' in the context of Piper?",
+            "options": [
+                "A process for automating builds using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for automating builds using code"
+        },
+        {
+            "id": 74,
+            "questionContent": "What is 'continuous integration as code' in the context of Piper?",
+            "options": [
+                "A process for automating continuous integration using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for automating continuous integration using code"
+        },
+        {
+            "id": 75,
+            "questionContent": "What is 'continuous delivery as code' in the context of Piper?",
+            "options": [
+                "A process for automating continuous delivery using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for automating continuous delivery using code"
+        },
+        {
+            "id": 76,
+            "questionContent": "What is 'continuous deployment as code' in the context of Piper?",
+            "options": [
+                "A process for automating continuous deployment using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for automating continuous deployment using code"
+        },
+        {
+            "id": 77,
+            "questionContent": "What is 'infrastructure as code' in the context of Piper?",
+            "options": [
+                "A process for managing infrastructure using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing infrastructure using code"
+        },
+        {
+            "id": 78,
+            "questionContent": "What is 'configuration as code' in the context of Piper?",
+            "options": [
+                "A process for managing configuration using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing configuration using code"
+        },
+        {
+            "id": 79,
+            "questionContent": "What is 'policy as code' in the context of Piper?",
+            "options": [
+                "A process for managing policies using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing policies using code"
+        },
+        {
+            "id": 80,
+            "questionContent": "What is 'security as code' in the context of Piper?",
+            "options": [
+                "A process for managing security using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing security using code"
+        },
+        {
+            "id": 81,
+            "questionContent": "What is 'compliance as code' in the context of Piper?",
+            "options": [
+                "A process for managing compliance using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing compliance using code"
+        },
+        {
+            "id": 82,
+            "questionContent": "What is 'audit as code' in the context of Piper?",
+            "options": [
+                "A process for managing audits using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing audits using code"
+        },
+        {
+            "id": 83,
+            "questionContent": "What is 'testing as code' in the context of Piper?",
+            "options": [
+                "A process for managing tests using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing tests using code"
+        },
+        {
+            "id": 84,
+            "questionContent": "What is 'monitoring as code' in the context of Piper?",
+            "options": [
+                "A process for managing monitoring using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing monitoring using code"
+        },
+        {
+            "id": 85,
+            "questionContent": "What is 'logging as code' in the context of Piper?",
+            "options": [
+                "A process for managing logging using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing logging using code"
+        },
+        {
+            "id": 86,
+            "questionContent": "What is 'alerting as code' in the context of Piper?",
+            "options": [
+                "A process for managing alerting using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing alerting using code"
+        },
+        {
+            "id": 87,
+            "questionContent": "What is 'incident management as code' in the context of Piper?",
+            "options": [
+                "A process for managing incidents using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing incidents using code"
+        },
+        {
+            "id": 88,
+            "questionContent": "What is 'change management as code' in the context of Piper?",
+            "options": [
+                "A process for managing changes using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing changes using code"
+        },
+        {
+            "id": 89,
+            "questionContent": "What is 'release management as code' in the context of Piper?",
+            "options": [
+                "A process for managing releases using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing releases using code"
+        },
+        {
+            "id": 90,
+            "questionContent": "What is 'configuration management as code' in the context of Piper?",
+            "options": [
+                "A process for managing configuration using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing configuration using code"
+        },
+        {
+            "id": 91,
+            "questionContent": "What is 'dependency management as code' in the context of Piper?",
+            "options": [
+                "A process for managing dependencies using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing dependencies using code"
+        },
+        {
+            "id": 92,
+            "questionContent": "What is 'artifact management as code' in the context of Piper?",
+            "options": [
+                "A process for managing artifacts using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing artifacts using code"
+        },
+        {
+            "id": 93,
+            "questionContent": "What is 'build automation as code' in the context of Piper?",
+            "options": [
+                "A process for automating builds using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for automating builds using code"
+        },
+        {
+            "id": 94,
+            "questionContent": "What is 'continuous integration as code' in the context of Piper?",
+            "options": [
+                "A process for automating continuous integration using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for automating continuous integration using code"
+        },
+        {
+            "id": 95,
+            "questionContent": "What is 'continuous delivery as code' in the context of Piper?",
+            "options": [
+                "A process for automating continuous delivery using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for automating continuous delivery using code"
+        },
+        {
+            "id": 96,
+            "questionContent": "What is 'continuous deployment as code' in the context of Piper?",
+            "options": [
+                "A process for automating continuous deployment using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for automating continuous deployment using code"
+        },
+        {
+            "id": 97,
+            "questionContent": "What is 'infrastructure as code' in the context of Piper?",
+            "options": [
+                "A process for managing infrastructure using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing infrastructure using code"
+        },
+        {
+            "id": 98,
+            "questionContent": "What is 'configuration as code' in the context of Piper?",
+            "options": [
+                "A process for managing configuration using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing configuration using code"
+        },
+        {
+            "id": 99,
+            "questionContent": "What is 'policy as code' in the context of Piper?",
+            "options": [
+                "A process for managing policies using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing policies using code"
+        },
+        {
+            "id": 100,
+            "questionContent": "What is 'security as code' in the context of Piper?",
+            "options": [
+                "A process for managing security using code",
+                "Deleting unused code",
+                "Merging branches",
+                "Creating new repositories"
+            ],
+            "correctAnswer": "A process for managing security using code"
+        }
+    ]
+}

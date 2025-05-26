@@ -53,10 +53,11 @@
 
 .btn_uar {
     position: relative;
-    left: 50%;
+    left: 25%;
     max-width: 12vw;
     min-width: 100px;
     background-color: transparent !important;
+    transform: translate(-100%, 0%);
 }
 
 .btn_uar:hover {

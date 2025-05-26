@@ -1,0 +1,44 @@
+.main-start-button {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: satoshi;
+    border-bottom: 0.1vw solid rgba(0, 0, 0, 0.2);
+    transition: 0.2s ease-out;
+    padding-bottom: 20px;
+    z-index: 10000;
+}
+
+.main-start-button.hovered {
+    transform: scale(1.02);
+    transition: 0.2s ease-in;
+}
+
+.main-start-button-p {
+    font-size: 20px;
+    margin-bottom: 0px;
+    font-weight: 200;
+}
+
+.start-button {
+    position: relative;
+    background-color: rgb(17 24 39);
+    padding: 15px;
+    padding-right: 100px;
+    border-radius: 10px;
+    width: 15%;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s ease;
+    z-index: 1000;
+}
+
+.start-button:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease;
+}

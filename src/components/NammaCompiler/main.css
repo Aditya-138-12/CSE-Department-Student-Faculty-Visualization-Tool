@@ -1,0 +1,198 @@
+#root {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.light-theme.nammaCompiler {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    max-height: 5%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 0.1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme.nammaCompiler {
+    position: relative;
+    background-color: #1e1e1e;
+    width: 100%;
+    height: fit-content;
+    max-height: 5%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 0.1px solid rgba(255, 255, 255, 0.1);
+}
+
+.light-theme.nammaCompiler2 {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+}
+
+.dark-theme.nammaCompiler2 {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+}
+
+.light-theme.nammaCompiler3 {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    background-color: none;
+}
+
+.dark-theme.nammaCompiler3 {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.light-theme.nammaCompiler4 {
+    position: relative;
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+    background-color: none;
+    padding: 10px;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme.nammaCompiler4 {
+    position: relative;
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 10px;
+    border: 0.1px solid rgba(255, 255, 255, 0.1);
+
+}
+
+.light-theme.nammaCompiler4EditorMainDiv {
+    position: relative;
+    width: 65%;
+    height: 100%;
+}
+
+.dark-theme.nammaCompiler4EditorMainDiv {
+    position: relative;
+    width: 65%;
+    height: 100%;
+}
+
+.light-theme.nammaCompiler4EditorSideMain {
+    position: relative;
+    width: 35%;
+    height: 100%;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dark-theme.nammaCompiler4EditorSideMain {
+    position: relative;
+    width: 35%;
+    height: 100%;
+    border: 0.1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* NammaCompilerInput*/
+
+.light-theme.nammaCompilerInputDiv {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dark-theme.nammaCompilerInputDiv {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+}
+
+.light-theme.nammaCompilerInput {
+    background-color: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme.nammaCompilerInput {
+
+    background-color: #1e1e1e;
+    color: white;
+    border: 0.1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+/* NammaCompilerOutput*/
+
+.light-theme.nammaCompilerOutputDiv {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dark-theme.nammaCompilerOutputDiv {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+}
+
+.light-theme.nammaCompilerOutput {
+    background-color: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme.nammaCompilerOutput {
+    background-color: #1e1e1e;
+    color: white;
+    border: 0.1px solid rgba(255, 255, 255, 0.1);
+}

@@ -29,13 +29,14 @@
     max-width: 50.5rem;
     height: auto;
     min-height: 70vh;
-    max-height: none;
+    max-height: 80vh;
     display: flex;
     flex-direction: column;
     z-index: 998;
     box-sizing: border-box;
     margin: 2rem auto;
-    overflow: visible;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 @media (max-width: 640px) {

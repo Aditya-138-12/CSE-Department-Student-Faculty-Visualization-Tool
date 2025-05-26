@@ -137,8 +137,8 @@ export function LiveDataChart() {
     };
 
     return (
-        <div id='container' className='cont' style={{ width: '100%', margin: '20px auto', maxWidth: '800px' }}>
-            <div ref={chartRef}></div>
+        <div id='container' className='cont' style={{ width: '100%', marginLeft: '20px', height: '400px', maxWidth: '800px', borderRadius: '15px' }}>
+            <div ref={chartRef} style={{ height: '400px', borderRadius: '15px' }}></div>
         </div>
     );
 }

@@ -1,0 +1,115 @@
+.main-questions-particles {
+    position: relative;
+    margin-top: 0px;
+    right: 0;
+    width: 20%;
+    height: auto;
+    max-height: 423px !important;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    user-select: none;
+    overflow-y: scroll;
+    margin-right: 50px;
+}
+
+.question-particle.notAnswered.onParticle {
+
+    border: 2px solid black;
+}
+
+.question-particle.Answered.onParticle {
+
+    border: 2px solid black;
+}
+
+
+.question-particle.notAnswered {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 123, 0);
+    /*background-color: #007bff;*/
+    color: white;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+    /*transition: 0.2s ease;*/
+    border: 0px solid black;
+    transition: 0.2s ease;
+}
+
+.question-particle.notAnswered:hover {
+    transform: scale(1.1);
+    background-color: rgb(255, 123, 0);
+}
+
+.question-particle.Answered {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    /*background-color: #007bff;*/
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.question-particle.Answered:hover {
+    background-color: green;
+    transform: scale(1.1);
+}
+
+.display-div {
+    width: 100%;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.display-question-particle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 123, 0);
+    color: white;
+    /*border-radius: 50%;*/
+    border: 0px solid black;
+}
+
+.display-question-particle.Answered {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    border: 0px solid black;
+}
+
+.display-question-particle.onParticle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 123, 0);
+    color: white;
+    /*border-radius: 50%;*/
+    border: 2px solid black;
+}

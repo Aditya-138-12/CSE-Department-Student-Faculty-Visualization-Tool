@@ -1,0 +1,1105 @@
+{
+    "topic": "Git",
+    "questions": [
+        {
+            "id": 1,
+            "questionContent": "What is Git?",
+            "options": [
+                "A programming language",
+                "A version control system",
+                "An operating system",
+                "A database management system"
+            ],
+            "correctAnswer": "A version control system"
+        },
+        {
+            "id": 2,
+            "questionContent": "Which command is used to initialize a new Git repository?",
+            "options": [
+                "git start",
+                "git init",
+                "git new",
+                "git create"
+            ],
+            "correctAnswer": "git init"
+        },
+        {
+            "id": 3,
+            "questionContent": "What does the 'git clone' command do?",
+            "options": [
+                "Creates a new branch",
+                "Copies a repository from a remote source to your local machine",
+                "Deletes a repository",
+                "Merges two branches"
+            ],
+            "correctAnswer": "Copies a repository from a remote source to your local machine"
+        },
+        {
+            "id": 4,
+            "questionContent": "How do you check the status of your working directory in Git?",
+            "options": [
+                "git status",
+                "git check",
+                "git diff",
+                "git log"
+            ],
+            "correctAnswer": "git status"
+        },
+        {
+            "id": 5,
+            "questionContent": "What command is used to stage files for a commit in Git?",
+            "options": [
+                "git stage",
+                "git add",
+                "git commit",
+                "git push"
+            ],
+            "correctAnswer": "git add"
+        },
+        {
+            "id": 6,
+            "questionContent": "How do you commit changes in Git with a message?",
+            "options": [
+                "git commit -m 'message'",
+                "git commit 'message'",
+                "git commit -a 'message'",
+                "git commit -log 'message'"
+            ],
+            "correctAnswer": "git commit -m 'message'"
+        },
+        {
+            "id": 7,
+            "questionContent": "What is the purpose of 'git push'?",
+            "options": [
+                "To fetch changes from a remote repository",
+                "To update the local repository with changes from the remote",
+                "To send changes to a remote repository",
+                "To delete a branch"
+            ],
+            "correctAnswer": "To send changes to a remote repository"
+        },
+        {
+            "id": 8,
+            "questionContent": "What does 'git pull' do?",
+            "options": [
+                "Pushes changes to a remote repository",
+                "Fetches changes from a remote repository and merges them into the current branch",
+                "Creates a new branch",
+                "Deletes a branch"
+            ],
+            "correctAnswer": "Fetches changes from a remote repository and merges them into the current branch"
+        },
+        {
+            "id": 9,
+            "questionContent": "How do you create a new branch in Git?",
+            "options": [
+                "git branch new-branch",
+                "git checkout -b new-branch",
+                "git create-branch new-branch",
+                "git new-branch"
+            ],
+            "correctAnswer": "git checkout -b new-branch"
+        },
+        {
+            "id": 10,
+            "questionContent": "What is the command to switch to an existing branch in Git?",
+            "options": [
+                "git switch branch-name",
+                "git checkout branch-name",
+                "git change branch-name",
+                "git move branch-name"
+            ],
+            "correctAnswer": "git checkout branch-name"
+        },
+        {
+            "id": 11,
+            "questionContent": "How do you delete a branch in Git?",
+            "options": [
+                "git delete branch-name",
+                "git remove branch-name",
+                "git branch -d branch-name",
+                "git branch --delete branch-name"
+            ],
+            "correctAnswer": "git branch -d branch-name"
+        },
+        {
+            "id": 12,
+            "questionContent": "What is a 'merge conflict' in Git?",
+            "options": [
+                "A situation where Git cannot automatically resolve differences in code between two commits",
+                "A command to merge two branches",
+                "A type of Git repository",
+                "A feature in Git for managing large files"
+            ],
+            "correctAnswer": "A situation where Git cannot automatically resolve differences in code between two commits"
+        },
+        {
+            "id": 13,
+            "questionContent": "How do you resolve a merge conflict in Git?",
+            "options": [
+                "By manually editing the conflicted files and then committing the changes",
+                "By using the 'git resolve' command",
+                "By deleting the conflicted files",
+                "By ignoring the conflict and pushing the changes"
+            ],
+            "correctAnswer": "By manually editing the conflicted files and then committing the changes"
+        },
+        {
+            "id": 14,
+            "questionContent": "What is the purpose of 'git rebase'?",
+            "options": [
+                "To delete a branch",
+                "To move or combine a sequence of commits to a new base commit",
+                "To create a new branch",
+                "To fetch changes from a remote repository"
+            ],
+            "correctAnswer": "To move or combine a sequence of commits to a new base commit"
+        },
+        {
+            "id": 15,
+            "questionContent": "What is the difference between 'git merge' and 'git rebase'?",
+            "options": [
+                "'git merge' creates a new commit that combines the changes, while 'git rebase' moves or combines commits to a new base",
+                "'git merge' is used for deleting branches, while 'git rebase' is used for creating branches",
+                "'git merge' is faster than 'git rebase'",
+                "There is no difference"
+            ],
+            "correctAnswer": "'git merge' creates a new commit that combines the changes, while 'git rebase' moves or combines commits to a new base"
+        },
+        {
+            "id": 16,
+            "questionContent": "What is a 'detached HEAD' state in Git?",
+            "options": [
+                "A state where the HEAD pointer is not pointing to the latest commit",
+                "A state where the HEAD pointer is pointing to a specific commit instead of a branch",
+                "A state where the repository is corrupted",
+                "A state where the repository is in the middle of a merge conflict"
+            ],
+            "correctAnswer": "A state where the HEAD pointer is pointing to a specific commit instead of a branch"
+        },
+        {
+            "id": 17,
+            "questionContent": "How do you view the commit history in Git?",
+            "options": [
+                "git log",
+                "git history",
+                "git commits",
+                "git show"
+            ],
+            "correctAnswer": "git log"
+        },
+        {
+            "id": 18,
+            "questionContent": "What is the purpose of 'git stash'?",
+            "options": [
+                "To delete changes in the working directory",
+                "To temporarily save changes that are not ready to be committed",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To temporarily save changes that are not ready to be committed"
+        },
+        {
+            "id": 19,
+            "questionContent": "How do you apply stashed changes in Git?",
+            "options": [
+                "git stash apply",
+                "git stash pop",
+                "git stash apply stash@{0}",
+                "All of the above"
+            ],
+            "correctAnswer": "All of the above"
+        },
+        {
+            "id": 20,
+            "questionContent": "What is the purpose of 'git tag'?",
+            "options": [
+                "To create a new branch",
+                "To mark specific points in history as important",
+                "To delete a branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To mark specific points in history as important"
+        },
+        {
+            "id": 21,
+            "questionContent": "How do you create an annotated tag in Git?",
+            "options": [
+                "git tag -a v1.0 -m 'Release version 1.0'",
+                "git tag v1.0",
+                "git create tag v1.0",
+                "git tag --annotate v1.0"
+            ],
+            "correctAnswer": "git tag -a v1.0 -m 'Release version 1.0'"
+        },
+        {
+            "id": 22,
+            "questionContent": "What is the purpose of 'git fetch'?",
+            "options": [
+                "To download objects and refs from another repository",
+                "To upload objects and refs to another repository",
+                "To delete a branch",
+                "To create a new branch"
+            ],
+            "correctAnswer": "To download objects and refs from another repository"
+        },
+        {
+            "id": 23,
+            "questionContent": "What is the difference between 'git fetch' and 'git pull'?",
+            "options": [
+                "'git fetch' downloads changes but does not integrate them, while 'git pull' downloads and integrates changes",
+                "'git fetch' integrates changes, while 'git pull' only downloads changes",
+                "'git fetch' is used for deleting branches, while 'git pull' is used for creating branches",
+                "There is no difference"
+            ],
+            "correctAnswer": "'git fetch' downloads changes but does not integrate them, while 'git pull' downloads and integrates changes"
+        },
+        {
+            "id": 24,
+            "questionContent": "What is the purpose of 'git remote'?",
+            "options": [
+                "To manage set of tracked repositories",
+                "To create a new branch",
+                "To delete a branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To manage set of tracked repositories"
+        },
+        {
+            "id": 25,
+            "questionContent": "How do you add a new remote repository in Git?",
+            "options": [
+                "git remote add origin <url>",
+                "git add remote origin <url>",
+                "git remote new origin <url>",
+                "git create remote origin <url>"
+            ],
+            "correctAnswer": "git remote add origin <url>"
+        },
+        {
+            "id": 26,
+            "questionContent": "What is the purpose of 'git diff'?",
+            "options": [
+                "To show the commit history",
+                "To show changes between commits, commit and working tree, etc",
+                "To create a new branch",
+                "To delete a branch"
+            ],
+            "correctAnswer": "To show changes between commits, commit and working tree, etc"
+        },
+        {
+            "id": 27,
+            "questionContent": "How do you view the differences between the working directory and the index (staging area)?",
+            "options": [
+                "git diff",
+                "git diff --cached",
+                "git diff HEAD",
+                "git diff --staged"
+            ],
+            "correctAnswer": "git diff"
+        },
+        {
+            "id": 28,
+            "questionContent": "How do you view the differences between the index (staging area) and the last commit?",
+            "options": [
+                "git diff",
+                "git diff --cached",
+                "git diff HEAD",
+                "git diff --staged"
+            ],
+            "correctAnswer": "git diff --cached"
+        },
+        {
+            "id": 29,
+            "questionContent": "How do you view the differences between the working directory and the last commit?",
+            "options": [
+                "git diff",
+                "git diff --cached",
+                "git diff HEAD",
+                "git diff --staged"
+            ],
+            "correctAnswer": "git diff HEAD"
+        },
+        {
+            "id": 30,
+            "questionContent": "What is the purpose of 'git reset'?",
+            "options": [
+                "To reset the staging area to the last commit",
+                "To reset the working directory to the last commit",
+                "To reset the current branch to a specific commit",
+                "All of the above"
+            ],
+            "correctAnswer": "All of the above"
+        },
+        {
+            "id": 31,
+            "questionContent": "What is the difference between 'git reset --soft' and 'git reset --hard'?",
+            "options": [
+                "'git reset --soft' moves the HEAD to a specific commit without changing the working directory or staging area, while 'git reset --hard' resets the working directory and staging area to match the specified commit",
+                "'git reset --soft' deletes all changes, while 'git reset --hard' keeps changes in the working directory",
+                "'git reset --soft' is used for merging branches, while 'git reset --hard' is used for deleting branches",
+                "There is no difference"
+            ],
+            "correctAnswer": "'git reset --soft' moves the HEAD to a specific commit without changing the working directory or staging area, while 'git reset --hard' resets the working directory and staging area to match the specified commit"
+        },
+        {
+            "id": 32,
+            "questionContent": "What is the purpose of 'git cherry-pick'?",
+            "options": [
+                "To apply the changes introduced by some existing commits",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To apply the changes introduced by some existing commits"
+        },
+        {
+            "id": 33,
+            "questionContent": "How do you revert a commit in Git?",
+            "options": [
+                "git revert <commit>",
+                "git reset <commit>",
+                "git delete <commit>",
+                "git undo <commit>"
+            ],
+            "correctAnswer": "git revert <commit>"
+        },
+        {
+            "id": 34,
+            "questionContent": "What is the purpose of 'git bisect'?",
+            "options": [
+                "To find the commit that introduced a bug using binary search",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To find the commit that introduced a bug using binary search"
+        },
+        {
+            "id": 35,
+            "questionContent": "How do you start a 'git bisect' session?",
+            "options": [
+                "git bisect start",
+                "git bisect begin",
+                "git bisect init",
+                "git bisect run"
+            ],
+            "correctAnswer": "git bisect start"
+        },
+        {
+            "id": 36,
+            "questionContent": "How do you mark a commit as good during a 'git bisect' session?",
+            "options": [
+                "git bisect good",
+                "git bisect right",
+                "git bisect correct",
+                "git bisect pass"
+            ],
+            "correctAnswer": "git bisect good"
+        },
+        {
+            "id": 37,
+            "questionContent": "How do you mark a commit as bad during a 'git bisect' session?",
+            "options": [
+                "git bisect bad",
+                "git bisect wrong",
+                "git bisect fail",
+                "git bisect incorrect"
+            ],
+            "correctAnswer": "git bisect bad"
+        },
+        {
+            "id": 38,
+            "questionContent": "What is the purpose of 'git submodule'?",
+            "options": [
+                "To include one Git repository inside another",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To include one Git repository inside another"
+        },
+        {
+            "id": 39,
+            "questionContent": "How do you add a submodule to a Git repository?",
+            "options": [
+                "git submodule add <repository> <path>",
+                "git add submodule <repository> <path>",
+                "git create submodule <repository> <path>",
+                "git submodule new <repository> <path>"
+            ],
+            "correctAnswer": "git submodule add <repository> <path>"
+        },
+        {
+            "id": 40,
+            "questionContent": "How do you update a submodule in a Git repository?",
+            "options": [
+                "git submodule update",
+                "git update submodule",
+                "git submodule sync",
+                "git submodule refresh"
+            ],
+            "correctAnswer": "git submodule update"
+        },
+        {
+            "id": 41,
+            "questionContent": "What is the purpose of 'git worktree'?",
+            "options": [
+                "To manage multiple working trees attached to the same repository",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To manage multiple working trees attached to the same repository"
+        },
+        {
+            "id": 42,
+            "questionContent": "How do you add a new working tree in Git?",
+            "options": [
+                "git worktree add <path> <branch>",
+                "git add worktree <path> <branch>",
+                "git create worktree <path> <branch>",
+                "git worktree new <path> <branch>"
+            ],
+            "correctAnswer": "git worktree add <path> <branch>"
+        },
+        {
+            "id": 43,
+            "questionContent": "What is the purpose of 'git reflog'?",
+            "options": [
+                "To record when the tips of branches and other references were updated in the local repository",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To record when the tips of branches and other references were updated in the local repository"
+        },
+        {
+            "id": 44,
+            "questionContent": "How do you view the reflog in Git?",
+            "options": [
+                "git reflog",
+                "git log --reflog",
+                "git show reflog",
+                "git history reflog"
+            ],
+            "correctAnswer": "git reflog"
+        },
+        {
+            "id": 45,
+            "questionContent": "What is the purpose of 'git filter-branch'?",
+            "options": [
+                "To rewrite Git history by applying custom filters",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To rewrite Git history by applying custom filters"
+        },
+        {
+            "id": 46,
+            "questionContent": "How do you rewrite commit messages using 'git filter-branch'?",
+            "options": [
+                "git filter-branch --msg-filter 'sed \"s/old/new/\"' HEAD",
+                "git filter-branch --message-filter 'sed \"s/old/new/\"' HEAD",
+                "git filter-branch --commit-filter 'sed \"s/old/new/\"' HEAD",
+                "git filter-branch --rewrite-filter 'sed \"s/old/new/\"' HEAD"
+            ],
+            "correctAnswer": "git filter-branch --msg-filter 'sed \"s/old/new/\"' HEAD"
+        },
+        {
+            "id": 47,
+            "questionContent": "What is the purpose of 'git gc'?",
+            "options": [
+                "To clean up unnecessary files and optimize the local repository",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To clean up unnecessary files and optimize the local repository"
+        },
+        {
+            "id": 48,
+            "questionContent": "How do you run garbage collection in Git?",
+            "options": [
+                "git gc",
+                "git garbage-collect",
+                "git clean",
+                "git optimize"
+            ],
+            "correctAnswer": "git gc"
+        },
+        {
+            "id": 49,
+            "questionContent": "What is the purpose of 'git fsck'?",
+            "options": [
+                "To verify the connectivity and validity of the objects in the database",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To verify the connectivity and validity of the objects in the database"
+        },
+        {
+            "id": 50,
+            "questionContent": "How do you check the integrity of a Git repository?",
+            "options": [
+                "git fsck",
+                "git check",
+                "git verify",
+                "git integrity"
+            ],
+            "correctAnswer": "git fsck"
+        },
+        {
+            "id": 51,
+            "questionContent": "What is the purpose of 'git blame'?",
+            "options": [
+                "To show what revision and author last modified each line of a file",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To show what revision and author last modified each line of a file"
+        },
+        {
+            "id": 52,
+            "questionContent": "How do you use 'git blame' to see who last modified each line of a file?",
+            "options": [
+                "git blame <file>",
+                "git blame --show <file>",
+                "git blame --last <file>",
+                "git blame --author <file>"
+            ],
+            "correctAnswer": "git blame <file>"
+        },
+        {
+            "id": 53,
+            "questionContent": "What is the purpose of 'git grep'?",
+            "options": [
+                "To search for a string in the working directory",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To search for a string in the working directory"
+        },
+        {
+            "id": 54,
+            "questionContent": "How do you search for a string in the working directory using Git?",
+            "options": [
+                "git grep <string>",
+                "git search <string>",
+                "git find <string>",
+                "git locate <string>"
+            ],
+            "correctAnswer": "git grep <string>"
+        },
+        {
+            "id": 55,
+            "questionContent": "What is the purpose of 'git archive'?",
+            "options": [
+                "To create an archive of files from a named tree",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To create an archive of files from a named tree"
+        },
+        {
+            "id": 56,
+            "questionContent": "How do you create a zip archive of the latest commit in Git?",
+            "options": [
+                "git archive --format=zip --output=archive.zip HEAD",
+                "git archive --zip --output=archive.zip HEAD",
+                "git archive --format=zip HEAD > archive.zip",
+                "git archive --zip HEAD > archive.zip"
+            ],
+            "correctAnswer": "git archive --format=zip --output=archive.zip HEAD"
+        },
+        {
+            "id": 57,
+            "questionContent": "What is the purpose of 'git bundle'?",
+            "options": [
+                "To package up objects and refs for transport",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To package up objects and refs for transport"
+        },
+        {
+            "id": 58,
+            "questionContent": "How do you create a bundle of a Git repository?",
+            "options": [
+                "git bundle create repo.bundle HEAD",
+                "git create bundle repo.bundle HEAD",
+                "git bundle repo.bundle HEAD",
+                "git bundle --create repo.bundle HEAD"
+            ],
+            "correctAnswer": "git bundle create repo.bundle HEAD"
+        },
+        {
+            "id": 59,
+            "questionContent": "What is the purpose of 'git notes'?",
+            "options": [
+                "To add notes to commits",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To add notes to commits"
+        },
+        {
+            "id": 60,
+            "questionContent": "How do you add a note to a commit in Git?",
+            "options": [
+                "git notes add -m 'note message' <commit>",
+                "git add note -m 'note message' <commit>",
+                "git note add -m 'note message' <commit>",
+                "git notes --add -m 'note message' <commit>"
+            ],
+            "correctAnswer": "git notes add -m 'note message' <commit>"
+        },
+        {
+            "id": 61,
+            "questionContent": "What is the purpose of 'git replace'?",
+            "options": [
+                "To replace objects without changing the original objects",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To replace objects without changing the original objects"
+        },
+        {
+            "id": 62,
+            "questionContent": "How do you replace an object in Git?",
+            "options": [
+                "git replace <old-object> <new-object>",
+                "git replace --object <old-object> <new-object>",
+                "git replace --replace <old-object> <new-object>",
+                "git replace --new <old-object> <new-object>"
+            ],
+            "correctAnswer": "git replace <old-object> <new-object>"
+        },
+        {
+            "id": 63,
+            "questionContent": "What is the purpose of 'git rerere'?",
+            "options": [
+                "To reuse recorded resolution of conflicted merges",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To reuse recorded resolution of conflicted merges"
+        },
+        {
+            "id": 64,
+            "questionContent": "How do you enable 'git rerere'?",
+            "options": [
+                "git config --global rerere.enabled true",
+                "git rerere enable",
+                "git enable rerere",
+                "git rerere --enable"
+            ],
+            "correctAnswer": "git config --global rerere.enabled true"
+        },
+        {
+            "id": 65,
+            "questionContent": "What is the purpose of 'git rev-parse'?",
+            "options": [
+                "To parse revision (commit) identifiers",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To parse revision (commit) identifiers"
+        },
+        {
+            "id": 66,
+            "questionContent": "How do you parse a commit hash in Git?",
+            "options": [
+                "git rev-parse <commit>",
+                "git parse <commit>",
+                "git rev-parse --hash <commit>",
+                "git rev-parse --commit <commit>"
+            ],
+            "correctAnswer": "git rev-parse <commit>"
+        },
+        {
+            "id": 67,
+            "questionContent": "What is the purpose of 'git show-ref'?",
+            "options": [
+                "To list references in a local repository",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To list references in a local repository"
+        },
+        {
+            "id": 68,
+            "questionContent": "How do you list all references in a Git repository?",
+            "options": [
+                "git show-ref",
+                "git list-refs",
+                "git refs",
+                "git show-references"
+            ],
+            "correctAnswer": "git show-ref"
+        },
+        {
+            "id": 69,
+            "questionContent": "What is the purpose of 'git symbolic-ref'?",
+            "options": [
+                "To read, modify, and delete symbolic references",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To read, modify, and delete symbolic references"
+        },
+        {
+            "id": 70,
+            "questionContent": "How do you read the symbolic reference for HEAD?",
+            "options": [
+                "git symbolic-ref HEAD",
+                "git read-symbolic-ref HEAD",
+                "git symbolic-ref --read HEAD",
+                "git symbolic-ref --head"
+            ],
+            "correctAnswer": "git symbolic-ref HEAD"
+        },
+        {
+            "id": 71,
+            "questionContent": "What is the purpose of 'git update-ref'?",
+            "options": [
+                "To safely update the object name stored in a reference",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To safely update the object name stored in a reference"
+        },
+        {
+            "id": 72,
+            "questionContent": "How do you update a reference in Git?",
+            "options": [
+                "git update-ref refs/heads/branch <new-commit>",
+                "git update-ref --update refs/heads/branch <new-commit>",
+                "git update-ref --new refs/heads/branch <new-commit>",
+                "git update-ref --ref refs/heads/branch <new-commit>"
+            ],
+            "correctAnswer": "git update-ref refs/heads/branch <new-commit>"
+        },
+        {
+            "id": 73,
+            "questionContent": "What is the purpose of 'git verify-commit'?",
+            "options": [
+                "To check the GPG signature of a commit",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To check the GPG signature of a commit"
+        },
+        {
+            "id": 74,
+            "questionContent": "How do you verify the GPG signature of a commit?",
+            "options": [
+                "git verify-commit <commit>",
+                "git verify --commit <commit>",
+                "git verify-commit --gpg <commit>",
+                "git verify-commit --signature <commit>"
+            ],
+            "correctAnswer": "git verify-commit <commit>"
+        },
+        {
+            "id": 75,
+            "questionContent": "What is the purpose of 'git verify-tag'?",
+            "options": [
+                "To check the GPG signature of a tag",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To check the GPG signature of a tag"
+        },
+        {
+            "id": 76,
+            "questionContent": "How do you verify the GPG signature of a tag?",
+            "options": [
+                "git verify-tag <tag>",
+                "git verify --tag <tag>",
+                "git verify-tag --gpg <tag>",
+                "git verify-tag --signature <tag>"
+            ],
+            "correctAnswer": "git verify-tag <tag>"
+        },
+        {
+            "id": 77,
+            "questionContent": "What is the purpose of 'git whatchanged'?",
+            "options": [
+                "To show logs with differences each commit introduces",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To show logs with differences each commit introduces"
+        },
+        {
+            "id": 78,
+            "questionContent": "How do you view the changes introduced by each commit?",
+            "options": [
+                "git whatchanged",
+                "git log --whatchanged",
+                "git show-changes",
+                "git changes"
+            ],
+            "correctAnswer": "git whatchanged"
+        },
+        {
+            "id": 79,
+            "questionContent": "What is the purpose of 'git write-tree'?",
+            "options": [
+                "To create a tree object from the current index",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To create a tree object from the current index"
+        },
+        {
+            "id": 80,
+            "questionContent": "How do you create a tree object from the current index?",
+            "options": [
+                "git write-tree",
+                "git create-tree",
+                "git tree",
+                "git write --tree"
+            ],
+            "correctAnswer": "git write-tree"
+        },
+        {
+            "id": 81,
+            "questionContent": "What is the purpose of 'git commit-tree'?",
+            "options": [
+                "To create a commit object from a tree object",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To create a commit object from a tree object"
+        },
+        {
+            "id": 82,
+            "questionContent": "How do you create a commit object from a tree object?",
+            "options": [
+                "git commit-tree <tree> -m 'message'",
+                "git create-commit <tree> -m 'message'",
+                "git commit --tree <tree> -m 'message'",
+                "git commit-tree --create <tree> -m 'message'"
+            ],
+            "correctAnswer": "git commit-tree <tree> -m 'message'"
+        },
+        {
+            "id": 83,
+            "questionContent": "What is the purpose of 'git hash-object'?",
+            "options": [
+                "To compute the object ID for a file",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To compute the object ID for a file"
+        },
+        {
+            "id": 84,
+            "questionContent": "How do you compute the object ID for a file?",
+            "options": [
+                "git hash-object <file>",
+                "git compute-hash <file>",
+                "git hash --object <file>",
+                "git hash-object --compute <file>"
+            ],
+            "correctAnswer": "git hash-object <file>"
+        },
+        {
+            "id": 85,
+            "questionContent": "What is the purpose of 'git mktree'?",
+            "options": [
+                "To build a tree object from ls-tree formatted text",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To build a tree object from ls-tree formatted text"
+        },
+        {
+            "id": 86,
+            "questionContent": "How do you build a tree object from ls-tree formatted text?",
+            "options": [
+                "git mktree",
+                "git build-tree",
+                "git tree --build",
+                "git mktree --build"
+            ],
+            "correctAnswer": "git mktree"
+        },
+        {
+            "id": 87,
+            "questionContent": "What is the purpose of 'git mktag'?",
+            "options": [
+                "To create a tag object",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To create a tag object"
+        },
+        {
+            "id": 88,
+            "questionContent": "How do you create a tag object?",
+            "options": [
+                "git mktag",
+                "git create-tag",
+                "git tag --create",
+                "git mktag --create"
+            ],
+            "correctAnswer": "git mktag"
+        },
+        {
+            "id": 89,
+            "questionContent": "What is the purpose of 'git unpack-objects'?",
+            "options": [
+                "To unpack objects from a packed archive",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To unpack objects from a packed archive"
+        },
+        {
+            "id": 90,
+            "questionContent": "How do you unpack objects from a packed archive?",
+            "options": [
+                "git unpack-objects < <pack-file>",
+                "git unpack < <pack-file>",
+                "git unpack-objects --unpack < <pack-file>",
+                "git unpack-objects --file < <pack-file>"
+            ],
+            "correctAnswer": "git unpack-objects < <pack-file>"
+        },
+        {
+            "id": 91,
+            "questionContent": "What is the purpose of 'git pack-objects'?",
+            "options": [
+                "To create a packed archive of objects",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To create a packed archive of objects"
+        },
+        {
+            "id": 92,
+            "questionContent": "How do you create a packed archive of objects?",
+            "options": [
+                "git pack-objects <base-name>",
+                "git pack <base-name>",
+                "git pack-objects --create <base-name>",
+                "git pack-objects --archive <base-name>"
+            ],
+            "correctAnswer": "git pack-objects <base-name>"
+        },
+        {
+            "id": 93,
+            "questionContent": "What is the purpose of 'git prune'?",
+            "options": [
+                "To prune all unreachable objects from the object database",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To prune all unreachable objects from the object database"
+        },
+        {
+            "id": 94,
+            "questionContent": "How do you prune unreachable objects from the object database?",
+            "options": [
+                "git prune",
+                "git clean",
+                "git remove-unreachable",
+                "git prune-objects"
+            ],
+            "correctAnswer": "git prune"
+        },
+        {
+            "id": 95,
+            "questionContent": "What is the purpose of 'git prune-packed'?",
+            "options": [
+                "To remove extra objects that are already in pack files",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To remove extra objects that are already in pack files"
+        },
+        {
+            "id": 96,
+            "questionContent": "How do you remove extra objects that are already in pack files?",
+            "options": [
+                "git prune-packed",
+                "git prune --packed",
+                "git remove-packed",
+                "git prune-packed --remove"
+            ],
+            "correctAnswer": "git prune-packed"
+        },
+        {
+            "id": 97,
+            "questionContent": "What is the purpose of 'git rev-list'?",
+            "options": [
+                "To list commit objects in reverse chronological order",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To list commit objects in reverse chronological order"
+        },
+        {
+            "id": 98,
+            "questionContent": "How do you list commit objects in reverse chronological order?",
+            "options": [
+                "git rev-list HEAD",
+                "git list-rev HEAD",
+                "git rev-list --reverse HEAD",
+                "git rev-list --chrono HEAD"
+            ],
+            "correctAnswer": "git rev-list HEAD"
+        },
+        {
+            "id": 99,
+            "questionContent": "What is the purpose of 'git show-index'?",
+            "options": [
+                "To show the contents of a pack index file",
+                "To delete a branch",
+                "To create a new branch",
+                "To merge two branches"
+            ],
+            "correctAnswer": "To show the contents of a pack index file"
+        },
+        {
+            "id": 100,
+            "questionContent": "How do you show the contents of a pack index file?",
+            "options": [
+                "git show-index < <pack-file>.idx",
+                "git show --index < <pack-file>.idx",
+                "git show-index --contents < <pack-file>.idx",
+                "git show-index --pack < <pack-file>.idx"
+            ],
+            "correctAnswer": "git show-index < <pack-file>.idx"
+        }
+    ]
+}

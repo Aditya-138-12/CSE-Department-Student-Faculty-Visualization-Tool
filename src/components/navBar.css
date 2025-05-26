@@ -82,6 +82,30 @@ body {
 
 .MuiSheet-root.MuiSheet-variantOutlined.MuiSheet-colorNeutral.css-1xscj5t-JoySheet-root {
     outline: none;
+    padding: 40px !important;
+    height: 35%;
+    width: 35% !important;
+}
+
+.MuiSheet-root.MuiSheet-variantOutlined.MuiSheet-colorNeutral.css-1xsf3vf {
+    outline: none !important;
+    padding: 50px !important;
+    height: 60% !important;
+    width: 50% !important;
+    max-width: 100% !important;
+}
+
+.MuiSheet-root.MuiSheet-variantOutlined.MuiSheet-colorNeutral.css-1xsf3vf Button {
+    left: 96.5% !important;
+    top: 0% !important;
+    height: 4% !important;
+    width: 4% !important;
+    position: absolute;
+    outline: none !important;
+}
+
+.MuiSheet-root.MuiSheet-variantOutlined.MuiSheet-colorNeutral.css-1xscj5t-JoySheet-root {
+    outline: none;
     max-width: 100%;
     width: 50% !important;
     height: 80%;
@@ -105,7 +129,7 @@ body {
     padding: 10px;
     text-align: center;
     color: white;
-    top: 65%;
+    bottom: 0%;
     left: 50%;
     transform: translate(-50%, -65%);
     transition: 0.2s ease;
@@ -833,15 +857,15 @@ tr:hover {
     width: 100vw;
     height: 2.5vh;
     font-size: 1.3vh;
-    color: white;
-    background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+    color: black;
+    /*background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);*/
     background-size: 200% 100%;
     animation: gradientAnimation 5s ease alternate-reverse infinite;
 }
 
 .bottom-footter-aditya-saroha {
     text-decoration: none;
-    color: white;
+    color: black;
     border-bottom: 0.1vw solid white;
 }
 
@@ -954,7 +978,23 @@ tr:hover {
 .ChartsHoDdashboardDiv {
     width: 100%;
     display: flex;
+    margin-bottom: 0px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.ChartsHoDdashboardDiv2 {
+    width: 100%;
+    display: flex;
+    margin-top: -20px;
+    flex-direction: row;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
 }

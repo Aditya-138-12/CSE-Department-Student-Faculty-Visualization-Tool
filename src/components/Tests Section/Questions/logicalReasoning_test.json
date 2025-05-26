@@ -1,0 +1,225 @@
+{
+    "topic": "Logical Reasoning",
+    "questions": [
+        {
+            "id": 1,
+            "questionContent": "If all Bloops are Razzies and all Razzies are Lazzies, then are all Bloops definitely Lazzies?",
+            "options": [
+                "Yes",
+                "No",
+                "Maybe",
+                "Cannot be determined"
+            ],
+            "correctAnswer": "Yes"
+        },
+        {
+            "id": 2,
+            "questionContent": "What is the next number in the sequence: 2, 6, 12, 20, 30, ___?",
+            "options": [
+                "40",
+                "42",
+                "44",
+                "46"
+            ],
+            "correctAnswer": "42"
+        },
+        {
+            "id": 3,
+            "questionContent": "If A is the brother of B, B is the sister of C, and C is the father of D, how is A related to D?",
+            "options": [
+                "Uncle",
+                "Father",
+                "Brother",
+                "Cousin"
+            ],
+            "correctAnswer": "Uncle"
+        },
+        {
+            "id": 4,
+            "questionContent": "Which word does NOT belong to the group: Apple, Banana, Orange, Carrot?",
+            "options": [
+                "Apple",
+                "Banana",
+                "Orange",
+                "Carrot"
+            ],
+            "correctAnswer": "Carrot"
+        },
+        {
+            "id": 5,
+            "questionContent": "If all Zips are Zaps and some Zaps are Zops, then which of the following is true?",
+            "options": [
+                "Some Zips are Zops",
+                "All Zips are Zops",
+                "No Zips are Zops",
+                "Cannot be determined"
+            ],
+            "correctAnswer": "Cannot be determined"
+        },
+        {
+            "id": 6,
+            "questionContent": "What is the missing number in the sequence: 3, 9, 27, __, 243?",
+            "options": [
+                "54",
+                "81",
+                "108",
+                "135"
+            ],
+            "correctAnswer": "81"
+        },
+        {
+            "id": 7,
+            "questionContent": "If RED is coded as 1854, how is GREEN coded?",
+            "options": [
+                "7185514",
+                "7185515",
+                "7185516",
+                "7185517"
+            ],
+            "correctAnswer": "7185514"
+        },
+        {
+            "id": 8,
+            "questionContent": "Which shape completes the pattern: ▲, ■, ●, ▲, ■, ●, ___?",
+            "options": [
+                "▲",
+                "■",
+                "●",
+                "◆"
+            ],
+            "correctAnswer": "▲"
+        },
+        {
+            "id": 9,
+            "questionContent": "If today is Monday, what day will it be after 61 days?",
+            "options": [
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            ],
+            "correctAnswer": "Saturday"
+        },
+        {
+            "id": 10,
+            "questionContent": "What is the odd one out: Square, Circle, Triangle, Cube?",
+            "options": [
+                "Square",
+                "Circle",
+                "Triangle",
+                "Cube"
+            ],
+            "correctAnswer": "Cube"
+        },
+        {
+            "id": 11,
+            "questionContent": "If 5 workers can build 5 walls in 5 days, how many walls can 10 workers build in 10 days?",
+            "options": [
+                "10",
+                "20",
+                "25",
+                "50"
+            ],
+            "correctAnswer": "20"
+        },
+        {
+            "id": 12,
+            "questionContent": "Which number is opposite to 3 on a standard die?",
+            "options": [
+                "1",
+                "2",
+                "4",
+                "6"
+            ],
+            "correctAnswer": "4"
+        },
+        {
+            "id": 13,
+            "questionContent": "What is the next letter in the sequence: A, C, F, J, ___?",
+            "options": [
+                "M",
+                "N",
+                "O",
+                "P"
+            ],
+            "correctAnswer": "O"
+        },
+        {
+            "id": 14,
+            "questionContent": "If 1 = 5, 2 = 25, 3 = 325, 4 = 4325, then 5 = ?",
+            "options": [
+                "54325",
+                "54321",
+                "5432",
+                "54325"
+            ],
+            "correctAnswer": "54325"
+        },
+        {
+            "id": 15,
+            "questionContent": "Which of the following is NOT a leap year?",
+            "options": [
+                "2000",
+                "2004",
+                "2100",
+                "2024"
+            ],
+            "correctAnswer": "2100"
+        },
+        {
+            "id": 16,
+            "questionContent": "What is the missing number in the sequence: 1, 4, 9, 16, __, 36?",
+            "options": [
+                "20",
+                "24",
+                "25",
+                "30"
+            ],
+            "correctAnswer": "25"
+        },
+        {
+            "id": 17,
+            "questionContent": "If CAT is coded as 3120, how is DOG coded?",
+            "options": [
+                "4157",
+                "4158",
+                "4159",
+                "4160"
+            ],
+            "correctAnswer": "4157"
+        },
+        {
+            "id": 18,
+            "questionContent": "Which of the following is the odd one out: Mars, Venus, Earth, Moon?",
+            "options": [
+                "Mars",
+                "Venus",
+                "Earth",
+                "Moon"
+            ],
+            "correctAnswer": "Moon"
+        },
+        {
+            "id": 19,
+            "questionContent": "What is the next number in the sequence: 1, 1, 2, 3, 5, 8, ___?",
+            "options": [
+                "11",
+                "12",
+                "13",
+                "14"
+            ],
+            "correctAnswer": "13"
+        },
+        {
+            "id": 20,
+            "questionContent": "If all Roses are Flowers and some Flowers fade quickly, then which of the following is true?",
+            "options": [
+                "Some Roses fade quickly",
+                "All Roses fade quickly",
+                "No Roses fade quickly",
+                "Cannot be determined"
+            ],
+            "correctAnswer": "Cannot be determined"
+        }
+    ]
+}

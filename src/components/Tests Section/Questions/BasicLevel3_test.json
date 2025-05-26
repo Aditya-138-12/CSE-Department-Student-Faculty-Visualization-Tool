@@ -1,0 +1,225 @@
+{
+    "topic": "Basic Level Test - 3 (Fundamentals)",
+    "questions": [
+        {
+            "id": 1,
+            "questionContent": "What does DOM stand for?",
+            "options": [
+                "Document Object Model",
+                "Data Object Model",
+                "Document Oriented Model",
+                "Data Oriented Model"
+            ],
+            "correctAnswer": "Document Object Model"
+        },
+        {
+            "id": 2,
+            "questionContent": "Which of the following is a back-end programming language?",
+            "options": [
+                "Python",
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ],
+            "correctAnswer": "Python"
+        },
+        {
+            "id": 3,
+            "questionContent": "What is the purpose of the <canvas> tag in HTML?",
+            "options": [
+                "To draw graphics on the fly",
+                "To create forms",
+                "To insert images",
+                "To define a paragraph"
+            ],
+            "correctAnswer": "To draw graphics on the fly"
+        },
+        {
+            "id": 4,
+            "questionContent": "Which of the following is used to create a dropdown list in HTML?",
+            "options": [
+                "<select>",
+                "<dropdown>",
+                "<list>",
+                "<option>"
+            ],
+            "correctAnswer": "<select>"
+        },
+        {
+            "id": 5,
+            "questionContent": "What is the purpose of the <iframe> tag in HTML?",
+            "options": [
+                "To embed another document within the current HTML document",
+                "To create a form",
+                "To insert images",
+                "To define a paragraph"
+            ],
+            "correctAnswer": "To embed another document within the current HTML document"
+        },
+        {
+            "id": 6,
+            "questionContent": "Which of the following is used to create a table in HTML?",
+            "options": [
+                "<table>",
+                "<tr>",
+                "<td>",
+                "<th>"
+            ],
+            "correctAnswer": "<table>"
+        },
+        {
+            "id": 7,
+            "questionContent": "What is the purpose of the <form> tag in HTML?",
+            "options": [
+                "To create a form for user input",
+                "To insert images",
+                "To define a paragraph",
+                "To create a table"
+            ],
+            "correctAnswer": "To create a form for user input"
+        },
+        {
+            "id": 8,
+            "questionContent": "Which of the following is used to create a button in HTML?",
+            "options": [
+                "<button>",
+                "<input type='button'>",
+                "<a>",
+                "<div>"
+            ],
+            "correctAnswer": "<button>"
+        },
+        {
+            "id": 9,
+            "questionContent": "What is the purpose of the <label> tag in HTML?",
+            "options": [
+                "To define a label for an input element",
+                "To create a form",
+                "To insert images",
+                "To define a paragraph"
+            ],
+            "correctAnswer": "To define a label for an input element"
+        },
+        {
+            "id": 10,
+            "questionContent": "Which of the following is used to create a checkbox in HTML?",
+            "options": [
+                "<input type='checkbox'>",
+                "<checkbox>",
+                "<input type='check'>",
+                "<check>"
+            ],
+            "correctAnswer": "<input type='checkbox'>"
+        },
+        {
+            "id": 11,
+            "questionContent": "What is the purpose of the <textarea> tag in HTML?",
+            "options": [
+                "To create a multi-line text input",
+                "To create a form",
+                "To insert images",
+                "To define a paragraph"
+            ],
+            "correctAnswer": "To create a multi-line text input"
+        },
+        {
+            "id": 12,
+            "questionContent": "Which of the following is used to create a radio button in HTML?",
+            "options": [
+                "<input type='radio'>",
+                "<radio>",
+                "<input type='radiobutton'>",
+                "<radiobutton>"
+            ],
+            "correctAnswer": "<input type='radio'>"
+        },
+        {
+            "id": 13,
+            "questionContent": "What is the purpose of the <fieldset> tag in HTML?",
+            "options": [
+                "To group related elements in a form",
+                "To create a form",
+                "To insert images",
+                "To define a paragraph"
+            ],
+            "correctAnswer": "To group related elements in a form"
+        },
+        {
+            "id": 14,
+            "questionContent": "Which of the following is used to create a password input in HTML?",
+            "options": [
+                "<input type='password'>",
+                "<password>",
+                "<input type='pass'>",
+                "<pass>"
+            ],
+            "correctAnswer": "<input type='password'>"
+        },
+        {
+            "id": 15,
+            "questionContent": "What is the purpose of the <legend> tag in HTML?",
+            "options": [
+                "To define a caption for a <fieldset> element",
+                "To create a form",
+                "To insert images",
+                "To define a paragraph"
+            ],
+            "correctAnswer": "To define a caption for a <fieldset> element"
+        },
+        {
+            "id": 16,
+            "questionContent": "Which of the following is used to create a file input in HTML?",
+            "options": [
+                "<input type='file'>",
+                "<file>",
+                "<input type='files'>",
+                "<files>"
+            ],
+            "correctAnswer": "<input type='file'>"
+        },
+        {
+            "id": 17,
+            "questionContent": "What is the purpose of the <output> tag in HTML?",
+            "options": [
+                "To display the result of a calculation",
+                "To create a form",
+                "To insert images",
+                "To define a paragraph"
+            ],
+            "correctAnswer": "To display the result of a calculation"
+        },
+        {
+            "id": 18,
+            "questionContent": "Which of the following is used to create a range input in HTML?",
+            "options": [
+                "<input type='range'>",
+                "<range>",
+                "<input type='slider'>",
+                "<slider>"
+            ],
+            "correctAnswer": "<input type='range'>"
+        },
+        {
+            "id": 19,
+            "questionContent": "What is the purpose of the <datalist> tag in HTML?",
+            "options": [
+                "To provide a list of predefined options for an input element",
+                "To create a form",
+                "To insert images",
+                "To define a paragraph"
+            ],
+            "correctAnswer": "To provide a list of predefined options for an input element"
+        },
+        {
+            "id": 20,
+            "questionContent": "Which of the following is used to create a color input in HTML?",
+            "options": [
+                "<input type='color'>",
+                "<color>",
+                "<input type='colour'>",
+                "<colour>"
+            ],
+            "correctAnswer": "<input type='color'>"
+        }
+    ]
+}

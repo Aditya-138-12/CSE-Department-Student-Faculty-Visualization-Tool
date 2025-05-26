@@ -12,7 +12,7 @@ export function ChartExample() {
     useEffect(() => {
         const clubs = [
             { name: 'Code Arena', students: 12, color: '#FF4136', representative: { name: 'Nithish Mathangi', role: 'Representative', image: 'https://media.licdn.com/dms/image/v2/D5603AQF9qTAfqJCUmw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711515068792?e=1733356800&v=beta&t=EL6Pl-aMDYsIgyG5PLEOIvuYwU8cLHZj_rgfQqfkToI' } },
-            { name: 'IEEE Computer Society', students: 5, color: '#0074D9', representative: { name: 'Chaman', role: 'Representative', image: 'https://media.licdn.com/dms/image/v2/D5603AQFFrjGKmQR8Fw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695956296009?e=1733356800&v=beta&t=t1jT4ySTRboxgR2bFBlwUBnogdxsetYpinCc3dzjIxI' } },
+            { name: 'IEEE Computer Society', students: 6, color: '#0074D9', representative: { name: 'Aditya Saroha', role: 'Web Master', image: 'https://media.licdn.com/dms/image/v2/D5603AQGkTsPGux-7vA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1705401026481?e=1737590400&v=beta&t=qz_0VCySE3ODn81cA3WWQRCWtGrXk-EhEitlA19w8XY' } },
             { name: 'Design Club', students: 4, color: '#2ECC40', representative: { name: '', role: 'Representative', image: 'https://via.placeholder.com/50' } },
             { name: 'GDSC Club', students: 10, color: '#FFDC00', representative: { name: 'Amogh R. Gowda', role: 'Representative', image: 'https://media.licdn.com/dms/image/v2/D5603AQFN5q-YGUeofw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1702739965560?e=1733356800&v=beta&t=09PSSMv0ikCSk6ldXLBt_1c65zm09a11d5dgc6wAvxw' } },
             { name: 'MLSA Club', students: 4, color: '#B10DC9', representative: { name: 'G. Charan', role: 'Representative', image: 'https://media.licdn.com/dms/image/v2/D5603AQExOhFKnAUQPA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727626813845?e=1733356800&v=beta&t=FNp1e_miQtGb0y-lXTKhTdtXZ6yGMHTKbF9ZBZ8r0k0' } },
@@ -84,5 +84,5 @@ export function ChartExample() {
         });
     }, []);
 
-    return <div id="container" style={{ width: '100%', height: '400px' }} />;
+    return <div id="container" style={{ width: '100%', height: '400px', borderRadius: '15px' }} />;
 };

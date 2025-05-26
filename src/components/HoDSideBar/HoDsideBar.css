@@ -7,7 +7,7 @@
     /*min-height: 200px;
     height: 12.5vw;*/
     height: auto;
-    width: 6vh;
+    width: auto;
     background-color: rgba(128, 128, 128, 0.2);
     z-index: 1200;
     backdrop-filter: blur(8px);
@@ -19,6 +19,7 @@
     transition: 0.3s ease-in-out;
     overflow: hidden;
     padding-bottom: 10px;
+    padding-right: 15px;
 }
 
 .HoDsideBarMainDiv.hover {

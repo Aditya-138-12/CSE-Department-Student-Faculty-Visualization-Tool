@@ -1,0 +1,28 @@
+.main-footer {
+    position: relative;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    font-family: sans-serif;
+    padding: 20px;
+    margin-top: 200px;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: white;
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+a:hover {
+    border-bottom: 0.1vw solid white;
+}

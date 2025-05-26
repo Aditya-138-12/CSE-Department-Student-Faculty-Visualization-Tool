@@ -1,0 +1,225 @@
+{
+    "topic": "Basic Level Test - 1 (Fundamentals)",
+    "questions": [
+        {
+            "id": 1,
+            "questionContent": "What is the Full Form of HTML?",
+            "options": [
+                "Hyper Text Markup Language",
+                "Hyper Text Material Language",
+                "Hyper Text Mosquito Language",
+                "Hyper Text Man Language"
+            ],
+            "correctAnswer": "Hyper Text Markup Language"
+        },
+        {
+            "id": 2,
+            "questionContent": "What does CSS stand for?",
+            "options": [
+                "Cascading Style Sheets",
+                "Computer Style Sheets",
+                "Creative Style Sheets",
+                "Cascading System Sheets"
+            ],
+            "correctAnswer": "Cascading Style Sheets"
+        },
+        {
+            "id": 3,
+            "questionContent": "Which language is primarily used for web development?",
+            "options": [
+                "JavaScript",
+                "Python",
+                "Java",
+                "C++"
+            ],
+            "correctAnswer": "JavaScript"
+        },
+        {
+            "id": 4,
+            "questionContent": "What does API stand for?",
+            "options": [
+                "Application Programming Interface",
+                "Application Program Interface",
+                "Automatic Programming Interface",
+                "Advanced Programming Interface"
+            ],
+            "correctAnswer": "Application Programming Interface"
+        },
+        {
+            "id": 5,
+            "questionContent": "Which of the following is a database management system?",
+            "options": [
+                "MySQL",
+                "MongoDB",
+                "PostgreSQL",
+                "All of the above"
+            ],
+            "correctAnswer": "All of the above"
+        },
+        {
+            "id": 6,
+            "questionContent": "Which HTML tag is used to link an external JavaScript file?",
+            "options": [
+                "<script src='filename.js'></script>",
+                "<link src='filename.js'></link>",
+                "<script href='filename.js'></script>",
+                "<js src='filename.js'></js>"
+            ],
+            "correctAnswer": "<script src='filename.js'></script>"
+        },
+        {
+            "id": 7,
+            "questionContent": "What is the correct file extension for a JavaScript file?",
+            "options": [
+                ".js",
+                ".java",
+                ".html",
+                ".jsx"
+            ],
+            "correctAnswer": ".js"
+        },
+        {
+            "id": 8,
+            "questionContent": "What is the default port number for HTTP?",
+            "options": [
+                "80",
+                "443",
+                "8080",
+                "25"
+            ],
+            "correctAnswer": "80"
+        },
+        {
+            "id": 9,
+            "questionContent": "Which of these is used for styling a web page?",
+            "options": [
+                "CSS",
+                "HTML",
+                "JavaScript",
+                "PHP"
+            ],
+            "correctAnswer": "CSS"
+        },
+        {
+            "id": 10,
+            "questionContent": "What is the function of the <head> tag in HTML?",
+            "options": [
+                "Contains metadata and links to external files",
+                "Displays the content on the page",
+                "Contains the main content",
+                "None of the above"
+            ],
+            "correctAnswer": "Contains metadata and links to external files"
+        },
+        {
+            "id": 11,
+            "questionContent": "Which of these is an object-oriented programming language?",
+            "options": [
+                "C++",
+                "C",
+                "Fortran",
+                "Pascal"
+            ],
+            "correctAnswer": "C++"
+        },
+        {
+            "id": 12,
+            "questionContent": "What is Git?",
+            "options": [
+                "A version control system",
+                "A text editor",
+                "A programming language",
+                "A framework"
+            ],
+            "correctAnswer": "A version control system"
+        },
+        {
+            "id": 13,
+            "questionContent": "Which of these is not a JavaScript data type?",
+            "options": [
+                "String",
+                "Boolean",
+                "Integer",
+                "Undefined"
+            ],
+            "correctAnswer": "Integer"
+        },
+        {
+            "id": 14,
+            "questionContent": "What is the purpose of the <title> tag in HTML?",
+            "options": [
+                "Defines the title of the document",
+                "Displays the title on the webpage",
+                "Links to external CSS files",
+                "Contains the main content"
+            ],
+            "correctAnswer": "Defines the title of the document"
+        },
+        {
+            "id": 15,
+            "questionContent": "Which company developed JavaScript?",
+            "options": [
+                "Netscape",
+                "Microsoft",
+                "Sun Microsystems",
+                "Google"
+            ],
+            "correctAnswer": "Netscape"
+        },
+        {
+            "id": 16,
+            "questionContent": "What is the purpose of the <div> tag in HTML?",
+            "options": [
+                "To group content and structure the page",
+                "To define a link",
+                "To insert images",
+                "To create a form"
+            ],
+            "correctAnswer": "To group content and structure the page"
+        },
+        {
+            "id": 17,
+            "questionContent": "What is the latest version of HTML?",
+            "options": [
+                "HTML5",
+                "HTML4",
+                "HTML3",
+                "HTML6"
+            ],
+            "correctAnswer": "HTML5"
+        },
+        {
+            "id": 18,
+            "questionContent": "Which of these is a client-side scripting language?",
+            "options": [
+                "JavaScript",
+                "PHP",
+                "Java",
+                "SQL"
+            ],
+            "correctAnswer": "JavaScript"
+        },
+        {
+            "id": 19,
+            "questionContent": "Which of these is used to store key-value pairs?",
+            "options": [
+                "Dictionary",
+                "Array",
+                "Set",
+                "List"
+            ],
+            "correctAnswer": "Dictionary"
+        },
+        {
+            "id": 20,
+            "questionContent": "Which tag is used to create a hyperlink in HTML?",
+            "options": [
+                "<a>",
+                "<link>",
+                "<button>",
+                "<nav>"
+            ],
+            "correctAnswer": "<a>"
+        }
+    ]
+}

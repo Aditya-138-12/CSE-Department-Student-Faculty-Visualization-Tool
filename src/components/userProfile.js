@@ -5,6 +5,8 @@ import { ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage
 import './userProfiles.css';
 import Snackbar from "@mui/joy/Snackbar";
 import { Skeleton } from '@mui/material';
+import { renderHidden } from 'highcharts';
+import { Studentdb } from './firebaseStudent';
 
 const UserProfile = ({ FacultyUpload, FacultyLogOut }) => {
     const defaultAvatarUrl = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACUCAMAAAAj+tKkAAAAP1BMVEWoqa3///+lpqqio6f8/Pyoqaukpafu7u/29vbh4eL5+fnx8fKwsbSfoKWmqq3l5ebR0tO7u77DxMba2tzLzM05qcraAAAEFElEQVR4nO2cCZaiMBCGocImBEnA+591Ehm71UZNpRZ65vGd4H9FrUmFojg4ODg4ODg4ODg4OPhfqAN7a/iHAYAmAJG9tfwAzAh+vrgl4Nzsi3H8RSKDxfzSdn1V/qXqu2HxxS8xpLHz6UvaA6fZmr3VFSO4YVPdlWEpxl3lgXWv1a0se1nxHH3v0n3SFxzSFXv44jk6X/tZ3vVD+12MCJc0eRG3Q4Exp3R9ZTk1yp8ZUj/vlZCFOquo8Bz0vckt23SajgiQEL0/zKhoQ7z9rja0WpFiphx9Id0ofWSz5OmLsayhD+ZcfWV50XBDmxEgNzQCZcx0wJVWvLkxnqKvLGfxQMFUkA0GKyuPEiErwnFislL0PZVoqgGiB0ZmSRPSQnilFQwTsD1dYOXlTIhpol/jBAWiuuhXTGL6SFXuDrlUaFn0lWJOyOOCYZaXiuORxQWDE0p1DCOxDt/ogwVFuv+RIQtGYrWTGU+2T9nwhLZVRiCTvhjGEgKBKcuI5ZlDIJlfL5AzikUwXAJl5IVEzdPMXCuJjECGhj8ySNVi8/HOIY2TlAU5ZrqI3FxneaJErqOuWZywFdNXNCxOuAhOdZ5jLpY8WmgYeupBTh5PohEbmVaF9DiWlBe8kGzCk/BJP/Vwofcge51D9cKlEZqXbtSGlmlAaqD7EkgryLPUzH4HZN+EhQjRufDMztaDwnpFTTgIVrkxjtsRMOela5WrxCsm6zrnorgTYDKOMp3qkpSZkX5Yyd8iPin0qJrXz0Z7twe1OTMIXt68pDYuMZirxeyz6mh80hDV7mG+SKj7lxQbOlvvoRCMXxIjuTr58I1jkOgFCjR2QiSaqrXr+pva7pFFtzQnxeUyaFJWQ5/pncracuwVfObiQqcRzjVpsFtiQ3gWFQi0xZlBuiVENwnPVLJN15iUmd8j2HZBwbOzED6ziB9Cw3J+WZWt1OzEdMgf2geJUCGG7yMS8yfP+fSNKSg8szoir771K3MKxG3upzCx5kOuO6Z7+A7761A/uO4573FcNqyB6YbpGb4Okeka9hmuJxw8S3lbTCwC806K0qC7YXzbIuOAKww9diP2gSMTeczLOWjDsFC7Q7ZNj1cQ2wb+EvcMLZLBSxuQuMEAzD3MFi1BINeax3sIcx797UMKXb4BhVPMjfx6wjiFvCP3lY6OB0YyryhGFQ+M9FnlhG8j9DM+Z5FBvoh8k/WmkultRhJ9RtullWNWHL7tAqUcs9LhBSqGSAT9jUeBUf0d6LVRnTL8DbYgNwqN4APVjMs0PLuWGBZkKlToVB9BbrZyvJFE4jH66M+I8aC2avL/VJAP6jEb17MCDBUmE4K+PtQrkz1cEDXdSRxJfwaxfpv7txEaLaKjUW21bqQPd4Dby+Jiu63+AxfOOWntbr/vAAAAAElFTkSuQmCC";
@@ -26,6 +28,12 @@ const UserProfile = ({ FacultyUpload, FacultyLogOut }) => {
     const [activeView, setActiveView] = useState('profile');
     const [isUploading, setIsUploading] = useState(false);
     const [isSaving, setIsSaving] = useState(false);
+    const [studentsData, setStudentsData] = useState({});
+    const [classrooms, setClassrooms] = useState([]);
+    const [newClassroom, setNewClassroom] = useState({
+        semester: '',
+        section: '',
+    });
 
     useEffect(() => {
         const user = auth.currentUser;
@@ -277,7 +285,7 @@ const UserProfile = ({ FacultyUpload, FacultyLogOut }) => {
                         <div key={item.id} className="faculty-data-card">
                             <div className="card-header">
                                 <h3 className="card-title">
-                                    {item.type === 'achievement' ? 'Achievement' : 'Event'}
+                                    {item.type === 'achievement' ? item.achievement : item.events}  {/* Changed this from this for Murthy Sir's Suggestion: {item.type === 'achievement' ? 'Achievement' : 'Event'}  */}
                                 </h3>
                                 <span className="card-date">
                                     {item.date}
@@ -352,9 +360,148 @@ const UserProfile = ({ FacultyUpload, FacultyLogOut }) => {
         </div>
     );
 
+    useEffect(() => {
+        const user = auth.currentUser;
+        if (user) {
+            // Add this new section for students data
+            const studentsRef = dbRef(Studentdb, 'StudentUserData');
+            console.log("Fetching students data...");
+            const unsubscribeStudents = onValue(studentsRef, (snapshot) => {
+                if (snapshot.exists()) {
+                    const data = snapshot.val();
+                    console.log("Received student data:", data);
+                    setStudentsData(data);
+                } else {
+                    console.log("No student data found in database");
+                    setStudentsData({});
+                }
+            }, (error) => {
+                console.error("Error fetching student data:", error);
+            });
+
+            return () => {
+                unsubscribeStudents();
+            };
+        }
+    }, []);
+
     if (isLoading) {
         return <div className="loading">Loading...</div>;
     }
+
+
+
+    const renderClassroomView = () => {
+        const getStudentsForClass = (semester, section) => {
+            const students = [];
+            // Convert semester to string for comparison
+            const semString = semester.toString();
+
+            Object.entries(studentsData).forEach(([uid, data]) => {
+                if (data.sem === semString && data.section === section) {
+                    students.push({
+                        uid,
+                        name: data.name || 'No Name',
+                        rollNo: data.usn || 'No USN',  // Changed from rollNo to usn
+                        branch: data.branch || 'No Branch'
+                    });
+                }
+            });
+            return students;
+        };
+
+        return (
+            <div className="dashboard">
+                <h2 className="dashboard-title">Classroom Management <span style={{ color: 'red' }}>[Feature Under Development]</span></h2>
+
+                <div className="form-group" style={{ marginBottom: '2rem' }}>
+                    <h3>Create New Classroom</h3>
+                    <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+                        <select
+                            value={newClassroom.semester}
+                            onChange={(e) => setNewClassroom({ ...newClassroom, semester: e.target.value })}
+                            className="select"
+                        >
+                            <option value="">Select Semester</option>
+                            {Array.from({ length: 8 }, (_, i) => i + 1).map(sem => (
+                                <option key={sem} value={sem}>{sem}</option>
+                            ))}
+                        </select>
+
+                        <select
+                            value={newClassroom.section}
+                            onChange={(e) => setNewClassroom({ ...newClassroom, section: e.target.value })}
+                            className="select"
+                        >
+                            <option value="">Select Section</option>
+                            {['A', 'B', 'C'].map(sec => (
+                                <option key={sec} value={sec}>{sec}</option>
+                            ))}
+                        </select>
+
+                        <button
+                            onClick={() => {
+                                const classroomData = {
+                                    id: Date.now().toString(),
+                                    semester: newClassroom.semester,
+                                    section: newClassroom.section,
+                                    name: `Semester ${newClassroom.semester} - Section ${newClassroom.section}`,
+                                    createdAt: new Date().toISOString()
+                                };
+                                setClassrooms([...classrooms, classroomData]);
+                                setNewClassroom({ semester: '', section: '' });
+                            }}
+                            className="createClassroombutton"
+                            disabled={!newClassroom.semester || !newClassroom.section}
+                        >
+                            Create Classroom
+                        </button>
+                    </div>
+                </div>
+
+                <div className="faculty-data-grid">
+                    {classrooms.length > 0 ? (
+                        classrooms.map(classroom => {
+                            const students = getStudentsForClass(classroom.semester, classroom.section);
+
+                            return (
+                                <div key={classroom.id} className="faculty-data-card" style={{ maxHeight: '100%', overflowY: 'scroll' }}>
+                                    <div className="card-header" style={{ position: 'relative' }}>
+                                        <h3 className="card-title">{classroom.name}</h3>
+                                        <span className="card-date">
+                                            Total Students: {students.length}
+                                        </span>
+                                    </div>
+                                    <div className="card-content">
+                                        <div className="student-list">
+                                            <h4>Students in this class:</h4>
+                                            {students.length > 0 ? (
+                                                <ul className="student-items">
+                                                    {students.map(student => (
+                                                        <li key={student.uid} className="student-item">
+                                                            <div>{student.name}</div>
+                                                            <div className="student-details">
+                                                                <span>USN: {student.rollNo}<br></br><br></br></span>
+                                                            </div>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            ) : (
+                                                <p>No students found in this class.</p>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })
+                    ) : (
+                        <p className="no-data-message">No classrooms created yet.</p>
+                    )}
+                </div>
+            </div>
+        );
+    };
+
 
     return (
         <>
@@ -403,6 +550,12 @@ const UserProfile = ({ FacultyUpload, FacultyLogOut }) => {
                             Faculty Upload
                         </div>
                         <div
+                            className={'nav-item'}
+                            onClick={() => setActiveView('classroom')}
+                        >
+                            Classroom
+                        </div>
+                        <div
                             className={'nav-itemLogOut'}
                             onClick={FacultyLogOut}
                         >
@@ -412,9 +565,11 @@ const UserProfile = ({ FacultyUpload, FacultyLogOut }) => {
                 </div>
                 <div className="main-content">
                     <header className="header">
-                        {activeView === 'profile' ? 'Faculty Info' : 'Faculty Dashboard'}
+                        {activeView === 'profile' && 'Faculty Info'}
                     </header>
-                    {activeView === 'profile' ? renderProfileView() : renderDashboardView()}
+                    {activeView === 'dashboard' && renderDashboardView()}
+                    {activeView === 'profile' && renderProfileView()}
+                    {activeView === 'classroom' && renderClassroomView()}
                 </div>
             </div>
         </>

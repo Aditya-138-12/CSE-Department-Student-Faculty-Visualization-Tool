@@ -1,0 +1,225 @@
+{
+    "topic": "Java Programming",
+    "questions": [
+        {
+            "id": 1,
+            "questionContent": "What are the different lexical issues in Java?",
+            "options": [
+                "Syntax errors, logical errors, and runtime errors",
+                "Identifiers, keywords, literals, operators, and separators",
+                "Memory leaks, garbage collection, and stack overflow",
+                "None of the above"
+            ],
+            "correctAnswer": "Identifiers, keywords, literals, operators, and separators"
+        },
+        {
+            "id": 2,
+            "questionContent": "What is an array in Java?",
+            "options": [
+                "A collection of similar data types",
+                "A method to store multiple values in a single variable",
+                "A data structure that stores elements in a sequential manner",
+                "All of the above"
+            ],
+            "correctAnswer": "All of the above"
+        },
+        {
+            "id": 3,
+            "questionContent": "What does the '<<' operator do in Java?",
+            "options": [
+                "Left shift operator",
+                "Right shift operator",
+                "Unsigned right shift operator",
+                "Bitwise AND operator"
+            ],
+            "correctAnswer": "Left shift operator"
+        },
+        {
+            "id": 4,
+            "questionContent": "What are the object-oriented principles in Java?",
+            "options": [
+                "Encapsulation, Abstraction, Inheritance, Polymorphism",
+                "Variables, Methods, Classes, Objects",
+                "Loops, Conditionals, Arrays, Strings",
+                "None of the above"
+            ],
+            "correctAnswer": "Encapsulation, Abstraction, Inheritance, Polymorphism"
+        },
+        {
+            "id": 5,
+            "questionContent": "What is a constructor in Java?",
+            "options": [
+                "A method used to initialize objects",
+                "A special method with the same name as the class",
+                "Both A and B",
+                "None of the above"
+            ],
+            "correctAnswer": "Both A and B"
+        },
+        {
+            "id": 6,
+            "questionContent": "What is recursion in Java?",
+            "options": [
+                "A process where a method calls itself",
+                "A loop that runs infinitely",
+                "A method that calls another method",
+                "None of the above"
+            ],
+            "correctAnswer": "A process where a method calls itself"
+        },
+        {
+            "id": 7,
+            "questionContent": "What are the access specifiers in Java?",
+            "options": [
+                "public, private, protected, default",
+                "static, final, abstract, synchronized",
+                "int, float, double, char",
+                "None of the above"
+            ],
+            "correctAnswer": "public, private, protected, default"
+        },
+        {
+            "id": 8,
+            "questionContent": "What is call by value in Java?",
+            "options": [
+                "Passing a copy of the variable to a method",
+                "Passing the reference of the variable to a method",
+                "Both A and B",
+                "None of the above"
+            ],
+            "correctAnswer": "Passing a copy of the variable to a method"
+        },
+        {
+            "id": 9,
+            "questionContent": "What is multilevel inheritance in Java?",
+            "options": [
+                "A class inherits from a derived class",
+                "A class inherits from multiple classes",
+                "A class inherits from a single base class",
+                "None of the above"
+            ],
+            "correctAnswer": "A class inherits from a derived class"
+        },
+        {
+            "id": 10,
+            "questionContent": "What is an interface in Java?",
+            "options": [
+                "A blueprint of a class",
+                "A way to achieve multiple inheritance",
+                "Both A and B",
+                "None of the above"
+            ],
+            "correctAnswer": "Both A and B"
+        },
+        {
+            "id": 11,
+            "questionContent": "What is method overriding in Java?",
+            "options": [
+                "Providing a specific implementation of a method in a subclass",
+                "Creating a new method with the same name in the same class",
+                "Both A and B",
+                "None of the above"
+            ],
+            "correctAnswer": "Providing a specific implementation of a method in a subclass"
+        },
+        {
+            "id": 12,
+            "questionContent": "What is a package in Java?",
+            "options": [
+                "A group of related classes and interfaces",
+                "A way to organize code",
+                "Both A and B",
+                "None of the above"
+            ],
+            "correctAnswer": "Both A and B"
+        },
+        {
+            "id": 13,
+            "questionContent": "What is an exception in Java?",
+            "options": [
+                "An event that disrupts the normal flow of the program",
+                "A syntax error in the code",
+                "A logical error in the code",
+                "None of the above"
+            ],
+            "correctAnswer": "An event that disrupts the normal flow of the program"
+        },
+        {
+            "id": 14,
+            "questionContent": "What is a thread in Java?",
+            "options": [
+                "A lightweight sub-process",
+                "A way to execute multiple tasks simultaneously",
+                "Both A and B",
+                "None of the above"
+            ],
+            "correctAnswer": "Both A and B"
+        },
+        {
+            "id": 15,
+            "questionContent": "What is synchronization in Java?",
+            "options": [
+                "A way to control access to shared resources",
+                "A method to create multiple threads",
+                "Both A and B",
+                "None of the above"
+            ],
+            "correctAnswer": "A way to control access to shared resources"
+        },
+        {
+            "id": 16,
+            "questionContent": "What is multithreading in Java?",
+            "options": [
+                "Executing multiple threads simultaneously",
+                "Executing a single thread at a time",
+                "Both A and B",
+                "None of the above"
+            ],
+            "correctAnswer": "Executing multiple threads simultaneously"
+        },
+        {
+            "id": 17,
+            "questionContent": "What is auto-boxing in Java?",
+            "options": [
+                "Automatic conversion of primitive types to their wrapper classes",
+                "Automatic conversion of wrapper classes to primitive types",
+                "Both A and B",
+                "None of the above"
+            ],
+            "correctAnswer": "Automatic conversion of primitive types to their wrapper classes"
+        },
+        {
+            "id": 18,
+            "questionContent": "What is the 'super' keyword used for in Java?",
+            "options": [
+                "To refer to the immediate parent class object",
+                "To call the parent class constructor",
+                "Both A and B",
+                "None of the above"
+            ],
+            "correctAnswer": "Both A and B"
+        },
+        {
+            "id": 19,
+            "questionContent": "What is an abstract class in Java?",
+            "options": [
+                "A class that cannot be instantiated",
+                "A class that contains abstract methods",
+                "Both A and B",
+                "None of the above"
+            ],
+            "correctAnswer": "Both A and B"
+        },
+        {
+            "id": 20,
+            "questionContent": "What is the purpose of the 'this' keyword in Java?",
+            "options": [
+                "To refer to the current object",
+                "To call another constructor in the same class",
+                "Both A and B",
+                "None of the above"
+            ],
+            "correctAnswer": "Both A and B"
+        }
+    ]
+}

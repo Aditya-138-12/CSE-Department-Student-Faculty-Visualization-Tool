@@ -1,0 +1,225 @@
+{
+    "topic": "Quantitative Aptitude",
+    "questions": [
+        {
+            "id": 1,
+            "questionContent": "What is 25% of 200?",
+            "options": [
+                "25",
+                "50",
+                "75",
+                "100"
+            ],
+            "correctAnswer": "50"
+        },
+        {
+            "id": 2,
+            "questionContent": "If 3x + 5 = 20, what is the value of x?",
+            "options": [
+                "3",
+                "5",
+                "7",
+                "10"
+            ],
+            "correctAnswer": "5"
+        },
+        {
+            "id": 3,
+            "questionContent": "What is the square root of 169?",
+            "options": [
+                "11",
+                "12",
+                "13",
+                "14"
+            ],
+            "correctAnswer": "13"
+        },
+        {
+            "id": 4,
+            "questionContent": "If a train travels 300 km in 5 hours, what is its speed?",
+            "options": [
+                "50 km/h",
+                "60 km/h",
+                "70 km/h",
+                "80 km/h"
+            ],
+            "correctAnswer": "60 km/h"
+        },
+        {
+            "id": 5,
+            "questionContent": "What is the sum of the first 10 natural numbers?",
+            "options": [
+                "45",
+                "50",
+                "55",
+                "60"
+            ],
+            "correctAnswer": "55"
+        },
+        {
+            "id": 6,
+            "questionContent": "If 2^x = 16, what is the value of x?",
+            "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "correctAnswer": "4"
+        },
+        {
+            "id": 7,
+            "questionContent": "What is the area of a circle with a radius of 7 cm? (Use π = 22/7)",
+            "options": [
+                "154 cm²",
+                "160 cm²",
+                "165 cm²",
+                "170 cm²"
+            ],
+            "correctAnswer": "154 cm²"
+        },
+        {
+            "id": 8,
+            "questionContent": "What is the next number in the sequence: 1, 4, 9, 16, ___?",
+            "options": [
+                "20",
+                "24",
+                "25",
+                "30"
+            ],
+            "correctAnswer": "25"
+        },
+        {
+            "id": 9,
+            "questionContent": "If 20% of a number is 50, what is the number?",
+            "options": [
+                "200",
+                "250",
+                "300",
+                "350"
+            ],
+            "correctAnswer": "250"
+        },
+        {
+            "id": 10,
+            "questionContent": "What is the value of 5! (5 factorial)?",
+            "options": [
+                "100",
+                "120",
+                "140",
+                "160"
+            ],
+            "correctAnswer": "120"
+        },
+        {
+            "id": 11,
+            "questionContent": "What is the average of the numbers 10, 20, 30, 40, and 50?",
+            "options": [
+                "25",
+                "30",
+                "35",
+                "40"
+            ],
+            "correctAnswer": "30"
+        },
+        {
+            "id": 12,
+            "questionContent": "If a rectangle has a length of 10 cm and a width of 5 cm, what is its area?",
+            "options": [
+                "30 cm²",
+                "40 cm²",
+                "50 cm²",
+                "60 cm²"
+            ],
+            "correctAnswer": "50 cm²"
+        },
+        {
+            "id": 13,
+            "questionContent": "What is the value of 3^4?",
+            "options": [
+                "27",
+                "64",
+                "81",
+                "100"
+            ],
+            "correctAnswer": "81"
+        },
+        {
+            "id": 14,
+            "questionContent": "If 5x - 3 = 22, what is the value of x?",
+            "options": [
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+            "correctAnswer": "5"
+        },
+        {
+            "id": 15,
+            "questionContent": "What is the perimeter of a square with a side length of 8 cm?",
+            "options": [
+                "24 cm",
+                "32 cm",
+                "40 cm",
+                "48 cm"
+            ],
+            "correctAnswer": "32 cm"
+        },
+        {
+            "id": 16,
+            "questionContent": "What is the value of 0.5 × 0.2?",
+            "options": [
+                "0.01",
+                "0.1",
+                "0.2",
+                "0.5"
+            ],
+            "correctAnswer": "0.1"
+        },
+        {
+            "id": 17,
+            "questionContent": "What is the smallest prime number?",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "5"
+            ],
+            "correctAnswer": "2"
+        },
+        {
+            "id": 18,
+            "questionContent": "What is the value of 12 ÷ (3 + 1)?",
+            "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "correctAnswer": "3"
+        },
+        {
+            "id": 19,
+            "questionContent": "What is the sum of the angles in a triangle?",
+            "options": [
+                "90°",
+                "120°",
+                "180°",
+                "360°"
+            ],
+            "correctAnswer": "180°"
+        },
+        {
+            "id": 20,
+            "questionContent": "What is the value of 7 × 8 - 6 × 5?",
+            "options": [
+                "10",
+                "20",
+                "30",
+                "40"
+            ],
+            "correctAnswer": "20"
+        }
+    ]
+}

@@ -130,7 +130,7 @@ const FacultyDetailsWindow = ({ faculty, open, onClose }) => {
                 ))}
             </DialogContent>
             <DialogActions>
-                <Button className='' onClick={onClose} color="primary">
+                <Button className='facultyDetailedWindowCloseButton' onClick={onClose} color="primary">
                     Close
                 </Button>
             </DialogActions>

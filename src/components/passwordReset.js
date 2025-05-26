@@ -51,7 +51,7 @@ const PasswordReset = ({ onClose }) => {
                     top:50%;
                     left:50%;
                     transform:translate(-50%, -50%);
-                    z-index:1000;
+                    z-index:999;
                 }
                 .reset-form {
                     background-color: white;

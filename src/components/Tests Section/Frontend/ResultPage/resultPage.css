@@ -1,0 +1,95 @@
+/*CSS For the Result Page*/
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.super-overview-div {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: ;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.main-overview-div {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 20%;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:480px) {
+
+    .main-overview-div {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin-left: 10%;
+        margin-right: 10%;
+        height: 70%;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+.overview-div-main-total-marks-scored {
+    position: relative;
+    height: 40%;
+    width: 30%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.overview-div-main-total-marks-scored-p-top {
+    color: #3c4852;
+    font-family: AvertaStd, -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: left;
+    margin: 5px;
+}
+
+.overview-div-main-total-marks-scored-p-marks-score {
+
+    font-family: AvertaStd, -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: bold;
+    font-size: 3rem;
+    margin: 0px;
+    text-align: left;
+}
+
+.overview-div-main-total-marks-scored-span-total-score {
+    color: #3c4852;
+    font-family: AvertaStd, -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: left;
+    width: auto;
+    margin-right: 10px;
+    margin-top: 0;
+}

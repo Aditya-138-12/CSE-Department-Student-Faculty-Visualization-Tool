@@ -1,0 +1,225 @@
+{
+    "topic": "Verbal Ability",
+    "questions": [
+        {
+            "id": 1,
+            "questionContent": "What is the synonym of 'Benevolent'?",
+            "options": [
+                "Kind",
+                "Cruel",
+                "Selfish",
+                "Greedy"
+            ],
+            "correctAnswer": "Kind"
+        },
+        {
+            "id": 2,
+            "questionContent": "What is the antonym of 'Cautious'?",
+            "options": [
+                "Careful",
+                "Reckless",
+                "Thoughtful",
+                "Prudent"
+            ],
+            "correctAnswer": "Reckless"
+        },
+        {
+            "id": 3,
+            "questionContent": "Which word is spelled correctly?",
+            "options": [
+                "Accommodate",
+                "Acommodate",
+                "Acomodate",
+                "Accomodate"
+            ],
+            "correctAnswer": "Accommodate"
+        },
+        {
+            "id": 4,
+            "questionContent": "What is the meaning of 'Ephemeral'?",
+            "options": [
+                "Lasting a short time",
+                "Lasting forever",
+                "Very large",
+                "Very small"
+            ],
+            "correctAnswer": "Lasting a short time"
+        },
+        {
+            "id": 5,
+            "questionContent": "Which sentence is grammatically correct?",
+            "options": [
+                "She don't like apples.",
+                "She doesn't likes apples.",
+                "She doesn't like apples.",
+                "She don't likes apples."
+            ],
+            "correctAnswer": "She doesn't like apples."
+        },
+        {
+            "id": 6,
+            "questionContent": "What is the plural of 'Child'?",
+            "options": [
+                "Childs",
+                "Children",
+                "Childes",
+                "Childen"
+            ],
+            "correctAnswer": "Children"
+        },
+        {
+            "id": 7,
+            "questionContent": "What is the synonym of 'Meticulous'?",
+            "options": [
+                "Careless",
+                "Careful",
+                "Hasty",
+                "Sloppy"
+            ],
+            "correctAnswer": "Careful"
+        },
+        {
+            "id": 8,
+            "questionContent": "What is the antonym of 'Generous'?",
+            "options": [
+                "Kind",
+                "Selfish",
+                "Charitable",
+                "Benevolent"
+            ],
+            "correctAnswer": "Selfish"
+        },
+        {
+            "id": 9,
+            "questionContent": "Which word is spelled correctly?",
+            "options": [
+                "Definitely",
+                "Definately",
+                "Definatly",
+                "Definitly"
+            ],
+            "correctAnswer": "Definitely"
+        },
+        {
+            "id": 10,
+            "questionContent": "What is the meaning of 'Ambiguous'?",
+            "options": [
+                "Clear",
+                "Unclear",
+                "Specific",
+                "Precise"
+            ],
+            "correctAnswer": "Unclear"
+        },
+        {
+            "id": 11,
+            "questionContent": "Which sentence is grammatically correct?",
+            "options": [
+                "He go to school every day.",
+                "He goes to school every day.",
+                "He going to school every day.",
+                "He gone to school every day."
+            ],
+            "correctAnswer": "He goes to school every day."
+        },
+        {
+            "id": 12,
+            "questionContent": "What is the plural of 'Mouse'?",
+            "options": [
+                "Mouses",
+                "Mice",
+                "Mices",
+                "Mousees"
+            ],
+            "correctAnswer": "Mice"
+        },
+        {
+            "id": 13,
+            "questionContent": "What is the synonym of 'Obsolete'?",
+            "options": [
+                "Modern",
+                "Outdated",
+                "Current",
+                "New"
+            ],
+            "correctAnswer": "Outdated"
+        },
+        {
+            "id": 14,
+            "questionContent": "What is the antonym of 'Optimistic'?",
+            "options": [
+                "Hopeful",
+                "Pessimistic",
+                "Cheerful",
+                "Positive"
+            ],
+            "correctAnswer": "Pessimistic"
+        },
+        {
+            "id": 15,
+            "questionContent": "Which word is spelled correctly?",
+            "options": [
+                "Necessary",
+                "Neccessary",
+                "Necesary",
+                "Necesarry"
+            ],
+            "correctAnswer": "Necessary"
+        },
+        {
+            "id": 16,
+            "questionContent": "What is the meaning of 'Pragmatic'?",
+            "options": [
+                "Idealistic",
+                "Practical",
+                "Theoretical",
+                "Impractical"
+            ],
+            "correctAnswer": "Practical"
+        },
+        {
+            "id": 17,
+            "questionContent": "Which sentence is grammatically correct?",
+            "options": [
+                "They is going to the park.",
+                "They are going to the park.",
+                "They am going to the park.",
+                "They be going to the park."
+            ],
+            "correctAnswer": "They are going to the park."
+        },
+        {
+            "id": 18,
+            "questionContent": "What is the plural of 'Goose'?",
+            "options": [
+                "Gooses",
+                "Geese",
+                "Goosies",
+                "Goos"
+            ],
+            "correctAnswer": "Geese"
+        },
+        {
+            "id": 19,
+            "questionContent": "What is the synonym of 'Voracious'?",
+            "options": [
+                "Hungry",
+                "Full",
+                "Satisfied",
+                "Content"
+            ],
+            "correctAnswer": "Hungry"
+        },
+        {
+            "id": 20,
+            "questionContent": "What is the antonym of 'Benevolent'?",
+            "options": [
+                "Kind",
+                "Cruel",
+                "Generous",
+                "Charitable"
+            ],
+            "correctAnswer": "Cruel"
+        }
+    ]
+}

@@ -77,8 +77,8 @@ const SignUpForm = ({ OnsignupFormbodyDivClick }) => {
     };
 
     return (
-        <div className='signupFormbodyDiv' onClick={OnsignupFormbodyDivClick}>
-            <div className="signup-container">
+        <div className='signupFormbodyDiv' id='signupFormbodyDiv' onClick={OnsignupFormbodyDivClick}>
+            <div className="signup-container" id='signup-container'>
                 <form onSubmit={handleSubmit} className="signup-form">
                     <h2>Sign Up</h2>
                     {error && <div className="error-message">{error}</div>}

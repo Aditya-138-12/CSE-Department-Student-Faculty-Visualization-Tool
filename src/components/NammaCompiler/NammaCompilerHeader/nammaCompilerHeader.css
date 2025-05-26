@@ -1,0 +1,78 @@
+.nammaCompilerHeader {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    user-select: none;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.nammaCompilerLogoDiv {
+    position: relative;
+    width: auto;
+    max-width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 90%;
+    background-color: none;
+    font-size: 20px;
+}
+
+.nammaCompilerProblemsToogle,
+.nammaCompilerSave,
+.nammaCompilerShareCode,
+.nammaCompilerThemeToggle {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.nammaCompilerThemeToggle {
+    border-radius: 50%;
+}
+
+.light-theme .nammaCompilerThemeToggle:hover,
+.light-theme .nammaCompilerProblemsToogle:hover,
+.light-theme .nammaCompilerSave:hover,
+.light-theme .nammaCompilerShareCode:hover,
+.light-theme .nammaCompilerLogoDiv:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .nammaCompilerThemeToggle:hover,
+.dark-theme .nammaCompilerProblemsToogle:hover,
+.dark-theme .nammaCompilerSave:hover,
+.dark-theme .nammaCompilerShareCode:hover,
+.dark-theme .nammaCompilerLogoDiv:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nammaCompilerOptionDiv {
+    position: relative;
+    width: auto;
+    max-width: fit-content;
+    height: 100%;
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}

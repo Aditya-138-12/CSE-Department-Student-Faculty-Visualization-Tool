@@ -1,6 +1,6 @@
 .signup-container {
     position: absolute;
-    z-index: 999;
+    z-index: 10001111;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,6 +13,7 @@
     max-width: 400px;
     overflow-y: scroll;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    animation: 0.2s StudentSigninAnm linear;
 }
 
 .signup-form {
@@ -60,6 +61,7 @@ input {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
 }
 
 .submit-btn:hover {
@@ -115,7 +117,7 @@ input[type="date"] {
     width: 100%;
     margin: 0;
     padding: 0;
-    z-index: 1000000;
+    z-index: 10000;
     animation: 1s SignupbodyDivBlur linear forwards;
 }
 
@@ -127,5 +129,20 @@ input[type="date"] {
 
     to {
         backdrop-filter: blur(8px);
+    }
+}
+
+@keyframes StudentSigninAnm {
+
+    from {
+        height: 0;
+        opacity: 0;
+        background-color: black;
+    }
+
+    to {
+        height: 80vh;
+        opacity: 1;
+        background-color: transparent;
     }
 }
