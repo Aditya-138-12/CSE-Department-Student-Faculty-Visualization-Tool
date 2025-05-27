@@ -17,7 +17,7 @@ const NammaCompilerMenuBar = ({ isDark, code, setOutput }) => {
         const options = {
             method: 'POST',
             headers: {
-                'x-rapidapi-key': 'adfc60504emsh83fea8a764175dcp1adfcajsnb8c359db230a',
+                'x-rapidapi-key': '3794186eb4msh0d9d894d4da9e3bp174356jsn87e45d5743f7',
                 'x-rapidapi-host': 'judge0-ce.p.rapidapi.com',
                 'Content-Type': 'application/json'
             },
