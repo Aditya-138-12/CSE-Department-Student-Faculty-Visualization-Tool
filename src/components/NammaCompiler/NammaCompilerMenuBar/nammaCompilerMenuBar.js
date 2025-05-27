@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Play, Info, ChevronDown } from 'lucide-react';
+import { TailSpin } from 'react-loader-spinner';
 import './nammaCompilerMenuBar.css';
 import { Buffer } from 'buffer';
 
 const NammaCompilerMenuBar = ({ isDark, code, setOutput }) => {
 
+    const [isLoading, setIsLoading] = useState(0);
+
     const handleCodeSubmit = async () => {
+        setIsLoading(1);
         const url = 'https://judge0-ce.p.rapidapi.com/submissions?base64_encoded=true&wait=true&fields=*';
 
         const sourceCode = code;
@@ -20,7 +24,7 @@ const NammaCompilerMenuBar = ({ isDark, code, setOutput }) => {
             body: JSON.stringify({
                 language_id: 105,
                 source_code: Buffer.from(sourceCode).toString('base64'),
-                stdin: Buffer.from('1\n3').toString('base64')
+                stdin: Buffer.from('').toString('base64')
             })
         };
 
@@ -35,15 +39,18 @@ const NammaCompilerMenuBar = ({ isDark, code, setOutput }) => {
             if (output.trim()) {
                 console.log('Output:', output);
                 setOutput(output);
+                setIsLoading(0);
             }
             if (errors.trim()) {
                 console.error('Errors:', errors);
                 setOutput(errors);
+                setIsLoading(0);
             }
 
             if (compileOutput.trim()) {
                 console.error('Compile errors:', compileOutput);
                 setOutput(compileOutput);
+                setIsLoading(0);
             }
         } catch (err) {
             console.error('Request failed:', err);
@@ -109,7 +116,7 @@ const NammaCompilerMenuBar = ({ isDark, code, setOutput }) => {
                     <p className={`nammaCompilerMenuBarLanguageVersion ${isDark ? 'dark-theme' : 'light-theme'}`}><Info size={15} /></p>
                 </div>
                 <div className='nammaCompilerMenuBarItem'>
-                    <p className='nammaCompilerMenuBarRunButton'><Play size={20} onClick={handleCodeSubmit} /> Run</p>
+                    <p className='nammaCompilerMenuBarRunButton' onClick={handleCodeSubmit}>{isLoading ? (<TailSpin height={20} width={20} color="white" />) : (<><Play size={20} /> Run</>)}</p>
                 </div>
             </div >
         </>

@@ -11,7 +11,13 @@ import NammaCompilerAd from './NammaCompilerEditor/nammaCompilerAd';
 const NammaCompilerMain = () => {
 
     const [isDark, setIsDark] = useState(false);
-    const [editorCode, setEditorCode] = useState("");
+    const [editorCode, setEditorCode] = useState(`#include <iostream>
+int main(){
+  std::cout << "Still under Construction, users may face performance issues";
+  std::cout << "Welcome to Namma Compiler! Made by SJCIT CSE CodeArena Club Students";
+  return 0;
+}`);
+
     const [output, setOutput] = useState("");
 
     return (
