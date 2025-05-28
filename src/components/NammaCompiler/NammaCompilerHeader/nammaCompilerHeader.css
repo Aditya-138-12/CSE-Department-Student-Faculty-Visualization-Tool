@@ -36,29 +36,53 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
+    transition: 0.2s ease;
 }
 
 .nammaCompilerThemeToggle {
     border-radius: 50%;
 }
 
-.light-theme .nammaCompilerThemeToggle:hover,
 .light-theme .nammaCompilerProblemsToogle:hover,
 .light-theme .nammaCompilerSave:hover,
 .light-theme .nammaCompilerShareCode:hover,
 .light-theme .nammaCompilerLogoDiv:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.1);
+    padding-right: 50px;
+    transition: 0.2s ease;
 }
 
-.dark-theme .nammaCompilerThemeToggle:hover,
+.light-theme .nammaCompilerThemeToggle:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.2s ease;
+}
+
 .dark-theme .nammaCompilerProblemsToogle:hover,
 .dark-theme .nammaCompilerSave:hover,
 .dark-theme .nammaCompilerShareCode:hover,
 .dark-theme .nammaCompilerLogoDiv:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.1);
+    padding-right:50px;
+    transition: 0.2s ease;
+    .nammaCompilerComingSoon{
+        display: block;
+    }
 }
+
+.dark-theme .nammaCompilerThemeToggle:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: 0.2s ease;
+}
+
+ .nammaCompilerComingSoon{
+    display: none;
+    margin-left:5px;
+    margin-right:0px;
+ }
 
 .nammaCompilerOptionDiv {
     position: relative;

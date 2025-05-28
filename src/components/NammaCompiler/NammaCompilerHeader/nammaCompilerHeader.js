@@ -18,9 +18,9 @@ const NammaCompilerHeader = ({ isDark, setIsDark }) => {
                     >
                         {isDark ? <Sun size={20} /> : <Moon size={20} />}
                     </p>
-                    <p className={`${isDark ? 'dark-theme' : 'light-theme'} nammaCompilerProblemsToogle`}>Problems</p>
-                    <p className={`${isDark ? 'dark-theme' : 'light-theme'} nammaCompilerShareCode`}>Share Code</p>
-                    <p className={`${isDark ? 'dark-theme' : 'light-theme'} nammaCompilerSave`}>Save</p>
+                    <p className={`${isDark ? 'dark-theme' : 'light-theme'} nammaCompilerProblemsToogle`}>Problems<span className='nammaCompilerComingSoon'>Coming Soon</span></p>
+                    <p className={`${isDark ? 'dark-theme' : 'light-theme'} nammaCompilerShareCode`}>Share Code<span className='nammaCompilerComingSoon'>Coming Soon</span></p>
+                    <p className={`${isDark ? 'dark-theme' : 'light-theme'} nammaCompilerSave`}>Save<span className='nammaCompilerComingSoon'>Coming Soon</span></p>
                 </div>
             </div >
         </>
