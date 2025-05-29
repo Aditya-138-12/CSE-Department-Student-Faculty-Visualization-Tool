@@ -4,7 +4,7 @@ import { TailSpin } from 'react-loader-spinner';
 import './nammaCompilerMenuBar.css';
 import { Buffer } from 'buffer';
 
-const NammaCompilerMenuBar = ({ isDark, code, setOutput }) => {
+const NammaCompilerMenuBar = ({ isDark, code, setOutput, stdin }) => {
 
     const [isLoading, setIsLoading] = useState(0);
 
@@ -24,7 +24,7 @@ const NammaCompilerMenuBar = ({ isDark, code, setOutput }) => {
             body: JSON.stringify({
                 language_id: 105,
                 source_code: Buffer.from(sourceCode).toString('base64'),
-                stdin: Buffer.from('').toString('base64')
+                stdin: Buffer.from(stdin).toString('base64')
             })
         };
 

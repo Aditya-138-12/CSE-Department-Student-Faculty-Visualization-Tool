@@ -17,6 +17,8 @@ int main(){
   std::cout << "Welcome to Namma Compiler! Made by SJCIT CSE CodeArena Club Students";
   return 0;
 }`);
+    
+    const [stdin, setStdin] = useState('');
 
     const [output, setOutput] = useState("");
 
@@ -26,10 +28,10 @@ int main(){
                 <NammaCompilerHeader isDark={isDark} setIsDark={setIsDark} />
             </div>
             <div className={`nammaCompiler2 ${isDark ? 'dark-theme' : 'light-theme'}`} >
-                <NammaCompilerEnterTitle isDark={isDark} />
+                <NammaCompilerEnterTitle isDark={isDark}/>
             </div >
             <div className={`nammaCompiler3 ${isDark ? 'dark-theme' : 'light-theme'}`} >
-                <NammaCompilerMenuBar isDark={isDark} code={editorCode} setOutput={setOutput} />
+                <NammaCompilerMenuBar isDark={isDark} code={editorCode} setOutput={setOutput} stdin={stdin} />
             </div>
             <div className={`nammaCompiler4 ${isDark ? 'dark-theme' : 'light-theme'}`} >
                 <div className={`nammaCompiler4EditorMainDiv ${isDark ? 'dark-theme' : 'light-theme'}`}>
@@ -37,7 +39,7 @@ int main(){
                 </div>
                 <div className={`nammaCompiler4EditorSideMain ${isDark ? 'dark-theme' : 'light-theme'}`}>
                     <div className={`nammaCompiler4EditorInput ${isDark ? 'dark-theme' : 'light-theme'}`}>
-                        <NammaCompilerInput isDark={isDark} />
+                        <NammaCompilerInput isDark={isDark} setStdin={setStdin} />
                     </div>
                     <div className={`nammaCompiler4EditorOutput ${isDark ? 'dark-theme' : 'light-theme'}`} style={{ height: '60%' }}>
                         <NammaCompilerOutput isDark={isDark} outputText={output} />
