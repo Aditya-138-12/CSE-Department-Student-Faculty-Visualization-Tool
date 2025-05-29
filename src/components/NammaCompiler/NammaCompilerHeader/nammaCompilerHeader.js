@@ -2,9 +2,15 @@ import React from 'react';
 import { Sun, Moon } from 'lucide-react'
 import './nammaCompilerHeader.css';
 
-const NammaCompilerHeader = ({ isDark, setIsDark }) => {
+const NammaCompilerHeader = ({ isDark, setIsDark, shareCode }) => {
 
     const toggleTheme = () => setIsDark(prev => !prev);
+
+    const handleShareCode = (e) => {
+        navigator.clipboard.writeText(shareCode);
+        e.target.innerHTML = "✅ Copied!!";
+        setTimeout(() => { e.target.innerHTML = "Share Code"; }, 1500);
+    }
 
     return (
         <>
@@ -19,7 +25,7 @@ const NammaCompilerHeader = ({ isDark, setIsDark }) => {
                         {isDark ? <Sun size={20} /> : <Moon size={20} />}
                     </p>
                     <p className={`${isDark ? 'dark-theme' : 'light-theme'} nammaCompilerProblemsToogle`}>Problems<span className='nammaCompilerComingSoon'>Coming Soon</span></p>
-                    <p className={`${isDark ? 'dark-theme' : 'light-theme'} nammaCompilerShareCode`}>Share Code<span className='nammaCompilerComingSoon'>Coming Soon</span></p>
+                    <p className={`${isDark ? 'dark-theme' : 'light-theme'} nammaCompilerShareCode`} onClick={handleShareCode}>Share Code</p>
                     <p className={`${isDark ? 'dark-theme' : 'light-theme'} nammaCompilerSave`}>Save<span className='nammaCompilerComingSoon'>Coming Soon</span></p>
                 </div>
             </div >

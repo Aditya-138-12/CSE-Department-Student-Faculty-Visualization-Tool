@@ -29,7 +29,7 @@ int main(){
     return (
         <>
             <div className={`nammaCompiler ${isDark ? 'dark-theme' : 'light-theme'}`}>
-                <NammaCompilerHeader isDark={isDark} setIsDark={setIsDark} />
+                <NammaCompilerHeader isDark={isDark} setIsDark={setIsDark} shareCode={editorCode} />
             </div>
             <div className={`nammaCompiler2 ${isDark ? 'dark-theme' : 'light-theme'}`} >
                 <NammaCompilerEnterTitle isDark={isDark} />
