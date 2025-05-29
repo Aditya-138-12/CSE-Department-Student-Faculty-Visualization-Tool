@@ -15,11 +15,14 @@ const NammaCompilerEditor = ({ isDark, setCode }) => {
                     height='100%'
                     defaultLanguage='cpp'
                     defaultValue={`#include <iostream>
+// using namespace std;
+
 int main(){
-    std::cout << "Still under Construction, users may face performance issues" ;
-    std::cout << "Welcome to Namma Compiler! Made by SJCIT CSE CodeArena Club Students" ;
+    std::cout << "Still under Construction, users may face performance issues" << std::endl;
+    std::cout << "Welcome to Namma Compiler! Made by SJCIT CSE CodeArena Club Students" << std::endl ;
     return 0;
-}`
+}
+`
                     }
                     theme={isDark ? 'vs-dark' : 'vs-light'}
                     options={{
