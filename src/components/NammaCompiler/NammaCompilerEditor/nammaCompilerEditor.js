@@ -1,7 +1,7 @@
 import React from 'react';
 import { Editor } from '@monaco-editor/react';
 
-const NammaCompilerEditor = ({ isDark, setCode }) => {
+const NammaCompilerEditor = ({ isDark, setCode, code, lang }) => {
 
     const handleEditorChange = (value, event) => {
         console.log(value);
@@ -13,17 +13,8 @@ const NammaCompilerEditor = ({ isDark, setCode }) => {
             <div className='nammaCompilerEditor' style={{ position: 'relative', height: '100%', width: '100%' }}>
                 <Editor
                     height='100%'
-                    defaultLanguage='cpp'
-                    defaultValue={`#include <iostream>
-// using namespace std;
-
-int main(){
-    std::cout << "Still under Construction, users may face performance issues" << std::endl;
-    std::cout << "Welcome to Namma Compiler! Made by SJCIT CSE CodeArena Club Students" << std::endl ;
-    return 0;
-}
-`
-                    }
+                    language={lang}
+                    value={code}
                     theme={isDark ? 'vs-dark' : 'vs-light'}
                     options={{
                         padding: {
