@@ -64,7 +64,7 @@
     position: relative;
     height: 40%;
     width: 40%;
-    background-image: url("https://www.mycompiler.io/static/img/lang/cpp_small.png");
+    /* background-image: url("https://www.mycompiler.io/static/img/lang/cpp_small.png"); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }

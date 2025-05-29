@@ -3,6 +3,7 @@ import { Play, Info, ChevronDown } from 'lucide-react';
 import { TailSpin } from 'react-loader-spinner';
 import './nammaCompilerMenuBar.css';
 import { Buffer } from 'buffer';
+import { set } from 'firebase/database';
 
 const NammaCompilerMenuBar = ({ isDark, code, setOutput, stdin }) => {
 
@@ -57,58 +58,73 @@ const NammaCompilerMenuBar = ({ isDark, code, setOutput, stdin }) => {
         }
     }
 
+    const [mainLanguageSlected, setMainLanguageSlected] = useState('C++');
+    const [mainLanguageSlectedImgSrc, setMainLanguageSlectedImgSrc] = useState('https://www.mycompiler.io/static/img/lang/cpp_small.png');
+
+    const handleLanguageSelect = (e) => {
+
+        console.log("This is the Language: ", e.target.dataset);
+        setMainLanguageSlected(e.target.dataset.lang);
+
+        console.log("This is the Language ID: ", e.target.dataset.id);
+        console.log("This is the Language Version: ", e.target.dataset.langversion);
+
+        console.log("This is the Language Icon: ", e.target.dataset.langiconsrc);
+        setMainLanguageSlectedImgSrc(e.target.dataset.langiconsrc);
+    }
+
     return (
         <>
             <div className='nammaCompilerMenuBar'>
                 <div className='nammaCompilerMenuBarItem'>
                     <p className={`nammaCompilerMenuBarLanguageSelect ${isDark ? 'dark-theme' : 'light-theme'}`}>
-                        <img className='nammaCompilerMenuBarLanguageIcon' src='https://www.mycompiler.io/static/img/lang/cpp_small.png'></img>
-                        <p className='nammaCompilerMenuBarLanguageName'>C++</p>
+                        <img className='nammaCompilerMenuBarLanguageIcon' src={mainLanguageSlectedImgSrc}></img>
+                        <p className='nammaCompilerMenuBarLanguageName'>{mainLanguageSlected}</p>
                         <ChevronDown size={25} />
-                        <div className={`nammaCompilerMenuBarLanguageSelectMainDiv ${isDark ? 'dark-theme' : 'light-theme'}`}>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='cpp' data-id='105' data-langVersion='C++ (GCC 14.1.0)'>
+                        <div className={`nammaCompilerMenuBarLanguageSelectMainDiv ${isDark ? 'dark-theme' : 'light-theme'}`} onClick={handleLanguageSelect}>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='C++' data-id='105' data-langversion='C++ (GCC 14.1.0)' data-langiconsrc='https://www.mycompiler.io/static/img/lang/cpp_small.png'>
                                 <img style={{ height: '80%' }} src='https://www.mycompiler.io/static/img/lang/cpp_small.png' />C++
                             </div>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='c' data-id='110' data-langVersion='C (Clang 19.1.7)'>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='C' data-id='110' data-langVersion='C (Clang 19.1.7)'>
                                 <img style={{ height: '80%' }} src='https://www.mycompiler.io/static/img/lang/c_small.png' />C
                             </div>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='csharp' data-id='51' data-langVersion='C# (Mono 6.6.0.161)'>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='C#' data-id='51' data-langVersion='C# (Mono 6.6.0.161)' data-langIconSrc='https://www.mycompiler.io/static/img/lang/csharp_small.png'>
                                 <img style={{ height: '80%' }} src='	https://www.mycompiler.io/static/img/lang/csharp_small.png' />C#
                             </div>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='java' data-id='91' data-langVersion='Java (JDK 17.0.6)'>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='Java' data-id='91' data-langVersion='Java (JDK 17.0.6)' data-langIconSrc='https://www.mycompiler.io/static/img/lang/java_small.png'>
                                 <img style={{ height: '80%' }} src='	https://www.mycompiler.io/static/img/lang/java_small.png' />Java
                             </div>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='python' data-id='109' data-langVersion='Python (3.13.2)'>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='Python' data-id='109' data-langVersion='Python (3.13.2)' data-langIconSrc='https://www.mycompiler.io/static/img/lang/python_small.png'>
                                 <img style={{ height: '80%' }} src='	https://www.mycompiler.io/static/img/lang/python_small.png' />Python
                             </div>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='ruby' data-id='72' data-langVersion='Ruby (2.7.0)'>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='Ruby' data-id='72' data-langVersion='Ruby (2.7.0)' data-langIconSrc='https://www.mycompiler.io/static/img/lang/ruby_small.png'>
                                 <img style={{ height: '80%' }} src='	https://www.mycompiler.io/static/img/lang/ruby_small.png' />Ruby
                             </div>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='go' data-id='107' data-langVersion='Go (1.23.5)'>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='Go' data-id='107' data-langVersion='Go (1.23.5)' data-langIconSrc='https://www.mycompiler.io/static/img/lang/go_small.png'>
                                 <img style={{ height: '80%' }} src='	https://www.mycompiler.io/static/img/lang/go_small.png' />Go
                             </div>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='typescript' data-id='101' data-langVersion='TypeScript (5.6.2)'>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='Typescript' data-id='101' data-langVersion='TypeScript (5.6.2)' data-langIconSrc='https://www.mycompiler.io/static/img/lang/typescript_small.png'>
                                 <img style={{ height: '80%' }} src='	https://www.mycompiler.io/static/img/lang/typescript_small.png' />Typescript
                             </div>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='php' data-id='98' data-langVersion='PHP (8.3.11)'>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='PHP' data-id='98' data-langVersion='PHP (8.3.11)' data-langIconSrc='https://www.mycompiler.io/static/img/lang/php_small.png'>
                                 <img style={{ height: '80%' }} src='	https://www.mycompiler.io/static/img/lang/php_small.png' />PHP
                             </div>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='bash' data-id='46' data-langVersion='Bash (5.0.0)'>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='Bash' data-id='46' data-langVersion='Bash (5.0.0)' data-langIconSrc='https://www.mycompiler.io/static/img/lang/bash_small.png'>
                                 <img style={{ height: '80%' }} src='	https://www.mycompiler.io/static/img/lang/bash_small.png' />Bash
                             </div>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='octave' data-id='66' data-langVersion='Octave (5.1.0)'>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='Octave' data-id='66' data-langVersion='Octave (5.1.0)' data-langIconSrc='https://www.mycompiler.io/static/img/lang/octave_small.png'>
                                 <img style={{ height: '80%' }} src='	https://www.mycompiler.io/static/img/lang/octave_small.png' />Octave
                             </div>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='lua' data-id='64' data-langVersion='Lua (5.3.5)'>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='Lua' data-id='64' data-langVersion='Lua (5.3.5)' data-langIconSrc='https://www.mycompiler.io/static/img/lang/lua_small.png'>
                                 <img style={{ height: '80%' }} src='	https://www.mycompiler.io/static/img/lang/lua_small.png' />Lua
                             </div>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='erlang' data-id='58' data-langVersion='Erlang (OTP 22.2)'>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='Erlang' data-id='58' data-langVersion='Erlang (OTP 22.2)' data-langIconSrc='https://www.mycompiler.io/static/img/lang/erlang_small.png'>
                                 <img style={{ height: '80%' }} src='	https://www.mycompiler.io/static/img/lang/erlang_small.png' />Erlang
                             </div>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='perl' data-id='85' data-langVersion='Perl (5.28.1)'>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='Perl' data-id='85' data-langVersion='Perl (5.28.1)' data-langIconSrc='https://www.mycompiler.io/static/img/lang/perl_small.png'>
                                 <img style={{ height: '80%' }} src='	https://www.mycompiler.io/static/img/lang/perl_small.png' />Perl
                             </div>
-                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='rust' data-id='108' data-langVersion='Rust (1.85.0)'>
+                            <div className='nammaCompilerMenuBarLanguageSelectMainDivItem' data-lang='Rust' data-id='108' data-langVersion='Rust (1.85.0)' data-langIconSrc='https://www.mycompiler.io/static/img/lang/rust_small.png'>
                                 <img style={{ height: '80%' }} src='	https://www.mycompiler.io/static/img/lang/rust_small.png' />Rust
                             </div>
                         </div>
