@@ -68,26 +68,11 @@ int main(){
             }
         }
 
-        const writeData = async () => {
-            try {
-                //await set(ref(Studentdb, `${testCode}/`), { code: editorCode });
-                console.log("Saving code to Firebase:", editorCode);
-                const codeArr = editorCode.split('');
-                console.log("Code Array:", codeArr);
-                console.log("Length:", editorCode.length);
-                console.log("Char codes:", [...editorCode].map(c => c.charCodeAt(0)));
-                await set(ref(Studentdb, `${testCode}/`), { code: codeArr });
-                console.log("Data Written Sucessfully.")
-            } catch (error) {
-                console.log("Write Failed: ", error);
-            }
-        }
-
         if (isViewRoute) {
             readData();
         } else {
             console.log("Not in view mode");
-            writeData();
+            //writeData();
         }
 
 
@@ -97,7 +82,7 @@ int main(){
     return (
         <>
             <div className={`nammaCompiler ${isDark ? 'dark-theme' : 'light-theme'} `}>
-                <NammaCompilerHeader isDark={isDark} setIsDark={setIsDark} shareCode={editorCode} />
+                <NammaCompilerHeader isDark={isDark} setIsDark={setIsDark} shareCode={editorCode} editorCode={editorCode} testCode={testCode} />
             </div>
             <div className={`nammaCompiler2 ${isDark ? 'dark-theme' : 'light-theme'} `} >
                 <NammaCompilerEnterTitle isDark={isDark} />
