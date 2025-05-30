@@ -26,6 +26,8 @@ int main(){
     const [output, setOutput] = useState("");
     const [compileTimeError, setcompileTimeError] = useState("");
 
+    const [langVersion, setLangVersion] = useState('C++ (GCC 14.1.0)');
+
     return (
         <>
             <div className={`nammaCompiler ${isDark ? 'dark-theme' : 'light-theme'}`}>
@@ -35,7 +37,7 @@ int main(){
                 <NammaCompilerEnterTitle isDark={isDark} />
             </div >
             <div className={`nammaCompiler3 ${isDark ? 'dark-theme' : 'light-theme'}`} >
-                <NammaCompilerMenuBar isDark={isDark} code={editorCode} setOutput={setOutput} stdin={stdin} setCode={setEditorCode} setLang={setLang} setCompilerError={setcompileTimeError} />
+                <NammaCompilerMenuBar langVersion={langVersion} setLangVersion={setLangVersion} isDark={isDark} code={editorCode} setOutput={setOutput} stdin={stdin} setCode={setEditorCode} setLang={setLang} setCompilerError={setcompileTimeError} lang={lang} />
             </div>
             <div className={`nammaCompiler4 ${isDark ? 'dark-theme' : 'light-theme'}`} >
                 <div className={`nammaCompiler4EditorMainDiv ${isDark ? 'dark-theme' : 'light-theme'}`}>

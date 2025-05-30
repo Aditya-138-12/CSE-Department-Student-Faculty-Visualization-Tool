@@ -5,7 +5,7 @@ import './nammaCompilerMenuBar.css';
 import { Buffer } from 'buffer';
 import { set } from 'firebase/database';
 
-const NammaCompilerMenuBar = ({ isDark, code, setOutput, stdin, setCode, setLang, setCompilerError }) => {
+const NammaCompilerMenuBar = ({ isDark, code, setOutput, stdin, setCode, setLang, setCompilerError, langVersion, setLangVersion }) => {
 
     const [isLoading, setIsLoading] = useState(0);
     const [langId, setLangId] = useState(105);
@@ -138,6 +138,7 @@ import "fmt"
         setLangId(e.target.dataset.id);
 
         console.log("This is the Language Version: ", e.target.dataset.langversion);
+        setLangVersion(e.target.dataset.langversion);
 
         console.log("This is the Language Icon: ", e.target.dataset.langiconsrc);
         setMainLanguageSlectedImgSrc(e.target.dataset.langiconsrc);
@@ -199,7 +200,7 @@ import "fmt"
                             </div>
                         </div>
                     </p>
-                    <p className={`nammaCompilerMenuBarLanguageVersion ${isDark ? 'dark-theme' : 'light-theme'}`}><Info size={15} /></p>
+                    <p className={`nammaCompilerMenuBarLanguageVersion ${isDark ? 'dark-theme' : 'light-theme'}`}><Info size={15} /><span className={`nammaCompilerLangVersion ${isDark ? 'dark-theme' : 'light-theme'}`}>{langVersion}</span></p>
                 </div >
                 <div className='nammaCompilerMenuBarItem'>
                     <p className='nammaCompilerMenuBarRunButton' onClick={handleCodeSubmit}>{isLoading ? (<TailSpin height={20} width={20} color="white" />) : (<><Play size={20} /> Run</>)}</p>

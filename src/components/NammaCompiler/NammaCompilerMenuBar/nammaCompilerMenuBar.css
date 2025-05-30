@@ -88,6 +88,8 @@
     padding-right: 10px;
     padding-left: 10px;
     background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.2s ease;
+    transition: 0.2s ease;
 }
 
 .dark-theme.nammaCompilerMenuBarLanguageVersion {
@@ -103,10 +105,20 @@
     padding-right: 10px;
     padding-left: 10px;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: 0.2s ease;
+    transition: 0.2s ease;
 }
 
 .nammaCompilerMenuBarLanguageVersion:hover {
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease;
+
+    transition: 0.2s ease;
+
+    .nammaCompilerLangVersion {
+        display: flex;
+    }
 }
 
 .nammaCompilerMenuBarRunButton {
@@ -162,7 +174,7 @@
     z-index: 1000;
     overflow-y: scroll;
     background-color: #1e1e1e;
-    columns: white;
+    color: white;
     z-index: 10000;
 }
 
@@ -184,4 +196,29 @@
 .nammaCompilerMenuBarLanguageSelectMainDivItem:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .nammaCompilerLangVersion {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 9px;
+    position: absolute;
+    width: max-content;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+    left: 120%;
+}
+
+.dark-theme .nammaCompilerLangVersion {
+    position: absolute;
+    width: max-content;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    left: 120%;
 }
