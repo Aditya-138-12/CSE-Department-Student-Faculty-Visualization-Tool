@@ -36,7 +36,7 @@ function App() {
       <Route path="/home" element={<NavBar />} />
       <Route path='/privacy-policy' element={<PrivacyPolicy />}></Route >
       <Route path="/placements" element={<Placements />}></Route>
-      <Route path='*' element={<PageNotFound />}></Route>
+      <Route path='*' element={<PageNotFound pathToNavigate={'/home'} />}></Route>
     </Routes >
   );
 }

@@ -1,7 +1,7 @@
 import { React, useRef } from 'react';
 import { Editor } from '@monaco-editor/react';
 
-const NammaCompilerEditor = ({ isDark, setCode, code, lang, viewMode }) => {
+const NammaCompilerEditor = ({ isDark, setCode, code, lang, viewMode, langFromDb }) => {
 
     const handleEditorChange = (value, event) => {
         console.log(value);
@@ -15,7 +15,7 @@ const NammaCompilerEditor = ({ isDark, setCode, code, lang, viewMode }) => {
             <div className='nammaCompilerEditor' style={{ position: 'relative', height: '100%', width: '100%' }}>
                 <Editor
                     height='100%'
-                    language={lang}
+                    language={langFromDb ? langFromDb : lang}
                     value={code}
                     theme={isDark ? 'vs-dark' : 'vs-light'}
                     options={{

@@ -2,11 +2,11 @@ import React from "react";
 import './404Page.css';
 import { useNavigate } from "react-router-dom";
 
-function PageNotFound() {
+const PageNotFound = ({ pathToNavigate }) => {
     const navigate = useNavigate();
 
     const redirect = () => {
-        navigate("/home");
+        navigate(pathToNavigate);
     }
 
     return (
