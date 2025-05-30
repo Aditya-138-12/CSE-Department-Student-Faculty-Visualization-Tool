@@ -30,6 +30,7 @@ function App() {
       } />
       <Route path="/tests" element={<Tests />} />
       <Route path="/nammaCompiler" element={<NammaCompilerMain />} />
+      <Route path="/nammaCompiler/view/:code" element={<NammaCompilerMain />} />
       <Route path="/tests/:testID" element={<TestPage />} />
       <Route path='/tests/result' element={<ResultPage />} />
       <Route path="/home" element={<NavBar />} />

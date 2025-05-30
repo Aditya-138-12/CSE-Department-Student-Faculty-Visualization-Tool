@@ -1,7 +1,7 @@
 import { React, useRef } from 'react';
 import { Editor } from '@monaco-editor/react';
 
-const NammaCompilerEditor = ({ isDark, setCode, code, lang }) => {
+const NammaCompilerEditor = ({ isDark, setCode, code, lang, viewMode }) => {
 
     const handleEditorChange = (value, event) => {
         console.log(value);
@@ -24,7 +24,8 @@ const NammaCompilerEditor = ({ isDark, setCode, code, lang }) => {
                             bottom: 10
                         },
                         fontSize: 14,
-                        minimap: { enabled: false } // optional, for cleaner layout
+                        minimap: { enabled: false }, // optional, for cleaner layout
+                        readOnly: viewMode
                     }}
                     onChange={handleEditorChange}
                     onMount={(editor) => (editorRef.current = editor)}  // For now it is not usefull.
