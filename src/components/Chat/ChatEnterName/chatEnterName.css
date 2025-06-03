@@ -1,0 +1,65 @@
+.chat-enter-name {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('https://www.transparenttextures.com/patterns/pixel-weave.png');
+    background-repeat: repeat;
+    background-size: 16px 16px;
+    /* gives it a pixelated grid effect */
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', monospace;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+.chat-enter-name-inner-div {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 35px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 300px;
+    z-index: 10000;
+}
+
+.chat-enter-name-inner-div-input {
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-size: 1rem;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.input-error {
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    border: 0.1px solid rgba(255, 0, 0, 1);
+    transition: 0.2s ease;
+}
+
+.input-error::placeholder {
+    color: red;
+}
+
+.chat-enter-name-inner-div div {
+    text-align: center;
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.chat-enter-name-inner-div div:hover {
+    background-color: #222;
+}

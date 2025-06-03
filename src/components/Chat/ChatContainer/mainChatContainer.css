@@ -9,20 +9,136 @@
 
 .main-chat-messages {
     position: relative;
-    width: calc(100% - 20px);
+    width: calc(85% - 20px);
     height: calc(100% - 40px);
     padding: 20px;
     display: flex;
+    align-items: center;
     flex-direction: column;
+    gap: 15px;
+    /* For now let us keep the gap to be 15px*/
 }
 
 .main-chat-sidebar {
     position: relative;
-    width: calc(20% - 80px);
+    min-width: 200px;
+    width: calc(15% - 80px);
     height: calc(100% - 40px);
     background-color: rgba(0, 0, 0, 0.018);
     border-left: 0.1px solid rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     padding: 20px;
+}
+
+.main-chat-container-messages {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    gap: 35px;
+    /* For now let us keep the gap to be 15px*/
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.main-chat-container-messages::-webkit-scrollbar {
+    display: none;
+}
+
+.main-chat-container-options {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    background-color: none;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.main-chat-main-message-div {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    /* border: 0.1px solid rgba(0, 0, 0, 0.1); */
+    padding: 0px;
+}
+
+.main-chat-main-msg-container {
+    position: relative;
+    width: max-content;
+    max-width: 45%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    user-select: none;
+    overflow: hidden;
+}
+
+.main-chat-main-msg-container-header {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 0.1px solid rgba(0, 0, 0, 0.1); */
+    gap: 50px;
+}
+
+.main-chat-main-msg-container-userDetails {
+    position: relative;
+    width: max-content;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+
+}
+
+.main-chat-main-msg-container-userDetails-avatar {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.main-chat-main-msg-container-userDetails-name {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.main-chat-main-msg-container-message-box {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    /* border: 0.1px solid rgba(0, 0, 0, 0.1); */
 }
