@@ -1,0 +1,80 @@
+.chat-header {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 0.1px solid rgba(0, 0, 0, 0.1);
+}
+
+.chat-header-logo {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-image: url('./chatlogo.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.chat-header-option {
+    position: relative;
+    width: max-content;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    vertical-align: center;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.chat-header-option-avatar {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    background-color: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    user-select: none;
+    font-size: 0.8rem;
+    transition: 0.2s ease;
+}
+
+.chat-header-option-avatar:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.2s ease;
+}
+
+.chat-header-option-logout {
+    position: relative;
+    width: max-content;
+    height: max-content;
+    background-color: rgba(255, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.1px solid rgba(255, 0, 0, 0.1);
+    color: black;
+    padding: 5px;
+    user-select: none;
+    font-size: 0.8rem;
+    color: red;
+    transition: 0.2s ease;
+}
+
+.chat-header-option-logout:hover {
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.2);
+    transition: 0.2s ease;
+}

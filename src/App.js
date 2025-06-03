@@ -11,6 +11,7 @@ import Tests from './components/Tests Section/Frontend/testsFrontEnd';
 import TestPage from './components/Tests Section/Frontend/TestPage/testPage';
 import ResultPage from './components/Tests Section/Frontend/ResultPage/ResultPage';
 import NammaCompilerMain from './components/NammaCompiler/main';
+import MainChat from './components/Chat/main';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
       <Route path='/privacy-policy' element={<PrivacyPolicy />}></Route >
       <Route path="/placements" element={<Placements />}></Route>
       <Route path='*' element={<PageNotFound pathToNavigate={'/home'} />}></Route>
+      <Route path="/home/chat" element={<MainChat />} />
     </Routes >
   );
 }
