@@ -12,7 +12,20 @@ const MainChat = () => {
     const [name, setName] = useState('');
     const [showNameInput, setShowNameInput] = useState(true);
 
+    const [uuid, setuuid] = useState('');
+
     useEffect(() => {
+
+        const KEY = '6e6d6a6b-6c6d-4c6b-6f6c-6e6d6a6b6c6d';
+
+        let uid = localStorage.getItem(KEY);
+        if (!uid) {
+            uid = crypto.randomUUID();
+            localStorage.setItem(KEY, uid);
+        }
+
+        console.log("UID Set to uniquely define: ", uid);
+
         const socket = io('http://localhost:5000');     // For now this is the testing endpoint, will be updated once pushed to prod
         setSocket(socket);
 

@@ -23,6 +23,7 @@
     flex-direction: column;
     gap: 10px;
     min-width: 300px;
+    max-width: 350px;
     z-index: 10000;
 }
 

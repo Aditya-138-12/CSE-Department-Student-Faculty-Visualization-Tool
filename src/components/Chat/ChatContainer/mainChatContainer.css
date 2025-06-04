@@ -38,7 +38,7 @@
     overflow-y: scroll;
     border: 0.1px solid rgba(0, 0, 0, 0.1);
     padding: 10px;
-    gap: 35px;
+    gap: 15px;
     /* For now let us keep the gap to be 15px*/
     display: flex;
     flex-direction: column;
@@ -78,6 +78,7 @@
 
 .main-chat-main-msg-container {
     position: relative;
+    min-width: 15%;
     width: max-content;
     max-width: 45%;
     height: max-content;
