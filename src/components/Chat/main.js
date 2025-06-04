@@ -13,13 +13,22 @@ const MainChat = () => {
     const [showNameInput, setShowNameInput] = useState(true);
 
     const [uuid, setuuid] = useState('');
+    const [showEnterName, setShowEnterName] = useState(false);
 
     useEffect(() => {
 
         const KEY = '6e6d6a6b-6c6d-4c6b-6f6c-6e6d6a6b6c6d';
+        const LocalName = 'LocalName';
 
         let uid = localStorage.getItem(KEY);
-        if (!uid) {
+        let localName = localStorage.getItem(LocalName);
+        if (uid && localName) {
+            setName(localName);
+            setuuid(uid);
+        }
+
+        if (!uid && !localName) {
+            setShowEnterName(true);
             uid = crypto.randomUUID();
             localStorage.setItem(KEY, uid);
         }
@@ -43,13 +52,14 @@ const MainChat = () => {
             socket.userName = name;
             socket.emit('user-name', name);
             setShowNameInput(false);
+            localStorage.setItem("LocalName", name);
         }
     }, [name, socket]);
 
     return (
 
         <>
-            {showNameInput && <ChatEnterName setName={setName} />}
+            {showNameInput && <ChatEnterName showEnterName={showEnterName} setName={setName} />}
             <ChatHeader />
             <MainChatContainer socket={socket} />
         </>
