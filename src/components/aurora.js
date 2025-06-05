@@ -39,6 +39,10 @@ export function BackgroundBeamsDemo() {
         navigate('/nammaCompiler');
     }
 
+    const handleChat = () => {
+        navigate('home/chat');
+    }
+
     const [lang, setLang] = useState('en');
 
     const handleLangChange = () => {
@@ -172,6 +176,26 @@ export function BackgroundBeamsDemo() {
                 >
                     {lang == 'en' ? "Namma Compiler" : "ನಮ್ಮ ಕಂಪೈಲರ್"}
                 </Button>
+                <br></br>
+                <Button
+                    className="btn_uar"
+                    onClick={handleChat}
+                    sx={{
+                        backgroundColor: 'white',
+                        color: 'black',
+                        border: '1px solid black',
+                        '&:hover': {
+                            backgroundColor: 'black',
+                            color: "white",
+                            border: "1px solid black"
+                        },
+                    }}
+                    style={{ marginLeft: "0px", marginTop: "15px" }}
+                >
+                    {lang == 'en' ? "Chat with SJCIT-Connect" : "SJCIT-Connect ಜೊತೆ ಚಾಟ್ ಮಾಡಿ"}
+                </Button>
+
+
             </div>
             <BackgroundBeams />
         </>
