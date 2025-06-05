@@ -19,6 +19,16 @@ const MainChatContainer = ({ socket }) => {
                 time: "undefined",
                 isUser: false
             }]);
+            const audio = new Audio("./notif.mp3");
+            audio.load();
+            audio.play().catch(err => {
+                console.warn('Audio play prevented due to an error', err);
+            });
+            if (Notification.permission === 'granted') {
+                new Notification(`New Message arrived from ${data.userName}`, {
+                    body: data.message
+                });
+            }
         };
 
         const handleOnlineUsers = (data) => {

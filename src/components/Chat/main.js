@@ -17,6 +17,10 @@ const MainChat = () => {
 
     useEffect(() => {
 
+        if ('Notification' in window && Notification.permission !== 'granted') {
+            Notification.requestPermission();
+        }
+
         const socket = io('https://cse-department-student-faculty.onrender.com', {
             withCredentials: true,
             transports: ['websocket']
