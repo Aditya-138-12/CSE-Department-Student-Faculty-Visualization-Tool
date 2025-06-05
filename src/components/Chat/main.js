@@ -17,7 +17,10 @@ const MainChat = () => {
 
     useEffect(() => {
 
-        const socket = io('http://localhost:3001');     // For now this is the testing endpoint, will be updated once pushed to prod
+        const socket = io('https://cse-department-student-faculty.onrender.com', {
+            withCredentials: true,
+            transports: ['websocket']
+        });     // For now this is the testing endpoint, will be updated once pushed to prod `http://localhost:3001`
         setSocket(socket);
 
         socket.on('server-broadcast', (msg) => {

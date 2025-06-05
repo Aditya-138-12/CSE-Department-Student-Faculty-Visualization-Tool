@@ -9,7 +9,17 @@ const registerSocketHandlers = require('./config/socket')
 const app = express();
 
 // Middlewares
-//app.use(cors({ origin: process.env.TEST_CLIENT_ORIGIN }));
+app.use(cors({
+    origin: [process.env.MAIN_CLIENT_ORIGIN, process.env.TEST_CLIENT_ORIGIN],
+    credentials: true
+}));
+
+// Preflight response
+app.options('*', cors({
+    origin: [process.env.MAIN_CLIENT_ORIGIN, process.env.TEST_CLIENT_ORIGIN],
+    credentials: true
+}));
+
 
 // http Routes
 app.use('/api', require('./routes/index'));
@@ -20,8 +30,9 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: process.env.TEST_CLIENT_ORIGIN,
-        methods: ["GET", "POST"]
+        origin: [process.env.MAIN_CLIENT_ORIGIN, process.env.TEST_CLIENT_ORIGIN],
+        methods: ["GET", "POST"],
+        credentials: true
     }
 });
 
