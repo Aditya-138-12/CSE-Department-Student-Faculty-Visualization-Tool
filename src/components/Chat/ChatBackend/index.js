@@ -28,7 +28,7 @@ const io = new Server(server, {
 // Register Socket handlers
 registerSocketHandlers(io);
 
-const PORT = 5000;
+const PORT = 3001;
 
 server.listen(PORT, () => {
     console.log(`Server has spinned up on PORT: http://localhost:${PORT}`);

@@ -17,6 +17,13 @@ const MainChat = () => {
 
     useEffect(() => {
 
+        const socket = io('http://localhost:3001');     // For now this is the testing endpoint, will be updated once pushed to prod
+        setSocket(socket);
+
+        socket.on('server-broadcast', (msg) => {
+            console.log(`Message reeived from server: ${msg}`);
+        });
+
         const KEY = '6e6d6a6b-6c6d-4c6b-6f6c-6e6d6a6b6c6d';
         const LocalName = 'LocalName';
 
@@ -25,22 +32,17 @@ const MainChat = () => {
         if (uid && localName) {
             setName(localName);
             setuuid(uid);
+            socket.emit('user-name', name);
         }
 
         if (!uid && !localName) {
             setShowEnterName(true);
             uid = crypto.randomUUID();
             localStorage.setItem(KEY, uid);
+            setuuid(uid);
         }
 
         console.log("UID Set to uniquely define: ", uid);
-
-        const socket = io('http://localhost:5000');     // For now this is the testing endpoint, will be updated once pushed to prod
-        setSocket(socket);
-
-        socket.on('server-broadcast', (msg) => {
-            console.log(`Message reeived from server: ${msg}`);
-        });
 
         return () => {
             socket.disconnect();

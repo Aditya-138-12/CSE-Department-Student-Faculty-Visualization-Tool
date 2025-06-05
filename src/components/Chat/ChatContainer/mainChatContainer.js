@@ -1,11 +1,13 @@
 import { React, useState, useEffect } from 'react';
 import './mainChatContainer.css';
 import { Send } from 'lucide-react';
+import TypingDots from '../ChatTypingIndicator/typing';
 
 const MainChatContainer = ({ socket }) => {
 
     const [message, setMessage] = useState('');
     const [msgArray, setMsgArray] = useState([]);
+    const [onlineUser, setOnlineUser] = useState([]);
 
     useEffect(() => {
         if (!socket) return;
@@ -18,11 +20,26 @@ const MainChatContainer = ({ socket }) => {
                 isUser: false
             }]);
         };
+
+        const handleOnlineUsers = (data) => {
+            console.log('Online Users: ', data);
+            setOnlineUser(data);
+        };
+
         socket.on('server-broadcast', handleServerMessageBroadcast);
+        socket.on('online-users', handleOnlineUsers);
         return () => {
             socket.off('server-broadcast', handleServerMessageBroadcast);
         }
     }, [socket]);
+
+    const handleTyping = (e) => {
+        if (socket && e.target.value) {
+            socket.emit('user-typing', { message: socket.userName, isTyping: true });
+        } else {
+            socket.emit('user-typing', { message: socket.userName, isTyping: false });
+        }
+    }
 
     const handleSubmitMessage = () => {
         if (message) {
@@ -30,6 +47,7 @@ const MainChatContainer = ({ socket }) => {
             socket.emit('send-message', { message: message, userName: socket.userName });
             setMessage('');
             console.log('submit message');
+            socket.emit('user-typing', { message: socket.userName, isTyping: false });  // For letting to know that, after the message has been submitted, the user has stopped typing
         } else {
             console.log('message is empty');
         }
@@ -66,12 +84,18 @@ const MainChatContainer = ({ socket }) => {
 
                 </div>
                 <div className='main-chat-container-options'>
-                    <input maxLength={1000} onKeyDown={handleKeyDown} style={{ padding: "15px" }} placeholder='Type your message...' value={message} onInput={(e) => { setMessage(e.target.value); }}></input>
+                    <input maxLength={1000} onKeyDown={handleKeyDown} style={{ padding: "15px" }} placeholder='Type your message...' value={message} onInput={(e) => { setMessage(e.target.value); }} onChange={handleTyping}></input>
                     <div onClick={handleSubmitMessage} style={{ position: "relative", padding: '13px', paddingRight: "20px", paddingLeft: "20px", border: "0.1px solid rgba(0, 0, 0, 0.1)", userSelect: "none", display: "flex", alignItems: "center", justifyContent: "center" }}><Send color='rgba(0, 0, 0, 0.5)' size={20} /></div>
 
                 </div>
             </div>
-            <div className='main-chat-sidebar'></div>
+            <div className='main-chat-sidebar'>
+                <p>Online ({onlineUser.length})</p>
+                {onlineUser.map((user, index) => (
+                    <p key={index}>{user.message}{user.isTyping && <TypingDots />}</p>
+                ))}
+
+            </div>
         </div >
 
     );
