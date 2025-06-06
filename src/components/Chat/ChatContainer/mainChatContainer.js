@@ -2,8 +2,9 @@ import { React, useState, useEffect } from 'react';
 import './mainChatContainer.css';
 import { Send } from 'lucide-react';
 import TypingDots from '../ChatTypingIndicator/typing';
+import { set } from 'lodash';
 
-const MainChatContainer = ({ socket }) => {
+const MainChatContainer = ({ socket, uuid }) => {
 
     const [message, setMessage] = useState('');
     const [msgArray, setMsgArray] = useState([]);
@@ -16,7 +17,7 @@ const MainChatContainer = ({ socket }) => {
             setMsgArray(prev => [...prev, {
                 message: data.message,
                 userName: data.userName,
-                time: "undefined",
+                time: data.time,
                 isUser: false
             }]);
             const audio = new Audio(require('./notif.mp3'));
@@ -36,25 +37,64 @@ const MainChatContainer = ({ socket }) => {
             setOnlineUser(data);
         };
 
+        const handleInitialChats = (data) => {
+            const allMsg = [];
+            console.log('Initial Chats: ', Object.keys(data));
+            Object.entries(data).forEach(([uuid, messageGroup]) => {
+                Object.entries(messageGroup).forEach(([msgId, msg]) => {
+                    allMsg.push({ ...msg, uuid });
+                });
+            });
+            console.log(allMsg);
+            allMsg.sort((a, b) => a.time - b.time);
+            const now = Date.now();
+            allMsg.forEach(msg => {
+                const diff = now - msg.time;
+
+                const seconds = Math.floor(diff / 1000);
+                const minutes = Math.floor(diff / (1000 * 60));
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+                if (seconds < 60) {
+                    msg.time = `just now`;
+                } else if (minutes < 60) {
+                    msg.time = `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+                } else if (hours < 24) {
+                    msg.time = `${hours} hour${hours > 1 ? 's' : ''} ago`;
+                } else if (days === 1) {
+                    msg.time = `yesterday`;
+                } else {
+                    msg.time = `${days} days ago`;
+                }
+            });
+            setMsgArray(allMsg);
+        }
+
         socket.on('server-broadcast', handleServerMessageBroadcast);
         socket.on('online-users', handleOnlineUsers);
+        socket.on('initial-chats', handleInitialChats);
         return () => {
             socket.off('server-broadcast', handleServerMessageBroadcast);
         }
     }, [socket]);
 
+    const [hasTyped, setHasTyped] = useState(false);
     const handleTyping = (e) => {
-        if (socket && e.target.value) {
+        if (socket && e.target.value && !hasTyped) {
             socket.emit('user-typing', { message: socket.userName, isTyping: true });
-        } else {
+            setHasTyped(true);
+        }
+        if (socket && e.target.value.length === 0 && hasTyped) {
             socket.emit('user-typing', { message: socket.userName, isTyping: false });
+            setHasTyped(false);
         }
     }
 
     const handleSubmitMessage = () => {
         if (message) {
             setMsgArray([...msgArray, { message: message, userName: socket.userName, time: new Date().toLocaleTimeString(), isUser: true }]);
-            socket.emit('send-message', { message: message, userName: socket.userName });
+            socket.emit('send-message', { uuid: uuid, message: message, userName: socket.userName, time: new Date().toLocaleTimeString() });
             setMessage('');
             console.log('submit message');
             socket.emit('user-typing', { message: socket.userName, isTyping: false });  // For letting to know that, after the message has been submitted, the user has stopped typing
@@ -69,13 +109,15 @@ const MainChatContainer = ({ socket }) => {
         }
     };
 
+
     return (
         <div className='main-chat-container'>
             <div className='main-chat-messages'>
                 <div className='main-chat-container-messages'>
 
+
                     {msgArray.map((msgArray, index) => (
-                        <div key={index} className='main-chat-main-message-div' style={{ justifyContent: `${msgArray.isUser ? 'right' : 'left'}` }}>
+                        <div key={index} className='main-chat-main-message-div' style={{ justifyContent: `${(msgArray.isUser || msgArray.uuid === uuid) ? 'right' : 'left'}` }}>
                             <div className='main-chat-main-msg-container'>
                                 <div className='main-chat-main-msg-container-header'>
                                     <div className='main-chat-main-msg-container-userDetails'>

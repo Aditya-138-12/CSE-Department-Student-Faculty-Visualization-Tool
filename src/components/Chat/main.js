@@ -65,12 +65,19 @@ const MainChat = () => {
         }
     }, [name, socket]);
 
+    useEffect(() => {
+        if (socket && name && uuid) {
+            socket.emit('usr-info', { name: name, uuid: uuid });
+            console.log("sent user data via ws.");
+        }
+    }, [name, uuid, socket]);
+
     return (
 
         <>
             {showNameInput && <ChatEnterName showEnterName={showEnterName} setName={setName} />}
             <ChatHeader />
-            <MainChatContainer socket={socket} />
+            <MainChatContainer uuid={uuid} socket={socket} />
         </>
 
     );
