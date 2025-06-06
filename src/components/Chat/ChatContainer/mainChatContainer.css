@@ -30,6 +30,11 @@
     flex-direction: column;
     padding: 20px;
     gap: 5px;
+    overflow-y: scroll;
+}
+
+.main-chat-sidebar::-webkit-scrollbar {
+    display: none;
 }
 
 .main-chat-sidebar p {

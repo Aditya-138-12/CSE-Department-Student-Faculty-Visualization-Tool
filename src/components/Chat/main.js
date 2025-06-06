@@ -24,7 +24,7 @@ const MainChat = () => {
         const socket = io('https://cse-department-student-faculty.onrender.com', {
             withCredentials: true,
             transports: ['websocket']
-        });     // For now this is the testing endpoint, will be updated once pushed to prod `http://localhost:3001`
+        });     // For now this is the testing endpoint, will be updated once pushed to prod `http://localhost:3001`, `https://cse-department-student-faculty.onrender.com`
         setSocket(socket);
 
         socket.on('server-broadcast', (msg) => {
