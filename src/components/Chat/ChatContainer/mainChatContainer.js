@@ -86,7 +86,7 @@ const MainChatContainer = ({ socket }) => {
                                     <div style={{ color: "rgba(0, 0, 0, 0.5)" }} className='main-chat-main-msg-container-time'>{msgArray.time}</div>
                                 </div>
                                 <div className='main-chat-main-msg-container-message-box'>
-                                    <p style={{ margin: "10px", wordBreak: "break-word", whiteSpace: "pre-wrap", overflowWrap: "break-word" }}>{msgArray.message}</p>
+                                    <p style={{ margin: "10px", wordBreak: "break-word", whiteSpace: "pre-wrap", overflowWrap: "break-word", userSelect: "text" }}>{msgArray.message}</p>
                                 </div>
                             </div>
                         </div>
