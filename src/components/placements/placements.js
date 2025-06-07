@@ -89,7 +89,8 @@ const Placements = () => {
         { serialNo: 42, companyName: "Technext", roleOffered: "-", students: 12, package: "4.5 LPA" },
         { serialNo: 43, companyName: "Kanini Software Solutions Pvt. Ltd", roleOffered: "-", students: 3, package: "4.5 LPA" },
         { serialNo: 44, companyName: "Foxconn", roleOffered: "-", students: 21, package: "3 LPA" },
-        { serialNo: 45, companyName: "Yokowaga", roleOffered: "-", students: 4, package: "4.6 LPA" }
+        { serialNo: 45, companyName: "Yokowaga", roleOffered: "-", students: 4, package: "4.6 LPA" },
+        { serialNo: 46, companyName: "Tata Electronics", roleOffered: "-", students: 26, package: "3 LPA" }
         //{ serialNo: 15, companyName: "DRDO(Defence Research & Development Organization)", roleOffered: "AI Research Intern", students: 1, package: "No Stipend" }
     ];
 
@@ -126,7 +127,7 @@ const Placements = () => {
             <div className='InfoAboutTheTable'>
                 <p style={{ marginBottom: '0', marginLeft: "30px", fontSize: "15px" }}>Placements for</p>
                 <h1 className='h1' style={{ marginBottom: '0', textAlign: "left", marginTop: "0", marginLeft: "30px", fontSize: "23px", fontWeight: '1000' }}>SJC Institute of Technology, 2025 Batch</h1>
-                <p style={{ marginTop: '0', marginLeft: "30px", fontSize: "15px" }}>Last updated at: 11 March 2025, 01:01:00 IST</p>
+                <p style={{ marginTop: '0', marginLeft: "30px", fontSize: "15px" }}>Last updated at: 7 June 2025, 01:01:00 IST</p>
                 <p style={{ marginBottom: '0', marginLeft: "30px", fontSize: "15px" }}>Maintained by <u>Aditya Saroha</u></p>
             </div>
             <Button

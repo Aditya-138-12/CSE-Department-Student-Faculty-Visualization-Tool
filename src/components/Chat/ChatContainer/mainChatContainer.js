@@ -93,8 +93,8 @@ const MainChatContainer = ({ socket, uuid }) => {
 
     const handleSubmitMessage = () => {
         if (message) {
-            setMsgArray([...msgArray, { message: message, userName: socket.userName, time: new Date().toLocaleTimeString(), isUser: true }]);
-            socket.emit('send-message', { uuid: uuid, message: message, userName: socket.userName, time: new Date().toLocaleTimeString() });
+            setMsgArray([...msgArray, { message: message, userName: socket.userName, time: Date.now(), isUser: true }]);
+            socket.emit('send-message', { uuid: uuid, message: message, userName: socket.userName, time: Date.now() });
             setMessage('');
             console.log('submit message');
             socket.emit('user-typing', { message: socket.userName, isTyping: false });  // For letting to know that, after the message has been submitted, the user has stopped typing

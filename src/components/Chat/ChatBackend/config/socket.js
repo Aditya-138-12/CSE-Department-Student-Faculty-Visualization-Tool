@@ -37,14 +37,14 @@ module.exports = function registerSocketHandlers(io) {
         });
 
         socket.on('send-message', (msg) => {
-            console.log(`Message received by user ${socket.id}:\n Name: ${msg.userName}:\n Message: ${msg.message}\n\n broadcasting it to all users`);
+            console.log(`Message received by user ${socket.id}:\n Name: ${msg.userName}:\n Message: ${msg.message} Time: ${msg.time}\n\n broadcasting it to all users`);
             socket.broadcast.emit('server-broadcast', msg);
 
             const existingUser = messageArray.get(msg.uuid);
             if (existingUser) {
                 existingUser.messagesDetails.push({
                     message: msg.message,
-                    time: new Date().toLocaleTimeString()
+                    time: msg.time
                 });
                 console.log(existingUser);
             }
@@ -53,7 +53,7 @@ module.exports = function registerSocketHandlers(io) {
             db.ref(`chats/${msg.uuid}`).push({
                 userName: msg.userName,
                 message: msg.message,
-                time: Date.now()
+                time: msg.time
             });
 
         });
