@@ -43,6 +43,14 @@ export function BackgroundBeamsDemo() {
         navigate('home/chat');
     }
 
+    const handleRankTeachers = () => {
+        navigate('/rankprofessor');
+    }
+
+    const handleMonthlyNewsletter = () => {
+        navigate('/monthlynewsletter');
+    }
+
     const [lang, setLang] = useState('en');
 
     const handleLangChange = () => {
@@ -187,12 +195,49 @@ export function BackgroundBeamsDemo() {
                         '&:hover': {
                             backgroundColor: 'black',
                             color: "white",
-                            border: "1px solid black"
+                            border: "1px solid black",
+
                         },
                     }}
                     style={{ marginLeft: "0px", marginTop: "15px" }}
                 >
                     {lang == 'en' ? "Chat with SJCIT-Connect" : "SJCIT-Connect ಜೊತೆ ಚಾಟ್ ಮಾಡಿ"}
+                </Button>
+                <Button
+                    className="btn_uar"
+                    onClick={handleRankTeachers}
+                    sx={{
+                        backgroundColor: 'white',
+                        color: 'black',
+                        border: '1px solid black',
+                        marginLeft: '50px !important',
+                        '&:hover': {
+                            backgroundColor: 'black',
+                            color: "white",
+                            border: "1px solid black"
+                        },
+                    }}
+                    style={{ marginLeft: "0px", marginTop: "15px" }}
+                >
+                    {lang == 'en' ? "Prof. Ranker" : "ರ್ಯಾಂಕ್ ಟೀಚರ್‌ಗಳ"}
+                </Button>
+                <Button
+                    className="btn_uar"
+                    onClick={handleMonthlyNewsletter}
+                    sx={{
+                        backgroundColor: 'white',
+                        color: 'black',
+                        border: '1px solid black',
+                        marginLeft: '50px !important',
+                        '&:hover': {
+                            backgroundColor: 'black',
+                            color: "white",
+                            border: "1px solid black"
+                        },
+                    }}
+                    style={{ marginLeft: "0px", marginTop: "15px" }}
+                >
+                    {lang == 'en' ? "Monthly Newsletter" : "ಮಾಸಿಕ ಸುದ್ದಿಪತ್ರ"}
                 </Button>
 
 

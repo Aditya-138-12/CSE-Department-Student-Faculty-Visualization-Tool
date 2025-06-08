@@ -1,0 +1,1479 @@
+{
+	"meta": {
+		"authors": [
+			"David Haz"
+		],
+		"bugs": "https://github.com/DavidHDev/react-bits/issues",
+		"description": "An open source collection of animated, interactive & fully customizable React components for building stunning, memorable user interfaces.",
+		"homepage": "https://reactbits.dev",
+		"repository": "https://github.com/DavidHDev/react-bits",
+		"tags": [
+			"react",
+			"javascript",
+			"components",
+			"web",
+			"reactjs",
+			"css-animations",
+			"component-library",
+			"ui-components",
+			"3d",
+			"ui-library",
+			"tailwind",
+			"tailwindcss",
+			"components",
+			"components-library"
+		]
+	},
+	"categories": [
+		{
+			"name": "Animations",
+			"blocks": [
+				{
+					"name": "AnimatedContent",
+					"directory": "src/content/Animations/AnimatedContent",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"AnimatedContent.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "BlobCursor",
+					"directory": "src/content/Animations/BlobCursor",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"BlobCursor.css",
+						"BlobCursor.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "ClickSpark",
+					"directory": "src/content/Animations/ClickSpark",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"ClickSpark.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Crosshair",
+					"directory": "src/content/Animations/Crosshair",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Crosshair.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "FadeContent",
+					"directory": "src/content/Animations/FadeContent",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"FadeContent.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "GlareHover",
+					"directory": "src/content/Animations/GlareHover",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"GlareHover.css",
+						"GlareHover.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "ImageTrail",
+					"directory": "src/content/Animations/ImageTrail",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"ImageTrail.css",
+						"ImageTrail.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Magnet",
+					"directory": "src/content/Animations/Magnet",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Magnet.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "MagnetLines",
+					"directory": "src/content/Animations/MagnetLines",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"MagnetLines.css",
+						"MagnetLines.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "MetaBalls",
+					"directory": "src/content/Animations/MetaBalls",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"MetaBalls.css",
+						"MetaBalls.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"ogl@^1.0.11"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "MetallicPaint",
+					"directory": "src/content/Animations/MetallicPaint",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"MetallicPaint.css",
+						"MetallicPaint.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Noise",
+					"directory": "src/content/Animations/Noise",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Noise.css",
+						"Noise.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "PixelTrail",
+					"directory": "src/content/Animations/PixelTrail",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"PixelTrail.css",
+						"PixelTrail.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"@react-three/fiber@^8.17.14",
+						"@react-three/drei@^9.121.4",
+						"three@^0.167.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "PixelTransition",
+					"directory": "src/content/Animations/PixelTransition",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"PixelTransition.css",
+						"PixelTransition.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Ribbons",
+					"directory": "src/content/Animations/Ribbons",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Ribbons.css",
+						"Ribbons.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"ogl@^1.0.11"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "SplashCursor",
+					"directory": "src/content/Animations/SplashCursor",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"SplashCursor.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "StarBorder",
+					"directory": "src/content/Animations/StarBorder",
+					"category": "Animations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"StarBorder.css",
+						"StarBorder.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				}
+			]
+		},
+		{
+			"name": "Backgrounds",
+			"blocks": [
+				{
+					"name": "Aurora",
+					"directory": "src/content/Backgrounds/Aurora",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Aurora.css",
+						"Aurora.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"ogl@^1.0.11"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Balatro",
+					"directory": "src/content/Backgrounds/Balatro",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Balatro.css",
+						"Balatro.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"ogl@^1.0.11"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Ballpit",
+					"directory": "src/content/Backgrounds/Ballpit",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Ballpit.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"three@^0.167.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Beams",
+					"directory": "src/content/Backgrounds/Beams",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Beams.css",
+						"Beams.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"three@^0.167.1",
+						"@react-three/fiber@^8.17.14",
+						"@react-three/drei@^9.121.4"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Dither",
+					"directory": "src/content/Backgrounds/Dither",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Dither.css",
+						"Dither.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"@react-three/fiber@^8.17.14",
+						"@react-three/postprocessing@^2.19.1",
+						"postprocessing@^6.36.0",
+						"three@^0.167.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "DotGrid",
+					"directory": "src/content/Backgrounds/DotGrid",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"DotGrid.css",
+						"DotGrid.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "GridDistortion",
+					"directory": "src/content/Backgrounds/GridDistortion",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"GridDistortion.css",
+						"GridDistortion.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"three@^0.167.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "GridMotion",
+					"directory": "src/content/Backgrounds/GridMotion",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"GridMotion.css",
+						"GridMotion.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Hyperspeed",
+					"directory": "src/content/Backgrounds/Hyperspeed",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"HyperSpeedPresets.js",
+						"Hyperspeed.css",
+						"Hyperspeed.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"three@^0.167.1",
+						"postprocessing@^6.36.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Iridescence",
+					"directory": "src/content/Backgrounds/Iridescence",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Iridescence.css",
+						"Iridescence.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"ogl@^1.0.11"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "LetterGlitch",
+					"directory": "src/content/Backgrounds/LetterGlitch",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"LetterGlitch.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Lightning",
+					"directory": "src/content/Backgrounds/Lightning",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Lightning.css",
+						"Lightning.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "LiquidChrome",
+					"directory": "src/content/Backgrounds/LiquidChrome",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"LiquidChrome.css",
+						"LiquidChrome.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"ogl@^1.0.11"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Orb",
+					"directory": "src/content/Backgrounds/Orb",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Orb.css",
+						"Orb.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"ogl@^1.0.11"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Particles",
+					"directory": "src/content/Backgrounds/Particles",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Particles.css",
+						"Particles.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"ogl@^1.0.11"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "ShapeBlur",
+					"directory": "src/content/Backgrounds/ShapeBlur",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"ShapeBlur.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"three@^0.167.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Silk",
+					"directory": "src/content/Backgrounds/Silk",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Silk.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"@react-three/fiber@^8.17.14",
+						"three@^0.167.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Squares",
+					"directory": "src/content/Backgrounds/Squares",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Squares.css",
+						"Squares.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Threads",
+					"directory": "src/content/Backgrounds/Threads",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Threads.css",
+						"Threads.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"ogl@^1.0.11"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Waves",
+					"directory": "src/content/Backgrounds/Waves",
+					"category": "Backgrounds",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Waves.css",
+						"Waves.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				}
+			]
+		},
+		{
+			"name": "Components",
+			"blocks": [
+				{
+					"name": "AnimatedList",
+					"directory": "src/content/Components/AnimatedList",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"AnimatedList.css",
+						"AnimatedList.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "BounceCards",
+					"directory": "src/content/Components/BounceCards",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"BounceCards.css",
+						"BounceCards.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "CardSwap",
+					"directory": "src/content/Components/CardSwap",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"CardSwap.css",
+						"CardSwap.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Carousel",
+					"directory": "src/content/Components/Carousel",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Carousel.css",
+						"Carousel.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24",
+						"react-icons@^5.2.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "ChromaGrid",
+					"directory": "src/content/Components/ChromaGrid",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"ChromaGrid.css",
+						"ChromaGrid.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "CircularGallery",
+					"directory": "src/content/Components/CircularGallery",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"CircularGallery.css",
+						"CircularGallery.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"ogl@^1.0.11"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Counter",
+					"directory": "src/content/Components/Counter",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Counter.css",
+						"Counter.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "DecayCard",
+					"directory": "src/content/Components/DecayCard",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"DecayCard.css",
+						"DecayCard.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Dock",
+					"directory": "src/content/Components/Dock",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Dock.css",
+						"Dock.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "ElasticSlider",
+					"directory": "src/content/Components/ElasticSlider",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"ElasticSlider.css",
+						"ElasticSlider.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24",
+						"@chakra-ui/react@^2.8.2",
+						"react-icons@^5.2.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "FlowingMenu",
+					"directory": "src/content/Components/FlowingMenu",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"FlowingMenu.css",
+						"FlowingMenu.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "FlyingPosters",
+					"directory": "src/content/Components/FlyingPosters",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"FlyingPosters.css",
+						"FlyingPosters.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"ogl@^1.0.11"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Folder",
+					"directory": "src/content/Components/Folder",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Folder.css",
+						"Folder.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "GlassIcons",
+					"directory": "src/content/Components/GlassIcons",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"GlassIcons.css",
+						"GlassIcons.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "GooeyNav",
+					"directory": "src/content/Components/GooeyNav",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"GooeyNav.css",
+						"GooeyNav.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "InfiniteMenu",
+					"directory": "src/content/Components/InfiniteMenu",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"InfiniteMenu.css",
+						"InfiniteMenu.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gl-matrix@^3.4.3"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "InfiniteScroll",
+					"directory": "src/content/Components/InfiniteScroll",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"InfiniteScroll.css",
+						"InfiniteScroll.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Lanyard",
+					"directory": "src/content/Components/Lanyard",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Lanyard.css",
+						"Lanyard.jsx",
+						"card.glb",
+						"lanyard.png"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"@react-three/fiber@^8.17.14",
+						"@react-three/drei@^9.121.4",
+						"@react-three/rapier@^1.4.0",
+						"meshline@^3.3.1",
+						"three@^0.167.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "PixelCard",
+					"directory": "src/content/Components/PixelCard",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"PixelCard.css",
+						"PixelCard.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "ProfileCard",
+					"directory": "src/content/Components/ProfileCard",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"ProfileCard.css",
+						"ProfileCard.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "RollingGallery",
+					"directory": "src/content/Components/RollingGallery",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"RollingGallery.css",
+						"RollingGallery.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "SpotlightCard",
+					"directory": "src/content/Components/SpotlightCard",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"SpotlightCard.css",
+						"SpotlightCard.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Stack",
+					"directory": "src/content/Components/Stack",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Stack.css",
+						"Stack.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "Stepper",
+					"directory": "src/content/Components/Stepper",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"Stepper.css",
+						"Stepper.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "TiltedCard",
+					"directory": "src/content/Components/TiltedCard",
+					"category": "Components",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"TiltedCard.css",
+						"TiltedCard.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				}
+			]
+		},
+		{
+			"name": "TextAnimations",
+			"blocks": [
+				{
+					"name": "ASCIIText",
+					"directory": "src/content/TextAnimations/ASCIIText",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"ASCIIText.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"three@^0.167.1"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "BlurText",
+					"directory": "src/content/TextAnimations/BlurText",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"BlurText.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "CircularText",
+					"directory": "src/content/TextAnimations/CircularText",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"CircularText.css",
+						"CircularText.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "CountUp",
+					"directory": "src/content/TextAnimations/CountUp",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"CountUp.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "DecryptedText",
+					"directory": "src/content/TextAnimations/DecryptedText",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"DecryptedText.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "FallingText",
+					"directory": "src/content/TextAnimations/FallingText",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"FallingText.css",
+						"FallingText.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"matter-js@^0.20.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "FuzzyText",
+					"directory": "src/content/TextAnimations/FuzzyText",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"FuzzyText.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "GlitchText",
+					"directory": "src/content/TextAnimations/GlitchText",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"GlitchText.css",
+						"GlitchText.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "GradientText",
+					"directory": "src/content/TextAnimations/GradientText",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"GradientText.css",
+						"GradientText.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "RotatingText",
+					"directory": "src/content/TextAnimations/RotatingText",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"RotatingText.css",
+						"RotatingText.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "ScrambledText",
+					"directory": "src/content/TextAnimations/ScrambledText",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"ScrambledText.css",
+						"ScrambledText.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "ScrollFloat",
+					"directory": "src/content/TextAnimations/ScrollFloat",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"ScrollFloat.css",
+						"ScrollFloat.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "ScrollReveal",
+					"directory": "src/content/TextAnimations/ScrollReveal",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"ScrollReveal.css",
+						"ScrollReveal.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "ScrollVelocity",
+					"directory": "src/content/TextAnimations/ScrollVelocity",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"ScrollVelocity.css",
+						"ScrollVelocity.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "ShinyText",
+					"directory": "src/content/TextAnimations/ShinyText",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"ShinyText.css",
+						"ShinyText.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "SplitText",
+					"directory": "src/content/TextAnimations/SplitText",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"SplitText.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"gsap@^3.13.0"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "TextCursor",
+					"directory": "src/content/TextAnimations/TextCursor",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"TextCursor.css",
+						"TextCursor.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "TextPressure",
+					"directory": "src/content/TextAnimations/TextPressure",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"TextPressure.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "TrueFocus",
+					"directory": "src/content/TextAnimations/TrueFocus",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"TrueFocus.css",
+						"TrueFocus.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				},
+				{
+					"name": "VariableProximity",
+					"directory": "src/content/TextAnimations/VariableProximity",
+					"category": "TextAnimations",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": [
+						"VariableProximity.css",
+						"VariableProximity.jsx"
+					],
+					"localDependencies": [],
+					"dependencies": [
+						"framer-motion@^11.3.24"
+					],
+					"devDependencies": [],
+					"_imports_": {}
+				}
+			]
+		}
+	]
+}

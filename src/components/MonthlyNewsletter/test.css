@@ -1,0 +1,83 @@
+@font-face {
+    font-family: satoshi;
+    src: url("Satoshi-VariableItalic.ttf");
+}
+
+.page {
+    border: 0.2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.news-letter-cover {
+    position: relative;
+    background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTNjZ2lrODlyMHhubG5tM3Bvcml0aDA5emt4d2JmM29yMHE5czM0NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jsH69xiL2JonAcOwwE/giphy.gif');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+}
+
+.news-letter-cover-college-logo {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-image: url('sjcit_logo-removebg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    z-index: 10000;
+}
+
+.news-letter-cover-logo {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-image: url('https://sjcit-connect.web.app/static/media/sjcit.5d9b62bec1243b319f35.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    z-index: 10000;
+    opacity: 0.8;
+}
+
+.news-letter-cover-relase-date {
+    position: absolute;
+    top: 65%;
+    font-size: 18px !important;
+    color: white;
+    width: 130px !important;
+    height: 130px !important;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.news-letter-cover-relase-names {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    width: max-content;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgb(173, 196, 241);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: 0.2s ease;
+}
+
+.news-letter-cover-relase-names:hover {
+    font-size: 28px;
+    cursor: default;
+    transition: 0.2s ease;
+}

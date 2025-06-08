@@ -12,6 +12,7 @@ import TestPage from './components/Tests Section/Frontend/TestPage/testPage';
 import ResultPage from './components/Tests Section/Frontend/ResultPage/ResultPage';
 import NammaCompilerMain from './components/NammaCompiler/main';
 import MainChat from './components/Chat/main';
+import TestNewsLetter from './components/MonthlyNewsletter/test';
 
 
 function App() {
@@ -39,6 +40,8 @@ function App() {
       <Route path="/placements" element={<Placements />}></Route>
       <Route path='*' element={<PageNotFound pathToNavigate={'/home'} />}></Route>
       <Route path="/home/chat" element={<MainChat />} />
+      <Route path='/rankprofessor' element={<p style={{ color: "red", textAlign: "center" }}>Feature under construction.</p>} />
+      <Route path='/monthlynewsletter' element={<TestNewsLetter />} />
     </Routes >
   );
 }

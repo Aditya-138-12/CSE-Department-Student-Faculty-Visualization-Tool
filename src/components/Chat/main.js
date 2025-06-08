@@ -21,7 +21,7 @@ const MainChat = () => {
             Notification.requestPermission();
         }
 
-        const socket = io('https://cse-department-student-faculty.onrender.com', {
+        const socket = io('http://localhost:3001', {
             withCredentials: true,
             transports: ['websocket']
         });     // For now this is the testing endpoint, will be updated once pushed to prod `http://localhost:3001`, `https://cse-department-student-faculty.onrender.com`
