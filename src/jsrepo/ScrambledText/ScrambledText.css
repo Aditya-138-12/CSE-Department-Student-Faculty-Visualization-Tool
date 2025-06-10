@@ -1,0 +1,15 @@
+.text-block {
+  margin: 0vw;
+  max-width: 500px;
+  margin: 0px;
+  margin-top: 0px;
+  width: fit-content;
+  font-size: clamp(14px, 4vw, 32px);
+  text-align: justify !important;
+  color: #fff;
+}
+
+.char {
+  will-change: transform;
+  display: inline-block;
+}
