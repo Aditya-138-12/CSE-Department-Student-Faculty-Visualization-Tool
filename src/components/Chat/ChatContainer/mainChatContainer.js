@@ -1,14 +1,24 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState, useEffect, useRef } from 'react';
 import './mainChatContainer.css';
 import { Send } from 'lucide-react';
 import TypingDots from '../ChatTypingIndicator/typing';
-import { set } from 'lodash';
+import { last, set } from 'lodash';
 
 const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
 
     const [message, setMessage] = useState('');
     const [msgArray, setMsgArray] = useState([]);
     const [onlineUser, setOnlineUser] = useState([]);
+
+    const latestMessageRef = useRef(null);
+    const containerRef = useRef(null);
+
+    const isUserNearBottom = () => {
+        const container = containerRef.current;
+        const latestMessage = latestMessageRef.current;
+        if (!container || !latestMessage) return false;
+        return latestMessage.offsetTop - container.scrollTop < latestMessage.clientHeight;
+    };
 
     useEffect(() => {
         if (!socket) return;
@@ -107,6 +117,30 @@ const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
         }
     };
 
+    useEffect(() => {
+        if (isUserNearBottom()) {
+            latestMessageRef.current.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            setLoading(true);
+        }
+    }, [msgArray]);
+
+    // use effect to know that the user has finally scrolled to the bottom.
+    useEffect(() => {
+        const container = containerRef.current;
+        if (!container) return;
+
+        const handleScroll = () => {
+            const atBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 50;
+            if (atBottom) {
+                setLoading(false);
+            }
+        };
+
+        container.addEventListener('scroll', handleScroll);
+        return () => container.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
             handleSubmitMessage();
@@ -117,7 +151,7 @@ const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
     return (
         <div className='main-chat-container'>
             <div className='main-chat-messages'>
-                <div className='main-chat-container-messages'>
+                <div className='main-chat-container-messages' ref={containerRef} >
 
 
                     {msgArray.map((msgArray, index) => (
@@ -131,7 +165,7 @@ const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
                                     </div>
                                     <div style={{ color: "rgba(0, 0, 0, 0.5)" }} className='main-chat-main-msg-container-time'>{msgArray.time}</div>
                                 </div>
-                                <div className='main-chat-main-msg-container-message-box'>
+                                <div className='main-chat-main-msg-container-message-box' ref={latestMessageRef}>
                                     <p style={{ margin: "10px", wordBreak: "break-word", whiteSpace: "pre-wrap", overflowWrap: "break-word", userSelect: "text" }}>{msgArray.message}</p>
                                 </div>
                             </div>
