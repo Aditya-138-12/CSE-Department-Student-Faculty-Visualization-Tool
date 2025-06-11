@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { TailSpin } from 'react-loader-spinner';
 import './main.css';
 import { io } from 'socket.io-client';
 
@@ -14,6 +15,9 @@ const MainChat = () => {
 
     const [uuid, setuuid] = useState('');
     const [showEnterName, setShowEnterName] = useState(false);
+
+    const [loading, setLoading] = useState(true);
+    const [isLongLoading, setIsLongLoading] = useState(false);
 
     useEffect(() => {
 
@@ -75,9 +79,10 @@ const MainChat = () => {
     return (
 
         <>
+            {loading && <div className='main-chat-loader'><TailSpin size={100} color="black" />{isLongLoading && <span> It may take upto 50s to <br /> load, due to render free tier.</span >}</div >}
             {showNameInput && <ChatEnterName showEnterName={showEnterName} setName={setName} />}
             <ChatHeader />
-            <MainChatContainer uuid={uuid} socket={socket} />
+            <MainChatContainer uuid={uuid} socket={socket} setLoading={setLoading} setIsLongLoading={setIsLongLoading} />
         </>
 
     );

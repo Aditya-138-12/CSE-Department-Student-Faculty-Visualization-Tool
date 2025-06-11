@@ -4,7 +4,7 @@ import { Send } from 'lucide-react';
 import TypingDots from '../ChatTypingIndicator/typing';
 import { set } from 'lodash';
 
-const MainChatContainer = ({ socket, uuid }) => {
+const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
 
     const [message, setMessage] = useState('');
     const [msgArray, setMsgArray] = useState([]);
@@ -38,6 +38,10 @@ const MainChatContainer = ({ socket, uuid }) => {
         };
 
         const handleInitialChats = (data) => {
+            setLoading(false);
+            setTimeout(() => {
+                setIsLongLoading(true);
+            }, 5000);
             const allMsg = [];
             console.log('Initial Chats: ', Object.keys(data));
             Object.entries(data).forEach(([uuid, messageGroup]) => {
