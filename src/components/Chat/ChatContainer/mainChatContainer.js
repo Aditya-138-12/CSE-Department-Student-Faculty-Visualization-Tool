@@ -117,6 +117,7 @@ const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
         }
     };
 
+    // This useEffect sets the new messageCame Component to be shown once the new messages arrives and the user has not seen it, otherwise it will just scroll to the newest message.
     useEffect(() => {
         if (isUserNearBottom()) {
             latestMessageRef.current.scrollIntoView({ behavior: 'smooth' });
