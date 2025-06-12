@@ -21,6 +21,8 @@ const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
         return latestMessage.offsetTop - container.scrollTop < latestMessage.clientHeight;
     };
 
+    // Main useEffect to handle the messages from the server, it works whenever there is a change in the socket, i.e. if server sends a message via the upgraded websocket
+    // connection. It receives messages from the server via the `handleServerMessageBroadcast` and adds them to the `msgArray`, which is then used to render the messages.
     useEffect(() => {
         if (!socket) return;
 
