@@ -2,7 +2,6 @@ import { React, useState, useEffect, useRef } from 'react';
 import './mainChatContainer.css';
 import { Send } from 'lucide-react';
 import TypingDots from '../ChatTypingIndicator/typing';
-import { last, set } from 'lodash';
 
 const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
 
