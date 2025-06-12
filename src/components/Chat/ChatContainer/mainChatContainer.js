@@ -14,6 +14,8 @@ const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
     const latestMessageRef = useRef(null);
     const containerRef = useRef(null);
 
+    // Function which tells whether the user really is near bottom or not, it just calculates the offsetTop of the latest message and compares 
+    // it with the scrollTop and clientHeight of the container.
     const isUserNearBottom = () => {
         const container = containerRef.current;
         const latestMessage = latestMessageRef.current;
