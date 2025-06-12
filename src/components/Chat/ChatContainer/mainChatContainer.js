@@ -130,6 +130,7 @@ const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
         const container = containerRef.current;
         if (!container) return;
 
+        // This handleScroll function will calculate whether the user has came down to the bottom or not.
         const handleScroll = () => {
             const atBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 50;
             if (atBottom) {
