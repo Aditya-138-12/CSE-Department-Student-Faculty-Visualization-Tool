@@ -10,6 +10,7 @@ const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
     const [msgArray, setMsgArray] = useState([]);
     const [onlineUser, setOnlineUser] = useState([]);
 
+    // Added some references to the components to be able to scroll to the latest message.
     const latestMessageRef = useRef(null);
     const containerRef = useRef(null);
 
