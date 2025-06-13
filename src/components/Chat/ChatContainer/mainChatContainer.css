@@ -160,3 +160,25 @@
     align-items: flex-start;
     /* border: 0.1px solid rgba(0, 0, 0, 0.1); */
 }
+
+.main-chat-message-scrolldown {
+    position: absolute;
+    bottom: 120px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #fefefe;
+    border: 0.2px solid rgba(0, 0, 0, 0.1);
+    z-index: 100000;
+}
+
+.main-chat-message-scrolldown:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}

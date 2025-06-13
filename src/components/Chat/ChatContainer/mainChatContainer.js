@@ -1,6 +1,6 @@
 import { React, useState, useEffect, useRef } from 'react';
 import './mainChatContainer.css';
-import { Send } from 'lucide-react';
+import { Send, ChevronDown } from 'lucide-react';
 import TypingDots from '../ChatTypingIndicator/typing';
 
 const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
@@ -8,6 +8,7 @@ const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
     const [message, setMessage] = useState('');
     const [msgArray, setMsgArray] = useState([]);
     const [onlineUser, setOnlineUser] = useState([]);
+    const [showScrollDownAndNewMessageButton, setShowScrollDownAndNewMessageButton] = useState(false);
 
     // Added some references to the components to be able to scroll to the latest message.
     const latestMessageRef = useRef(null);
@@ -126,7 +127,7 @@ const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
         if (isUserNearBottom()) {
             latestMessageRef.current.scrollIntoView({ behavior: 'smooth' });
         } else {
-            setLoading(true);
+            setShowScrollDownAndNewMessageButton(true);
         }
     }, [msgArray]);
 
@@ -139,7 +140,9 @@ const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
         const handleScroll = () => {
             const atBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 50;
             if (atBottom) {
-                setLoading(false);
+                setShowScrollDownAndNewMessageButton(false);
+            } else {
+                setShowScrollDownAndNewMessageButton(true);
             }
         };
 
@@ -153,10 +156,17 @@ const MainChatContainer = ({ socket, uuid, setLoading, setIsLongLoading }) => {
         }
     };
 
+    const handleScrollDown = () => {
+        latestMessageRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
 
     return (
         <div className='main-chat-container'>
-            <div className='main-chat-messages'>
+            <div className='main-chat-messages' >
+
+                {showScrollDownAndNewMessageButton && <div className='main-chat-message-scrolldown' onClick={handleScrollDown}><ChevronDown size={25} /></div>}
+
                 <div className='main-chat-container-messages' ref={containerRef} >
 
 
